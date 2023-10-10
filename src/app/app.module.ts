@@ -5,12 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     CabeceraComponent
+    IndexComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
