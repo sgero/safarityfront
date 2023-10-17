@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { FooterComponent } from './footer/footer.component';
+import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -14,6 +15,8 @@ import { LoginComponent } from './login/login.component';
     IndexComponent,
     CabeceraComponent,
     IndexComponent,
+    FooterComponent,
+    RegistroComponent,
     IndexComponent,
     FooterComponent,
     LoginComponent
