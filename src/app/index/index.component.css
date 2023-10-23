@@ -17,9 +17,9 @@
 .conten{
   display: flex;
   flex-direction: row;
-  background-color: #eceaea;
-  width: 90%;
-  margin: 10px 30px 10px 30px;
+  background-color: #cb2d2d;
+  width: 100%;
+  margin: 10px 10px 10px 10px;
   justify-content: space-between;
   align-items: center;
   padding-top: 5px;
