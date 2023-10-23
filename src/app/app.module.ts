@@ -7,6 +7,7 @@ import { IndexComponent } from './index/index.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegistroComponent } from './registro/registro.component';
+import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -16,10 +17,7 @@ import { LoginComponent } from './login/login.component';
     CabeceraComponent,
     IndexComponent,
     FooterComponent,
-    RegistroComponent,
-    IndexComponent,
-    FooterComponent,
-    LoginComponent
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
