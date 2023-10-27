@@ -4,6 +4,7 @@ import {IndexComponent} from "./index/index.component";
 import {RegistroComponent} from "./registro/registro.component";
 import {LoginComponent} from "./login/login.component";
 import {Registro2Component} from "./registro2/registro2.component";
+import {ExplorarComponent} from "./explorar/explorar.component";
 
 // Rutas de navegación
 
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path:'', redirectTo: '/inicio' , pathMatch:"full"},
   {path:'registro', component : RegistroComponent},
   {path:'login', component : LoginComponent},
-  {path:'registro2', component : Registro2Component}
+  {path:'registro2', component : Registro2Component},
+  {path:'login', component : LoginComponent},
+  {path:'explorar', component : ExplorarComponent}
 ];
 
 

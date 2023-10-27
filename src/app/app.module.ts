@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { Registro2Component } from './registro2/registro2.component';
+import { ExplorarComponent } from './explorar/explorar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,8 @@ import { Registro2Component } from './registro2/registro2.component';
     CabeceraComponent,
     IndexComponent,
     FooterComponent,
+    RegistroComponent,
+    ExplorarComponent,
     RegistroComponent,
     IndexComponent,
     FooterComponent,
