@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RegistroComponent } from './registro/registro.component';
 import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
+import { ExplorarComponent } from './explorar/explorar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     CabeceraComponent,
     IndexComponent,
     FooterComponent,
-    RegistroComponent
+    RegistroComponent,
+    ExplorarComponent
   ],
   imports: [
     BrowserModule,
