@@ -38,3 +38,9 @@ mat-sidenav {
 .icono {
   margin-right: 10px;
 }
+
+.mat-toolbar .mat-primary {
+
+  background-color: white !important;
+
+}
