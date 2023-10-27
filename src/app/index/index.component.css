@@ -7,6 +7,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+
 }
 .numero{
   display: flex;
@@ -17,7 +18,6 @@
 .conten{
   display: flex;
   flex-direction: row;
-  background-color: #eceaea;
   width: 90%;
   margin: 10px 30px 10px 30px;
   justify-content: space-between;
@@ -28,17 +28,18 @@
   flex-wrap: wrap;
 }
 .ctexto{
-  width: 300px;
+  width: 500px;
   height: 400px;
   background-color: #c9c8c8;
   color: black;
+
 }
 .imagen{
   width: 56%;
-  min-width: 300px;
+
 }
 .imagen>img{
-  width: 100%;
+  width:100%;
 }
 .iconos{
   display: flex;
