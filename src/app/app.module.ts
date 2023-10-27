@@ -42,13 +42,13 @@ import {SidenavComponent} from "./sidenav/sidenav.component";
     IndexComponent,
     FooterComponent,
     LoginComponent,
-    Registro2Component
+    Registro2Component,
     LoginComponent,
     SidenavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
