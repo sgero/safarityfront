@@ -7,8 +7,8 @@ import { IndexComponent } from './index/index.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegistroComponent } from './registro/registro.component';
-import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
+import { Registro2Component } from './registro2/registro2.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,11 @@ import { LoginComponent } from './login/login.component';
     CabeceraComponent,
     IndexComponent,
     FooterComponent,
-    RegistroComponent
+    RegistroComponent,
+    IndexComponent,
+    FooterComponent,
+    LoginComponent,
+    Registro2Component
   ],
   imports: [
     BrowserModule,
