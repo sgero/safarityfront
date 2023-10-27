@@ -1,29 +1,75 @@
-<link rel="stylesheet" href="registro.component.css">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-<div class="body">
+<head>
+  <meta charset="UTF-8">
+  <title> Login | SAFARITY </title>
+  <link rel="stylesheet" type="text/css" href="registro.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="contenedor">
 
-  <div class="container">
+  <input type="checkbox" id="vuelta">
 
-    <h2>Registrate</h2>
+  <div class="principal">
 
-    <form action="registro.php" method="post">
-
-      <div class="form-group">
-        <label for="alias">Usuario:</label>
-        <input type="text" id="alias" name="alias" required>
+    <div class="alante">
+      <img src="assets/img/Captura%20desde%202023-10-10%2020-03-03.png" alt="">
+      <div class="texto">
+        <span class="texto1">Haz lo que <br> te apasiona</span>
       </div>
-
-      <div class="form-group">
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" required>
-      </div>
-
-      <a routerLink="/registro2"><input type="submit" value="Continuar"></a>
-
-    </form>
+    </div>
 
   </div>
 
-  <div class="img"></div>
+  <div class="forms">
+
+    <div class="form-content">
+
+      <div class="signup-form">
+
+        <div class="titulo">Registrar</div>
+
+        <form name="form1" id="form1" action="#">
+
+          <div class="input-boxes">
+
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Usuario" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="clave1" id="clave1" placeholder="Contraseña" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="clave2" id="clave2" placeholder="Repetir contraseña" required>
+            </div>
+
+            <div class="boton input-box">
+              <input type="submit" (click)="comprobarContrasena()" routerLink="/registro2" value="Continuar">
+            </div>
+
+            <div class="texto sign-up-text">¿Tienes ya una cuenta?
+              <label routerLink="/login" for="vuelta">Inicia Sesión</label>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
+
+</body>
+</html>

@@ -1,54 +1,80 @@
-<link rel="stylesheet" href="registro2.component.css">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-<div class="body">
+<head>
+  <meta charset="UTF-8">
+  <title> Login | SAFARITY </title>
+  <link rel="stylesheet" type="text/css" href="registro2.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="contenedor">
 
-  <div class="container">
+  <input type="checkbox" id="vuelta">
 
-    <h2>Registrate</h2>
+  <div class="principal">
 
-    <form action="registro2.php" method="post">
-
-      <div class="form-group">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+    <div class="alante">
+      <img src="assets/img/Captura%20desde%202023-10-10%2020-03-03.png" alt="">
+      <div class="texto">
+        <span class="texto1">Haz lo que <br> te apasiona</span>
       </div>
-
-      <div class="form-group">
-        <label for="apellidos">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" required>
-      </div>
-
-      <div class="form-group">
-        <label for="correo">Correo Electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
-      </div>
-
-      <div class="form-group">
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" required>
-      </div>
-
-      <div class="form-group">
-        <label for="dni">DNI:</label>
-        <input type="text" id="dni" name="dni" required>
-      </div>
-
-      <div class="form-group">
-        <label for="dirección">Dirección:</label>
-        <input type="text" id="dirección" name="dirección" required>
-      </div>
-
-      <div class="form-group">
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" required>
-      </div>
-
-      <input type="submit" value="Registrar">
-
-    </form>
+    </div>
 
   </div>
 
-  <div class="img"></div>
+  <div class="forms">
+
+    <div class="form-content">
+
+      <div class="signup-form">
+
+        <div class="titulo">Registrar</div>
+
+        <form action="#">
+
+          <div class="input-boxes">
+
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Nombre" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Apellidos" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-calendar"></i>
+              <input type="date" placeholder="Fecha" required>
+            </div>
+
+            <div class="boton input-box">
+              <input routerLink="/registro2" type="submit" value="Registrate">
+            </div>
+
+            <div class="texto sign-up-text">¿Tienes ya una cuenta?
+              <label routerLink="/login" for="vuelta">Inicia Sesión</label>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
+
+</body>
+</html>
