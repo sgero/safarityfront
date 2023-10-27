@@ -8,6 +8,7 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
+import { Registro2Component } from './registro2/registro2.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     RegistroComponent,
     IndexComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    Registro2Component
   ],
   imports: [
     BrowserModule,
