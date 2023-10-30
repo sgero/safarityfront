@@ -32,15 +32,12 @@ h1.example-app-name {
 
 
 mat-sidenav {
-  width: 25% !important;
+  width: 15% !important;
 }
 
 .icono {
   margin-right: 10px;
 }
 
-.mat-toolbar .mat-primary {
 
-  background-color: white !important;
-
-}
+.mat-toolbar.mat-primary{--mat-toolbar-container-background-color:ffffff; background-color: #ffffff; color: #000000;}
