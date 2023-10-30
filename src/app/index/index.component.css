@@ -17,7 +17,7 @@
 .conten{
   display: flex;
   flex-direction: row;
-  background-color: #cb2d2d;
+  background-color: #9C5EE7FF;
   width: 100%;
   margin: 10px 10px 10px 10px;
   justify-content: space-between;
@@ -30,8 +30,18 @@
 .ctexto{
   width: 300px;
   height: 400px;
-  background-color: #c9c8c8;
+  background-color: #9C5EE7FF;
   color: black;
+  font-size: 1.2vw;
+  font-weight: lighter;
+  text-align: center;
+  margin: 10px 10px 10px 10px;
+  padding-top: 5px;
+  padding-left: 250px;
+  padding-right: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 .imagen{
   width: 56%;
