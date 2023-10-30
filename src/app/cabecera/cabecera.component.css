@@ -19,6 +19,15 @@ header{
   align-items: center;
   width: 100%;
   box-shadow: 0 8px 12px 0 rgba(0,0,0,0.1);
+  padding: 30px;
+
+  .header .logo .img {
+
+      width: 100px;
+      height: 100px;
+    padding-right: 50px;
+  }
+
 
 }
 
@@ -51,6 +60,7 @@ input{
   display: flex;
   width: 25%;
   margin-right: 200px;
+  /*margin-left: 200px;*/
 
 }
 
@@ -58,12 +68,13 @@ input{
 
   text-decoration: none;
   color: black;
+  padding-left:20px;
 
 }
 
 .icon>a:hover{
 
-  color: #414141;
+  color: #9c5ee7;
   transition: 0.2s;
 
 }
