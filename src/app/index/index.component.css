@@ -17,7 +17,7 @@
 .conten{
   display: flex;
   flex-direction: row;
-  background-color: #9C5EE7FF;
+  background-color: #C5AECF;
   width: 100%;
   margin: 10px 10px 10px 10px;
   justify-content: space-between;
@@ -30,14 +30,15 @@
 .ctexto{
   width: 300px;
   height: 400px;
-  background-color: #9C5EE7FF;
+  background-color: #C5AECF;
   color: black;
-  font-size: 1.2vw;
+  font-size: 2em;
+  line-height: 1.5em;
   font-weight: lighter;
   text-align: center;
   margin: 10px 10px 10px 10px;
   padding-top: 5px;
-  padding-left: 250px;
+  padding-left: 120px;
   padding-right: 5px;
   flex-wrap: wrap;
   justify-content: center;
@@ -46,15 +47,38 @@
 .imagen{
   width: 56%;
   min-width: 300px;
+  max-width: 100%;
+  height: auto;
+  padding: 20px 20px 20px 20px;
+  margin-right: 20px;
 }
 .imagen>img{
-  width: 100%;
-}
+ width: 90%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  }
+
+
 .iconos{
   display: flex;
   flex-direction: row;
-  width: 95%;
-  background-color: #c9c8c8;
-  padding: 10px 20px 10px 20px;
-  margin: 30px 0px 30px 0px;
+  width: 100%;
+  background-color: #C5AECF;
+  padding: 20px 20px 20px 20px;
+  margin: 30px 30px 30px 30px;
+}
+
+
+.icono{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+
 }
