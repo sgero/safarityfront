@@ -1,23 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Eventos</title>
+</head>
+<body>
+
 <div class="body">
-
   <div class="conten">
-
     <div class="ctexto">
-
+      <p>
+        Hola, Bienvenido/a a nuestro portal solidario.
+        ¡Esperamos que puedas tener una magnífica experiencia en nuestro sitio web!
+        Un saludo de todo el equipo.
+      </p>
     </div>
 
     <div class="imagen">
-      <img src="./assets/img/unicef-educa-blog-gotas-carrera-escolar-solidaria-agua-ods.png" alt="">
+      <img src="assets/img/safacrowd2.png">
     </div>
-
   </div>
 
   <div class="iconos">
-
     <div class="icono">
-      <img src="favicon.ico" alt="">
+      <img src="assets/img/caridad.png">
     </div>
 
-  </div>
+    <h1>Lista de Eventos</h1>
+    <ul>
 
+      <li th:each="evento : ${eventos}">
+        <span th:text="${evento.nombre}"></span>
+      </li>
+    </ul>
+
+  </div>
 </div>
+
+
+
+
+</body>
+</html>

@@ -31,13 +31,29 @@ h1.example-app-name {
 }
 
 
-mat-sidenav {
-  width: 15% !important;
+.mat-sidenav {
+  width: 25% !important;
 }
 
 .icono {
   margin-right: 10px;
 }
 
+.mat-toolbar.mat-primary {
+  --mat-toolbar-container-background-color: ffffff;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 80px;
+}
 
-.mat-toolbar.mat-primary{--mat-toolbar-container-background-color:ffffff; background-color: #ffffff; color: #000000;}
+
+.mat-mdc-button-touch-target {
+  position: relative !important;
+  padding: 200px;
+}
+
+.mat-toolbar .example-toolbar .mat-primary .mat-toolbar-single-row {
+  height: 100px;
+
+
+}
