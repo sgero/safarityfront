@@ -7,6 +7,10 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .numero{
   display: flex;
@@ -53,7 +57,7 @@
   margin-right: 20px;
 }
 .imagen>img{
- width: 90%;
+ width: 70%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -68,6 +72,7 @@
   background-color: #C5AECF;
   padding: 20px 20px 20px 20px;
   margin: 30px 30px 30px 30px;
+  align-items: center;
 }
 
 
@@ -81,4 +86,12 @@
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
 
+}
+
+
+
+
+.levento {
+  display: flex;
+  align-items: center;
 }
