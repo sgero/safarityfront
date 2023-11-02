@@ -11,15 +11,13 @@ header{
   width: 100%;
 }
 
-.header{
+.header {
 
   display: flex;
   justify-content: space-around;
   align-content: center;
   align-items: center;
   width: 100%;
-  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.1);
-  padding: 30px;
 
   .header .logo .img {
 
@@ -77,4 +75,37 @@ input{
   color: #9c5ee7;
   transition: 0.2s;
 
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  z-index: 9;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.dropdown p:hover {
+
+  color: #9c5ee7;
+  transition: 0.2s;
+
+}
+
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: #9c5ee7;
 }

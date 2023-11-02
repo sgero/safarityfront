@@ -1,11 +1,11 @@
 .example-container {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+}
+.cabezera{
+
+  width: 100%;
+
 }
 
 .example-is-mobile .example-toolbar {
@@ -55,5 +55,11 @@ h1.example-app-name {
 .mat-toolbar .example-toolbar .mat-primary .mat-toolbar-single-row {
   height: 100px;
 
+
+}
+
+mat-icon:hover{
+
+  color: #9c5ee7;
 
 }
