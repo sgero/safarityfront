@@ -113,13 +113,10 @@ body{
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 20px;
   height: 3px;
-  width: 25px;
+  width: 31px;
   background: #7d2ae8;
-}
-.forms .signup-form .titulo:before{
-  width: 20px;
 }
 .forms .form-content .input-boxes{
   margin-top: 30px;
@@ -200,14 +197,5 @@ body{
   .form-content .login-form,
   .form-content .signup-form{
     width: 100%;
-  }
-  .form-content .signup-form{
-    display: none;
-  }
-  .contenedor #vuelta:checked ~ .forms .signup-form{
-    display: block;
-  }
-  .contenedor #vuelta:checked ~ .forms .login-form{
-    display: none;
   }
 }

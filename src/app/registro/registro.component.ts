@@ -12,6 +12,7 @@ export class RegistroComponent {
 
     if (clave1 != clave2) {
       alert("Las contraseñas son distintas")
+
     }
 
   }
