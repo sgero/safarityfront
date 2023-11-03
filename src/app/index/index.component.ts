@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ConectionService} from "../service/conection.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-index',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent {
+
+  // eventos:any;
+  //
+  // constructor(private service:ConectionService, private router:Router) {
+  //
+  //   this.service.getEventos()
+  //     .subscribe(data => {this.eventos=data})
+  //
+  // }
 
 }
