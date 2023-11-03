@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PruebaService} from "../services/prueba.service";
+import {EventoService} from "../services/evento.service";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 
@@ -12,7 +12,7 @@ import {HttpClient} from "@angular/common/http";
 export class IndexComponent implements OnInit {
 
   eventos:any = [];
-  constructor(private service:PruebaService, private router:Router) { }
+  constructor(private service:EventoService, private router:Router) { }
 
   //Me suscribo al evento y lo traigo para mostrarlo
   ngOnInit(): void {
