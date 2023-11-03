@@ -53,13 +53,7 @@ h1.example-app-name {
 }
 
 .mat-toolbar .example-toolbar .mat-primary .mat-toolbar-single-row {
+
   height: 100px;
-
-
-}
-
-mat-icon:hover{
-
-  color: #9c5ee7;
 
 }
