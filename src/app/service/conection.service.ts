@@ -8,14 +8,14 @@ import {Injectable} from "@angular/core";
 })
 export class ConectionService {
 
-  constructor(private http:HttpClient) { }
-
-  Url='http://localhost:8080/evento/listar'
-
-  getEventos(){
-
-    return this.http.get<Evento[]>(this.Url)
-
-  }
+  // constructor(private http:HttpClient) { }
+  //
+  // Url='http://localhost:8080/evento/listar'
+  //
+  // getEventos(){
+  //
+  //   return this.http.get<Evento[]>(this.Url)
+  //
+  // }
 
 }
