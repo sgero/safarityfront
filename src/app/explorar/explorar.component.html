@@ -6,10 +6,10 @@
 
     <div class="linea1" >
 
-      <div class="tarjeta">
+      <div *ngFor="let organizacion of organizaciones" class="tarjeta">
         <img src="imagen.jpg" alt="Imagen de la tarjeta">
-        <h3>Título de la tarjeta</h3>
-        <p>Contenido de la tarjeta</p>
+        <h3>{{organizacion.nombre}}</h3>
+        <p>{{organizacion.cif}}</p>
       </div>
 
       <div class="tarjeta">
