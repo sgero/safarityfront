@@ -17,6 +17,7 @@ export class OrganizacionService {
   url = 'http://localhost:8080/organizacion';
 
   getOrganizacion() {
-    return this.http.get<Organizacion[]>(this.url);
+    return this.http.get<Organizacion[]>(this.url+"/listar");
+
   }
 }
