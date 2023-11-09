@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import {OrganizacionService} from "../services/organizacion.service";
 import {Router} from "@angular/router";
-import {Organizacion} from "../models/Organizacion";
+import {GeneralService} from "../services/general.service";
 
 @Component({
   selector: 'app-explorar',
@@ -13,7 +12,7 @@ export class ExplorarComponent {
   eventos : any;
   organizaciones : any;
 
-  constructor(private  service:OrganizacionService, private router:Router) {
+  constructor(private  service:GeneralService, private router:Router) {
     this.service.getOrganizacion().subscribe(data=> {this.organizaciones=data;})
     this.service.getEvento().subscribe(data=> {this.eventos=data;})
 

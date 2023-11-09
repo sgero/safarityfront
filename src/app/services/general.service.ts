@@ -1,15 +1,13 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 import {Organizacion} from "../models/Organizacion";
 import {Evento} from "../models/Evento";
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrganizacionService {
+export class GeneralService {
 
-  //private url = 'http://localhost:8080;'
   constructor(private http: HttpClient) {
   }
 
