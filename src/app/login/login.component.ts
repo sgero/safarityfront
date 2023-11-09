@@ -32,20 +32,21 @@ export class LoginComponent {
   }
 
   checkForm(){
-    let email = (<HTMLInputElement>document.getElementById("email")).value
+    let usuario = (<HTMLInputElement>document.getElementById("usuario")).value
     let clave = (<HTMLInputElement>document.getElementById("pwd")).value
 
-    if(email == "") {
-      alert("Error: Debe escribir Email!");
+    if(usuario == "") {
+      alert("Error: Debe escribir un Usuario!");
       this.router.navigate(['/login']);
-      document.getElementById("email")!.focus()
+      document.getElementById("usuario")!.focus()
       return false;
     }
-    var re = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
-    if(!re.test(email)) {
-      alert("Error: Email no válido");
+
+    var re = /^(a-zA-Z)+(a-zA-Z0-9){8,}$/;
+    if(!re.test(usuario)) {
+      alert(usuario + " no es válido, debe tener una longitud mínima de 8 carácteres y ser alfanumerico");
       this.router.navigate(['/login']);
-      document.getElementById("email")!.focus()
+      document.getElementById("usuario")!.focus()
       return false;
     }
 
