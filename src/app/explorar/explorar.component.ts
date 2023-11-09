@@ -10,10 +10,13 @@ import {Organizacion} from "../models/Organizacion";
 })
 export class ExplorarComponent {
 
+  eventos : any;
   organizaciones : any;
 
   constructor(private  service:OrganizacionService, private router:Router) {
     this.service.getOrganizacion().subscribe(data=> {this.organizaciones=data;})
+    this.service.getEvento().subscribe(data=> {this.eventos=data;})
+
   }
 
 }
