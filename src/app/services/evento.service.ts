@@ -15,7 +15,7 @@ export class EventoService {
   url = 'http://localhost:8080/evento';
 
   getEventos() {
-    return this.http.get<Evento[]>(this.url);
+    return this.http.get<Evento[]>(this.url+"/listar");
   }
 
 }
