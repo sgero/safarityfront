@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,72 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  mostrarContrasena(){
+
+    var eye = document.getElementById("eye")
+    var input = <HTMLInputElement>document.getElementById("pwd")
+    if (input!.type == 'password'){
+
+      input!.type = "text";
+      eye!.style.opacity = String(0.5);
+
+    }else {
+
+      input!.type = "password";
+      eye!.style.opacity = String(1);
+
+    }
+
+  }
+
+
+
+  constructor(public router: Router) {
+  }
+
+  checkForm(){
+    let email = (<HTMLInputElement>document.getElementById("email")).value
+    let clave = (<HTMLInputElement>document.getElementById("pwd")).value
+
+    if(email == "") {
+      alert("Error: Debe escribir Email!");
+      this.router.navigate(['/login']);
+      document.getElementById("email")!.focus()
+      return false;
+    }
+    var re = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
+    if(!re.test(email)) {
+      alert("Error: Email no válido");
+      this.router.navigate(['/login']);
+      document.getElementById("email")!.focus()
+      return false;
+    }
+
+    function checkPassword(valor: any){
+      var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+      if(myregex.test(valor)){
+        return true;
+      }else{
+        alert(valor + " no es valido, debe incluir al menos 8 dígitos, mayúscula y números.");
+        return false;
+      }
+    }
+
+    if(clave != "") {
+      if(!checkPassword(clave)) {
+        this.router.navigate(['/login']);
+        document.getElementById("pwd")!.focus();
+        return false;
+      }
+    }else {
+      alert("Error: debe introducir una contraseña!");
+      this.router.navigate(['/login']);
+      document.getElementById("pwd")!.focus();
+      return false;
+    }
+    this.router.navigate(['/inicio']);
+    return true;
+  }
 
 }

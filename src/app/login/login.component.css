@@ -211,3 +211,11 @@ body{
     display: none;
   }
 }
+
+.fa-eye{
+
+  position: relative !important;
+  color: black !important;
+  cursor: pointer;
+
+}
