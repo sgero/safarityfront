@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ConectionService} from "../service/conection.service";
+import {ConectionService} from "../services/conection.service";
 import {Router} from "@angular/router";
 import {OrganizacionService} from "../services/organizacion.service";
 import {EventoService} from "../services/evento.service";
