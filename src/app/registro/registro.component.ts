@@ -10,19 +10,10 @@ export class RegistroComponent {
 
   mostrarContrasena(){
 
-  var eye = document.getElementById("eye")
-  var input = <HTMLInputElement>document.getElementById("pwd1")
-    if (input!.type == 'password'){
-
-      input!.type = "text";
-      eye!.style.opacity = String(0.5);
-
-    }else {
-
-      input!.type = "password";
-      eye!.style.opacity = String(1);
-
-    }
+    var eye = document.getElementById("eye")
+    var input = <HTMLInputElement>document.getElementById("pwd1")
+    input!.type = "text";
+    eye!.style.opacity = String(0.5);
 
   }
 
@@ -30,17 +21,26 @@ export class RegistroComponent {
 
     var eye = document.getElementById("eye2")
     var input = <HTMLInputElement>document.getElementById("pwd2")
-    if (input!.type == 'password'){
+    input!.type = "text";
+    eye!.style.opacity = String(0.5);
 
-      input!.type = "text";
-      eye!.style.opacity = String(0.5);
+  }
 
-    }else {
+  arriba(){
 
-      input!.type = "password";
-      eye!.style.opacity = String(1);
+    var eye = document.getElementById("eye")
+    var input = <HTMLInputElement>document.getElementById("pwd1")
+    eye!.style.opacity = String(1);
+    input!.type = "password";
 
-    }
+  }
+
+  arriba2(){
+
+    var eye = document.getElementById("eye2")
+    var input = <HTMLInputElement>document.getElementById("pwd2")
+    eye!.style.opacity = String(1);
+    input!.type = "password";
 
   }
 

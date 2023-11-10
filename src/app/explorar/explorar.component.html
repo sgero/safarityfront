@@ -7,7 +7,7 @@
     <div class="linea1" >
 
       <div *ngFor="let o of organizaciones" class="tarjeta">
-        <img src="" alt="Imagen de la tarjeta">
+        <img [src]="o.imagen" alt="Imagen de la tarjeta">
         <h3>{{ o.nombre }}</h3>
         <p>{{ o.info }}</p>
       </div>

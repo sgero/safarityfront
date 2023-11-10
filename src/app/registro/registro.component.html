@@ -44,13 +44,13 @@
             <div class="input-box">
               <i class="fas fa-lock"></i>
               <input type="password" name="pwd1" id="pwd1" placeholder="Contraseña" required>
-              <i class="fas fa-eye" id="eye" (click)="mostrarContrasena()"></i>
+              <i class="fas fa-eye" id="eye" (mousedown)="mostrarContrasena()" (mouseup)="arriba()"></i>
             </div>
 
             <div class="input-box">
               <i class="fas fa-lock"></i>
               <input type="password" name="pwd2" id="pwd2" placeholder="Repetir contraseña" required>
-              <i class="fas fa-eye" id="eye2" (click)="mostrarContrasena2()"></i>
+              <i class="fas fa-eye" id="eye2" (mousedown)="mostrarContrasena2()" (mouseup)="arriba2()"></i>
             </div>
 
             <div class="boton input-box">

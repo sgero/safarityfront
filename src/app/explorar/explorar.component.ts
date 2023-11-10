@@ -22,7 +22,7 @@ export class ExplorarComponent {
 
   constructor(private  service:OrganizacionService, private router:Router) {
     this.service.getOrganizacion().subscribe(data=> {this.organizaciones=data;})
-  }
+}
 
 
 
