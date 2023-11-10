@@ -12,17 +12,17 @@ export class LoginComponent {
 
     var eye = document.getElementById("eye")
     var input = <HTMLInputElement>document.getElementById("pwd")
-    if (input!.type == 'password'){
+    eye!.style.opacity = String(0.5);
+    input!.type = "text";
 
-      input!.type = "text";
-      eye!.style.opacity = String(0.5);
+  }
 
-    }else {
+  arriba(){
 
-      input!.type = "password";
-      eye!.style.opacity = String(1);
-
-    }
+    var eye = document.getElementById("eye")
+    var input = <HTMLInputElement>document.getElementById("pwd")
+    eye!.style.opacity = String(1);
+    input!.type = "password";
 
   }
 
@@ -42,7 +42,7 @@ export class LoginComponent {
       return false;
     }
 
-    var re = /^(a-zA-Z)+(a-zA-Z0-9){8,}$/;
+    var re = /^[A-Za-z][A-Za-z0-9]*$/;
     if(!re.test(usuario)) {
       alert(usuario + " no es válido, debe tener una longitud mínima de 8 carácteres y ser alfanumerico");
       this.router.navigate(['/login']);
