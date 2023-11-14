@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {EventoService} from "../services/evento.service";
 import {Router} from "@angular/router";
 import {GeneralService} from "../services/general.service";
 
