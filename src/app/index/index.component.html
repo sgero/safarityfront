@@ -18,14 +18,6 @@
 
       <br>
 
-      <div class="icono">
-        <img src="assets/img/caridad.png">
-
-        <h1 class="levento">Lista de Eventos</h1>
-
-        <br>
-      </div>
-
 
     </div>
 
@@ -36,35 +28,40 @@
 
   <div class="iconos">
 
+    <div class="icono">
+      <img src="assets/img/caridad.png">
 
+      <h1 class="levento">Lista de Eventos</h1>
 
-<!--    Mostrar Eventos-->
-<!--    <div *ngFor="let evento of eventos">-->
-<!--      <span>{{evento.nombre}}</span>-->
-<!--      <span>{{evento.imagen}}</span>-->
-<!--      <span>{{evento.descripcion}}</span>-->
-<!--    </div>-->
-
-<!--    <div *ngFor="let evento of eventos" class="miniatura">-->
-<!--      <span>{{evento.nombre}}</span>-->
-<!--      <br>-->
-<!--      <img [src]="evento.imagen" alt="{{evento.nombre}}">-->
-<!--      <br>-->
-<!--    </div>-->
-
-    <div *ngFor="let evento of eventos" class="miniatura">
-
-
-
-      <span>{{evento.nombre}}</span>
       <br>
-      <a [routerLink]="['/eventos', evento.id]"> <!-- Añadido para redireccionar -->
-        <img [src]="evento.imagen" alt="{{evento.nombre}}">
-      </a>
-      <br>
+
+
+      <!--    Mostrar Eventos-->
+      <!--    <div *ngFor="let evento of eventos">-->
+      <!--      <span>{{evento.nombre}}</span>-->
+      <!--      <span>{{evento.imagen}}</span>-->
+      <!--      <span>{{evento.descripcion}}</span>-->
+      <!--    </div>-->
+
+      <!--    <div *ngFor="let evento of eventos" class="miniatura">-->
+      <!--      <span>{{evento.nombre}}</span>-->
+      <!--      <br>-->
+      <!--      <img [src]="evento.imagen" alt="{{evento.nombre}}">-->
+      <!--      <br>-->
+      <!--    </div>-->
+
+      <div *ngFor="let evento of eventos" class="miniatura">
+
+
+        <span>{{evento.nombre}}</span>
+        <br>
+        <a [routerLink]="['/eventos', evento.id]"> <!-- Añadido para redireccionar -->
+          <img [src]="evento.imagen" alt="{{evento.nombre}}">
+        </a>
+        <br>
+      </div>
+
     </div>
-
-
   </div>
 </div>
 
