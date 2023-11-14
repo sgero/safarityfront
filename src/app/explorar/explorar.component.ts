@@ -23,12 +23,6 @@ export class ExplorarComponent {
     this.service.getOrganizacion().subscribe(data=> {this.organizaciones=data;})
     this.service.getEvento().subscribe(data=> {this.eventos=data;})
 
-  constructor(private  service:OrganizacionService, private router:Router) {
-    this.service.getOrganizacion().subscribe(data=> {this.organizaciones=data;})
-}
-
-
-
   }
 
 }
