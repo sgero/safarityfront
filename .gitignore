@@ -6,6 +6,10 @@
 /out-tsc
 /bazel-out
 
+package.json
+package-lock.json
+.gitignore
+node_modules/@angular/material/prebuilt-themes/indigo-pink.css
 # Node
 /node_modules
 npm-debug.log

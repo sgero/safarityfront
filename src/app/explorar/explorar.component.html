@@ -4,40 +4,23 @@
 
   <div class="columna">
 
-    <div class="linea1" >
+    <div *ngFor="let organizacion of organizaciones" class="linea1" >
 
-      <div *ngFor="let e of eventos" class="tarjeta">
-        <img src="" alt="Imagen de la tarjeta">
-        <h3>{{ e.nombre }}</h3>
-        <p>{{ e.descripcion }}</p>
+      <div  class="tarjeta">
+        <img src="{{organizacion.logo}}">
+        <h3>{{organizacion.nombre}}</h3>
+        <p>{{organizacion.cif}}</p>
       </div>
+
 
     </div>
 
-    <div class="linea2" >
+    <div *ngFor="let e of eventos" class="linea2" >
 
       <div class="tarjeta">
-        <img src="imagen.jpg" alt="Imagen de la tarjeta">
-        <h3>Título de la tarjeta</h3>
-        <p>Contenido de la tarjeta</p>
-      </div>
-
-      <div class="tarjeta">
-        <img src="https://c3.klipartz.com/pngpicture/911/1019/sticker-png-daffy-duck-thumbnail.png" alt="Imagen de la tarjeta">
-        <h3>Título de la tarjeta</h3>
-        <p>Contenido de la tarjeta</p>
-      </div>
-
-      <div class="tarjeta">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Bugs_Bunny.svg/800px-Bugs_Bunny.svg.png" alt="Imagen de la tarjeta">
-        <h3>Título de la tarjeta</h3>
-        <p>Contenido de la tarjeta</p>
-      </div>
-
-      <div class="tarjeta">
-        <img src="https://w7.pngwing.com/pngs/456/910/png-transparent-donald-duck-daisy-duck-daffy-duck-mickey-mouse-donald-duck-heroes-vertebrate-donald-duck.png" alt="Imagen de la tarjeta">
-        <h3>Título de la tarjeta</h3>
-        <p>Contenido de la tarjeta</p>
+        <img src="{{e.imagen}}">
+        <h3>{{e.nombre}}</h3>
+        <p>{{e.aforo}}</p>
       </div>
 
     </div>

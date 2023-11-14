@@ -13,6 +13,18 @@
         ¡Esperamos que puedas tener una magnífica experiencia en nuestro sitio web!
         Un saludo de todo el equipo.
       </p>
+
+      <br>
+
+      <div class="icono">
+        <img src="assets/img/caridad.png">
+
+        <h1 class="levento">Lista de Eventos</h1>
+
+        <br>
+      </div>
+
+
     </div>
 
     <div class="imagen">
@@ -21,33 +33,38 @@
   </div>
 
   <div class="iconos">
-    <div class="icono">
-      <img src="assets/img/caridad.png">
+
+
+
+<!--    Mostrar Eventos-->
+<!--    <div *ngFor="let evento of eventos">-->
+<!--      <span>{{evento.nombre}}</span>-->
+<!--      <span>{{evento.imagen}}</span>-->
+<!--      <span>{{evento.descripcion}}</span>-->
+<!--    </div>-->
+
+<!--    <div *ngFor="let evento of eventos" class="miniatura">-->
+<!--      <span>{{evento.nombre}}</span>-->
+<!--      <br>-->
+<!--      <img [src]="evento.imagen" alt="{{evento.nombre}}">-->
+<!--      <br>-->
+<!--    </div>-->
+
+    <div *ngFor="let evento of eventos" class="miniatura">
+
+
+
+      <span>{{evento.nombre}}</span>
+      <br>
+      <a [routerLink]="['/eventos', evento.id]"> <!-- Añadido para redireccionar -->
+        <img [src]="evento.imagen" alt="{{evento.nombre}}">
+      </a>
+      <br>
     </div>
 
-    <h1 class="levento">Lista de Eventos</h1>
-<!--    <ul>-->
-
-<!--    &lt;!&ndash; Utiliza la directiva ng-repeat para mostrar los eventos &ndash;&gt;-->
-<!--    <div ng-repeat="evento in eventos">-->
-<!--      <span>{{eventos.nombre}}</span>-->
-<!--      <span>{{eventos.imagen}}</span>-->
-<!--      <span>{{eventos.descripcion}}</span>-->
-<!--    </div>-->
-<!--    <ul *ngFor="let e of eventos">-->
-
-<!--      <li>-->
-<!--        {{ e.nombre }}-->
-<!--        <span>{{ e.descripcion }}</span>-->
-<!--      </li>-->
-
-<!--    </ul>-->
 
   </div>
 </div>
-
-
-
 
 </body>
 </html>
