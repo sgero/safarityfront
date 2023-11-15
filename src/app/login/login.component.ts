@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {Usuario} from "../models/Usuario";
+import {GeneralService} from "../services/general.service";
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,8 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  usuario = { alias: '', password: '' };
+  errorMensaje?: string;
   mostrarContrasena(){
 
     var eye = document.getElementById("eye")
@@ -28,7 +31,27 @@ export class LoginComponent {
 
 
 
-  constructor(public router: Router) {
+  constructor(private service:GeneralService, public router: Router) {
+  }
+
+  login() {
+    this.service.login(this.usuario).subscribe(data => {
+      // Manejar la respuesta del servicio
+      console.log(data);
+
+      // Realizar acciones adicionales según la respuesta del servidor
+      if (data.token) {
+        // El inicio de sesión fue exitoso, puedes almacenar el token en localStorage o en una cookie
+        localStorage.setItem('token', data.token);
+
+        // Redirigir al usuario
+        this.router.navigate(['/inicio']);
+      } else {
+        // El inicio de sesión no fue exitoso, manejar según sea necesario
+        this.errorMensaje = data.info;
+        alert(this.errorMensaje = data.info)
+      }
+    });
   }
 
   checkForm(){
@@ -72,7 +95,6 @@ export class LoginComponent {
       document.getElementById("pwd")!.focus();
       return false;
     }
-    this.router.navigate(['/inicio']);
     return true;
   }
 
