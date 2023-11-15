@@ -29,6 +29,8 @@ import { LoginComponent } from './login/login.component';
 import { Registro2Component } from './registro2/registro2.component';
 import { ExplorarComponent } from './explorar/explorar.component';
 import {SidenavComponent} from "./sidenav/sidenav.component";
+import { MiperfilComponent } from './miperfil/miperfil.component';
+
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import {SidenavComponent} from "./sidenav/sidenav.component";
     LoginComponent,
     Registro2Component,
     LoginComponent,
-    SidenavComponent
+    SidenavComponent,
+    MiperfilComponent,
+
   ],
   imports: [
     HttpClientModule,
