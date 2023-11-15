@@ -8,3 +8,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display:inline !important;
 
 }
+
+
+.favicon {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+
+}

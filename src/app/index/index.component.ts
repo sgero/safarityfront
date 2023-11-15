@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GeneralService} from "../services/general.service";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
@@ -11,11 +11,26 @@ import {HttpClient} from "@angular/common/http";
 })
 export class IndexComponent implements OnInit {
 
-  eventos:any = [];
-  constructor(private service:GeneralService, private router:Router) { }
+  eventos: any = [];
+
+  constructor(private service: GeneralService, private router: Router) {
+  }
 
   //Me suscribo al evento y lo traigo para mostrarlo
   ngOnInit(): void {
-    this.service.getEvento().subscribe(data=> {this.eventos=data;})
+    this.service.getEvento().subscribe(data => {
+      this.eventos = data;
+      // this.service.getEventos().subscribe(data => {
+      //   this.eventos = data;
+      // });
+
+      //llamar al metodo getEventos() del servicio para mostrar eventos por pantalla
+      // getEventos(){
+      //   this.service.getEventos().subscribe(data=>{
+      //     this.eventos=data;
+      //   })
+      // }
+    });
   }
 }
+
