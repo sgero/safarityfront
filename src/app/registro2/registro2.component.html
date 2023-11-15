@@ -32,28 +32,28 @@
 
         <div class="titulo">Registrar</div>
 
-        <form action="#">
+        <form (ngSubmit)="register()">
 
           <div class="input-boxes">
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" required>
+              <input type="text" placeholder="Nombre" [(ngModel)]="participante.nombre" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Apellidos" required>
+              <input type="text" placeholder="Apellidos" [(ngModel)]="participante.apellidos" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" required>
+              <input type="email" placeholder="Email" [(ngModel)]="participante.email" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-calendar"></i>
-              <input type="date" placeholder="Fecha" required>
+              <input type="date" placeholder="Fecha" [(ngModel)]="participante.fecha_nacimento" required>
             </div>
 
             <div class="boton input-box">
@@ -61,7 +61,7 @@
             </div>
 
             <div class="texto sign-up-text">¿Tienes ya una cuenta?
-              <label routerLink="/login" for="vuelta">Inicia Sesión</label>
+              <label for="vuelta">Inicia Sesión</label>
             </div>
 
           </div>

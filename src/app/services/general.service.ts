@@ -5,6 +5,7 @@ import {Organizacion} from "../models/Organizacion";
 import {Evento} from "../models/Evento";
 import {Usuario} from "../models/Usuario";
 import {Auth} from "../models/Auth";
+import {Participante} from "../models/Participante";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,10 @@ export class GeneralService {
 
   login(data: Usuario){
     return this.http.post<Auth>(this.url+"/auth/login", data);
+  }
+
+  register(data: Participante){
+    return this.http.post<Auth>(this.url+"/auth/register", data);
   }
 
   // private apiUrl = '/evento/listar'; //

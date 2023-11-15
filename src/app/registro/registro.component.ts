@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {GeneralService} from "../services/general.service";
+import {RegistroService} from "../services/registro.service";
 
 @Component({
   selector: 'app-registro',
@@ -7,6 +9,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
+
+  constructor(private service:GeneralService, public router: Router, private service2:RegistroService) {
+  }
+
+  guardarDatos() {
+    this.service2.guardarDatosPaso1((<HTMLInputElement>document.getElementById("username")).value, (<HTMLInputElement>document.getElementById("pwd1")).value);
+  }
+
 
   mostrarContrasena(){
 
@@ -42,10 +52,6 @@ export class RegistroComponent {
     eye!.style.opacity = String(1);
     input!.type = "password";
 
-  }
-
-
-  constructor(public router: Router) {
   }
 
   checkForm(){
