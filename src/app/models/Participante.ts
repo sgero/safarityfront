@@ -9,7 +9,7 @@ export class Participante {
   dni?: string;
   telefono?: string;
   fecha_nacimiento?: string;
-  usuario?: Usuario;
+  usuario: Usuario = new Usuario();
   activo?: boolean;
 
 

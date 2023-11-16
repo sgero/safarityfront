@@ -39,13 +39,9 @@ import {SidenavComponent} from "./sidenav/sidenav.component";
     FooterComponent,
     RegistroComponent,
     ExplorarComponent,
-    RegistroComponent,
-    IndexComponent,
-    FooterComponent,
     LoginComponent,
     Registro2Component,
-    LoginComponent,
-    SidenavComponent
+    SidenavComponent,
   ],
   imports: [
     HttpClientModule,
@@ -53,7 +49,6 @@ import {SidenavComponent} from "./sidenav/sidenav.component";
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
     MatListModule,

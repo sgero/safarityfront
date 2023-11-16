@@ -15,6 +15,7 @@ export class RegistroComponent {
 
   guardarDatos() {
     this.service2.guardarDatosPaso1((<HTMLInputElement>document.getElementById("username")).value, (<HTMLInputElement>document.getElementById("pwd1")).value);
+    this.router.navigate(['/registro2']);
   }
 
 
@@ -95,7 +96,6 @@ export class RegistroComponent {
       document.getElementById("pwd1")!.focus();
       return false;
     }
-    this.router.navigate(['/registro2']);
     return true;
   }
 

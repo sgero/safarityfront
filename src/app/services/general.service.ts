@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import { Observable } from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 import {Organizacion} from "../models/Organizacion";
 import {Evento} from "../models/Evento";
 import {Usuario} from "../models/Usuario";
@@ -32,7 +32,8 @@ export class GeneralService {
   }
 
   register(data: Participante){
-    return this.http.post<Auth>(this.url+"/auth/register", data);
+    console.log('Datos enviados al backend:', data);
+    return this.http.post<Auth>(this.url+"/auth/register", data)
   }
 
   // private apiUrl = '/evento/listar'; //

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {GeneralService} from "../services/general.service";
 import {Router} from "@angular/router";
-import {RegistroComponent} from "../registro/registro.component";
 import {RegistroService} from "../services/registro.service";
 
 @Component({
@@ -18,17 +17,20 @@ export class Registro2Component{
   }
 
   register() {
-    this.participante.usuario.alias == this.service1.datosPaso1.alias
-    this.participante.usuario.password == this.service1.datosPaso1.password
-    this.service.register(this.participante).subscribe(data => {
-      // Manejar la respuesta del servicio
-      console.log(data);
+    if (!this.service1.datosPaso1.alias || !this.service1.datosPaso1.password) {
 
+      console.error('Datos del paso 1 no disponibles');
+      return;
+    }
+
+    this.participante.fecha_nacimento = this.formatDate(this.participante.fecha_nacimento);
+    this.participante.usuario.alias = this.service1.datosPaso1.alias
+    this.participante.usuario.password = this.service1.datosPaso1.password
+    this.service.register(this.participante).subscribe(data => {console.log(data);
       // Realizar acciones adicionales según la respuesta del servidor
       if (data.token) {
         // El inicio de sesión fue exitoso, puedes almacenar el token en localStorage o en una cookie
         localStorage.setItem('token', data.token);
-
         // Redirigir al usuario
         this.router.navigate(['/inicio']);
       } else {
@@ -39,5 +41,10 @@ export class Registro2Component{
     });
   }
 
+  private formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    return formattedDate;
+  }
 
 }

@@ -38,26 +38,26 @@
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" [(ngModel)]="participante.nombre" required>
+              <input type="text" placeholder="Nombre" name="nombre" id="nombre" [(ngModel)]="participante.nombre" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Apellidos" [(ngModel)]="participante.apellidos" required>
+              <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" [(ngModel)]="participante.apellidos" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" [(ngModel)]="participante.email" required>
+              <input type="email" placeholder="Email" name="email" id="email" [(ngModel)]="participante.email" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-calendar"></i>
-              <input type="date" placeholder="Fecha" [(ngModel)]="participante.fecha_nacimento" required>
+              <input type="date" placeholder="Fecha Nacimiento" name="fecha_nacimiento" id="fecha_nacimiento" [(ngModel)]="participante.fecha_nacimento" required>
             </div>
 
             <div class="boton input-box">
-              <input routerLink="/registro2" type="submit" value="Registrate">
+              <input type="submit" value="Registrate">
             </div>
 
             <div class="texto sign-up-text">¿Tienes ya una cuenta?
