@@ -163,6 +163,12 @@
   border: 1px solid #ccc;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
   overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.miniatura:hover {
+  border: 3px solid #b906f1;
+  transform: scale(1.2);
 }
 
 .miniatura img {
@@ -280,4 +286,13 @@
     display: flex;
     justify-content: center;
 
+  }
+
+  .listeventos .img {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
