@@ -100,6 +100,13 @@
 .levento {
   display: flex;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  font-weight: lighter;
+  text-align: center;
+
+
+
 }
 
 
@@ -136,6 +143,7 @@
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+
 }
 
 
@@ -169,6 +177,7 @@
 .miniatura:hover {
   border: 3px solid #b906f1;
   transform: scale(1.2);
+
 }
 
 .miniatura img {
@@ -221,13 +230,19 @@
   align-items: center;
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
-  font-weight: bold;
+  font-weight: lighter;
+  font-size: 1.2em;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-style: italic;
 
 }
 
 
 .miniatura > a > img:hover{
   border: 1px solid #b906f1;
+
 }
 
 .miniatura > a > img:active{
@@ -295,4 +310,6 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    size-adjust: auto;
+
   }
