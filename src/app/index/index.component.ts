@@ -13,6 +13,7 @@ import {interval} from "rxjs";
 export class IndexComponent implements OnInit {
 
   eventos: any = [];
+  mouseSobreEvento: boolean = false;
 
   constructor(private service: GeneralService, private router: Router) {
   }
@@ -40,7 +41,8 @@ export class IndexComponent implements OnInit {
       //HAGO MÉTODOS PARA MOSTRAR 5 EVENTOS ALEATORIOS EN EL INDEX.HTML
       this.mostrarEventosAleatorios();
       interval(5000).subscribe(() => {
-        this.mostrarEventosAleatorios();
+        if (!this.mouseSobreEvento) {
+        this.mostrarEventosAleatorios();}
       });
     });
   }
@@ -54,5 +56,16 @@ export class IndexComponent implements OnInit {
     const eventosAleatorios = this.eventos.sort(() => Math.random() - 0.5).slice(0, 5);
     return eventosAleatorios;
   }
+
+
+  pausarActualizacion() {
+    this.mouseSobreEvento = true;
+  }
+
+  reanudarActualizacion() {
+    this.mouseSobreEvento = false;
+  }
+
+
 }
 
