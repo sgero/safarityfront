@@ -26,14 +26,20 @@
     </div>
   </div>
 
+  <br>
+  <div class="listeventos">
+    <img src="assets/img/caridad.png">
+
+    <br>
+
+    <h1 class="levento">NUESTROS EVENTOS</h1>
+
+    <br>
+  </div>
   <div class="iconos">
 
-    <div class="icono">
-      <img src="assets/img/caridad.png">
 
-      <h1 class="levento">Lista de Eventos</h1>
-
-      <br>
+    <div class="icono" >
 
 
       <!--    Mostrar Eventos-->
@@ -50,7 +56,8 @@
       <!--      <br>-->
       <!--    </div>-->
 
-      <div *ngFor="let evento of eventos" class="miniatura">
+      <div *ngFor="let evento of eventos" (mouseover)="pausarActualizacion()" (mouseout)="reanudarActualizacion()" class="miniatura">
+      <!-- <div *ngFor="let evento of eventos" class="miniatura">-->
 
 
         <span>{{evento.nombre}}</span>
