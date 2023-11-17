@@ -57,7 +57,7 @@ export class GeneralService {
   }
 
   login(data: Usuario){
-    return this.http.post<Auth>(this.url+"/auth/login", data);
+    return this.http.post<Auth>(this.apiUrl+"/auth/login", data);
   }
 
   // Métodos para obtener datos relacionados con Organización y Evento
