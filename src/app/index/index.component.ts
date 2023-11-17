@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GeneralService} from "../services/general.service";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+import {interval} from "rxjs";
 
 
 @Component({
@@ -12,6 +13,7 @@ import {HttpClient} from "@angular/common/http";
 export class IndexComponent implements OnInit {
 
   eventos: any = [];
+  mouseSobreEvento: boolean = false;
 
   constructor(private service: GeneralService, private router: Router) {
   }
@@ -30,7 +32,40 @@ export class IndexComponent implements OnInit {
       //     this.eventos=data;
       //   })
       // }
+    // });
+    // this.service.getEvento().subscribe(data=>{
+    //   this.eventos=data;
+
+
+
+      //HAGO MÉTODOS PARA MOSTRAR 5 EVENTOS ALEATORIOS EN EL INDEX.HTML
+      this.mostrarEventosAleatorios();
+      interval(5000).subscribe(() => {
+        if (!this.mouseSobreEvento) {
+        this.mostrarEventosAleatorios();}
+      });
     });
   }
+
+  mostrarEventosAleatorios() {
+    const eventosAleatorios = this.obtener5EventosAleatorios();
+    this.eventos = eventosAleatorios;
+  }
+
+  obtener5EventosAleatorios(): any[] {
+    const eventosAleatorios = this.eventos.sort(() => Math.random() - 0.5).slice(0, 5);
+    return eventosAleatorios;
+  }
+
+
+  pausarActualizacion() {
+    this.mouseSobreEvento = true;
+  }
+
+  reanudarActualizacion() {
+    this.mouseSobreEvento = false;
+  }
+
+
 }
 
