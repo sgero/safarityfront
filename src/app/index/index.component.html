@@ -62,7 +62,7 @@
 
         <span>{{evento.nombre}}</span>
         <br>
-        <a [routerLink]="['/eventos', evento.id]"> <!-- Añadido para redireccionar -->
+        <a [routerLink]="['/evento/detalles', evento.id]"> <!-- Añadido para redireccionar -->
           <img [src]="evento.imagen" alt="{{evento.nombre}}">
         </a>
         <br>

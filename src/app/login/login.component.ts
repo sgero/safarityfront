@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {Usuario} from "../models/Usuario";
 import {GeneralService} from "../services/general.service";
+import{Rol} from "../models/Rol";
 
 @Component({
   selector: 'app-login',
@@ -31,28 +32,40 @@ export class LoginComponent {
 
 
 
+
   constructor(private service:GeneralService, public router: Router) {
   }
 
   login() {
-    this.service.login(this.usuario).subscribe(data => {
+    this.service.login(this.usuario).subscribe((data: any) => {
       // Manejar la respuesta del servicio
       console.log(data);
 
       // Realizar acciones adicionales según la respuesta del servidor
-      if (data.token) {
-        // El inicio de sesión fue exitoso, puedes almacenar el token en localStorage o en una cookie
+      if (data.token && data.rol) {
+        // El inicio de sesión fue exitoso, puedes almacenar el token y el rol en localStorage
         localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.rol.toString()); // Convierte el int a cadena
 
-        // Redirigir al usuario
-        this.router.navigate(['/inicio']);
+        // Redirigir al usuario según su rol
+        if (data.rol === 0) {
+          this.router.navigate(['/inicio']);
+        } else if (data.rol === 1) {
+          this.router.navigate(['/inicio']);
+        } else if (data.rol === 2) {
+          // Manejar otros roles o redirigir a una ruta por defecto
+          this.router.navigate(['/inicio']);
+        }
       } else {
         // El inicio de sesión no fue exitoso, manejar según sea necesario
         this.errorMensaje = data.info;
-        alert(this.errorMensaje = data.info)
+        alert(this.errorMensaje);
       }
     });
   }
+
+
+
 
   checkForm(){
     let usuario = (<HTMLInputElement>document.getElementById("usuario")).value
@@ -97,5 +110,4 @@ export class LoginComponent {
     }
     return true;
   }
-
 }

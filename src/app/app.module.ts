@@ -30,6 +30,7 @@ import { Registro2Component } from './registro2/registro2.component';
 import { ExplorarComponent } from './explorar/explorar.component';
 import {SidenavComponent} from "./sidenav/sidenav.component";
 import { MiperfilComponent } from './miperfil/miperfil.component';
+import { DetallesEventoComponent } from './detalles-evento/detalles-evento.component';
 
 
 
@@ -49,6 +50,7 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
     LoginComponent,
     SidenavComponent,
     MiperfilComponent,
+    DetallesEventoComponent,
 
   ],
   imports: [

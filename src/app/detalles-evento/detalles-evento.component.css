@@ -1,0 +1,40 @@
+/* Estilos para Detalles del Evento */
+.detalles-evento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0 auto; /* Centra la tarjeta en la página */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.detalles-evento h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.detalles-evento img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.detalles-evento p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.detalles-evento strong {
+  font-weight: bold;
+}
+
+/* Puedes agregar más estilos según tus necesidades */
+
+/* Asegúrate de agregar estos estilos a tu componente HTML correspondiente */

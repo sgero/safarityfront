@@ -1,0 +1,19 @@
+<div *ngIf="evento" class="evento-card">
+  <div class="card-header">
+    <h2>{{ evento.nombre }}</h2>
+  </div>
+  <div class="card-body">
+    <img [src]="evento.imagen" alt="Imagen del evento" class="card-image">
+    <p><strong>Dirección:</strong> {{ evento.direccion }}</p>
+    <p><strong>Descripción:</strong> {{ evento.descripcion }}</p>
+    <p><strong>Aforo:</strong> {{ evento.aforo }}</p>
+    <p><strong>Fecha de lanzamiento:</strong> {{ evento.fecha_lanzamiento }}</p>
+    <p><strong>Fecha de venta:</strong> {{ evento.fecha_venta }}</p>
+    <p><strong>Fecha de inicio:</strong> {{ evento.fecha_inicio }}</p>
+    <p><strong>Fecha de fin:</strong> {{ evento.fecha_fin }}</p>
+    <p><strong>Tipo de evento:</strong> {{ evento.tipoEvento }}</p>
+    <p><strong>Tipo de pago:</strong> {{ evento.tipoPago }}</p>
+    <p><strong>ID de organización:</strong> {{ evento.id_organizacion }}</p>
+    <p><strong>Activo:</strong> {{ evento.activo ? 'Sí' : 'No' }}</p>
+  </div>
+</div>

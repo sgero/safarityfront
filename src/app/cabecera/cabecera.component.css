@@ -107,6 +107,12 @@ input{
 
 }
 
+.dropdown p{
+
+  cursor: pointer;
+
+}
+
 .dropdown-content a:hover {
   color: #FFFFFF;
   background-color: #9c5ee7;
