@@ -39,12 +39,12 @@ export class SidenavComponent implements OnInit, OnDestroy {
   }
 
   private initializeFillerNav() {
-    if (this.userRole === 'ADMIN') {
+    if (localStorage.getItem("rol") === 'ADMIN') {
       this.fillerNav = [
         { name: 'PANEL ADMINISTRADOR', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
       ];
-    } else if (this.userRole === 'ORGANIZACION') {
+    } else if (localStorage.getItem("rol") === 'ORGANIZACION') {
       this.fillerNav = [
         { name: 'PANEL ORGANIZACION', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
@@ -52,7 +52,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         { name: 'Crear Evento', route: 'crearEvento', icon: 'perm_contact_calendar' },
         { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar', onclick: 'logout()' }
       ];
-    } else if (this.userRole === 'PARTICIPANTE') {
+    } else if (localStorage.getItem("rol") === 'PARTICIPANTE') {
       this.fillerNav = [
         { name: 'PANEL PARTICIPANTE', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
@@ -69,6 +69,20 @@ export class SidenavComponent implements OnInit, OnDestroy {
     }
   }
 
+
+  // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
+  shouldShowNavItem(nav: any): boolean {
+    switch (nav.role) {
+      case 'ADMIN':
+        return localStorage.getItem("rol") === 'ADMIN';
+      case 'PARTICIPANTE':
+        return localStorage.getItem("rol") === 'PARTICIPANTE';
+      case 'ORGANIZACION':
+        return localStorage.getItem("rol") === 'ORGANIZACION';
+      default:
+        return true; // Mostrar por defecto si no se especifica un rol
+    }
+  }
   // Métodos para cambiar el rol cuando el usuario se loguea como admin, participante u organización
   setRoleAsAdmin() {
     this.generalService.setRoleAsAdmin();
