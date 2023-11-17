@@ -1,7 +1,7 @@
 export class Usuario {
   id?: bigint;
-  alias?: string;
-  password?: string;
+  alias: string = ''; // Establecer un valor predeterminado o inicializar en el constructor
+  password: string = ''; // Establecer un valor predeterminado o inicializar en el constructor
   activo?: boolean;
   rol?: number;
 

@@ -251,3 +251,12 @@ body{
 .boton {
   margin-top: 20px;
 }
+
+
+.fa-eye{
+
+  position: relative !important;
+  color: black !important;
+  cursor: pointer;
+
+}

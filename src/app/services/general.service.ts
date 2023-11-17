@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable, Subject } from 'rxjs';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import { Subject } from 'rxjs';
 import { Organizacion } from "../models/Organizacion";
 import { Evento } from "../models/Evento";
+import {catchError, Observable, throwError} from 'rxjs';
 import {Usuario} from "../models/Usuario";
 import {Auth} from "../models/Auth";
+import {Participante} from "../models/Participante";
 
 @Injectable({
   providedIn: 'root'
@@ -68,6 +70,19 @@ export class GeneralService {
     return this.http.post<Auth>(this.apiUrl+"/auth/login", data);
   }
 
+  register(data: Participante){
+    console.log('Datos enviados al backend:', data);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<Auth>(this.apiUrl+"/auth/register", data, { headers: headers })
+  }
+
+  // private apiUrl = '/evento/listar'; //
+  //
+  // // constructor(private http: HttpClient) {}
+  // getEventos(): Observable<any[]> {
+  //   return this.http.get<any[]>(this.apiUrl);
+  // }
+
   // Métodos para obtener datos relacionados con Organización y Evento
   getOrganizacion(): Observable<Organizacion[]> {
     return this.http.get<Organizacion[]>(`${this.apiUrl}/organizacion/listar`);
@@ -76,4 +91,5 @@ export class GeneralService {
   getEvento(): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiUrl}/evento/listar`);
   }
+
 }

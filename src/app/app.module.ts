@@ -44,18 +44,13 @@ import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.comp
     IndexComponent,
     CabeceraComponent,
     FooterComponent,
-    RegistroComponent,
     ExplorarComponent,
     RegistroComponent,
-    IndexComponent,
-    FooterComponent,
     LoginComponent,
     Registro2Component,
-    LoginComponent,
     SidenavComponent,
     OrganizacionRegComponent,
-    MiperfilComponent,
-
+    MiperfilComponent
   ],
   imports: [
     HttpClientModule,
