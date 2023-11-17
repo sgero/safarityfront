@@ -1,8 +1,8 @@
-*{
+/**{*/
 
-  /*font-family: 'Play', sans-serif;*/
+/*  !*font-family: 'Play', sans-serif;*!*/
 
-}
+/*}*/
 
 .icon-with-margin {
   margin-right: 10px;
@@ -43,6 +43,43 @@ header{
 
 }
 
+.icon:hover .p {
+  display: block;
+  cursor: pointer;
+}
+.icon a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.icon p:hover {
+
+  color: #9c5ee7;
+  transition: 0.2s;
+  cursor: pointer;
+
+}
+
+.icon a:hover {
+  color: #FFFFFF;
+  background-color: #9c5ee7;
+  cursor: pointer;
+}
+
+.icon {
+  margin: 0 15px;
+
+
+}
+
+.icon p {
+  margin: 0;
+  cursor: pointer; /* Añadido para cambiar el cursor a puntero */
+}
+
 input{
 
   outline: none;
@@ -66,6 +103,7 @@ input{
   /*margin-left: 200px;*/
 
 }
+
 
 .icon>a{
 
