@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { Subject } from 'rxjs';
+import { of} from 'rxjs';
 import { Organizacion } from "../models/Organizacion";
 import { Evento } from "../models/Evento";
 import {catchError, Observable, throwError} from 'rxjs';
@@ -23,14 +24,19 @@ export class GeneralService {
   // Lógica de autenticación y gestión de roles
   private userRole: string = 'usuario';  // Valor predeterminado
 
-  constructor(private http: HttpClient) {}  // Agrega http como dependencia en el constructor
+  private usuarioAutenticado: boolean = false;
+
+  private usuarioAlias: string = '';
+
+
+  constructor(private http: HttpClient) {
+  }  // Agrega http como dependencia en el constructor
 
 
   // Método para registrar Organizacion
   registrarOrganizacion(organizacionData: Organizacion): Observable<any> {
     return this.http.post(`${this.apiUrl}/registro-organizacion`, organizacionData);
   }
-
 
 
   setRoleAsAdmin() {
@@ -66,8 +72,8 @@ export class GeneralService {
     }
   }
 
-  login(data: Usuario){
-    return this.http.post<Auth>(this.apiUrl+"/auth/login", data);
+  login(data: Usuario) {
+    return this.http.post<Auth>(this.apiUrl + "/auth/login", data);
   }
 
   register(data: Participante){
@@ -83,6 +89,7 @@ export class GeneralService {
   //   return this.http.get<any[]>(this.apiUrl);
   // }
 
+
   // Métodos para obtener datos relacionados con Organización y Evento
   getOrganizacion(): Observable<Organizacion[]> {
     return this.http.get<Organizacion[]>(`${this.apiUrl}/organizacion/listar`);
@@ -91,5 +98,25 @@ export class GeneralService {
   getEvento(): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiUrl}/evento/listar`);
   }
+
+  // Métodos para obtener datos relacionados con Organización y Evento
+  getUsuario(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(`${this.apiUrl}/usuario/listar`);
+  }
+
+  // Métodos para obtener datos relacionados con Organización y Evento
+  getUsuarioById(id: number): Observable<Usuario> {
+    return this.http.get<Usuario>(`${this.apiUrl}/usuario/listar/${id}`);
+  }
+
+  // Métodos para obtener datos relacionados con Organización y Evento
+  getUsuarioByAlias(alias: string): Observable<Usuario> {
+    return this.http.get<Usuario>(`${this.apiUrl}/usuario/listar/${alias}`);
+  }
+
+
+
+
+
 
 }
