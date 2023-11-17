@@ -1,0 +1,12 @@
+<p>organizacion-reg works!</p>
+<!-- organization-registration.component.html -->
+
+<form [formGroup]="organizacionForm" (ngSubmit)="onSubmit()">
+  <!-- Aquí coloca los campos del formulario -->
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" formControlName="nombre" required>
+
+  <!-- Otros campos del formulario -->
+
+  <button type="submit">Registrar</button>
+</form>

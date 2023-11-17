@@ -2,10 +2,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+
 
 /**
  * Material Modules
@@ -30,6 +33,8 @@ import { Registro2Component } from './registro2/registro2.component';
 import { ExplorarComponent } from './explorar/explorar.component';
 import {SidenavComponent} from "./sidenav/sidenav.component";
 import { MiperfilComponent } from './miperfil/miperfil.component';
+import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.component";
+
 
 
 
@@ -48,6 +53,7 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
     Registro2Component,
     LoginComponent,
     SidenavComponent,
+    OrganizacionRegComponent,
     MiperfilComponent,
 
   ],
@@ -62,7 +68,12 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
     MatButtonModule,
     MatListModule,
     MatSidenavModule,
-    MaterialModule
+    ReactiveFormsModule,
+    MaterialModule,
+    RouterModule.forRoot([ // Configura tus rutas aquí
+      { path: 'login', component: LoginComponent },
+      // Otras rutas
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
