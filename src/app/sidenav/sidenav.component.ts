@@ -50,7 +50,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
         { name: 'Crear Evento', route: 'crearEvento', icon: 'perm_contact_calendar' },
-        { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar' }
+        { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar', onclick: 'logout()' }
       ];
     } else if (this.userRole === 'PARTICIPANTE') {
       this.fillerNav = [
@@ -58,7 +58,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
         { name: 'Favoritos', route: 'favoritos', icon: 'perm_contact_calendar' },
-        { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar' }
+        { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar', onclick: 'logout()' }
       ];
     } else {
       // Default fillerNav for other roles or situations
@@ -88,4 +88,22 @@ export class SidenavComponent implements OnInit, OnDestroy {
   }
 
   shouldRun = true;
+
+  auth = {
+    token:''
+  };
+
+  logout(){
+
+    const token = localStorage.getItem('token') ?? '';
+
+    if (localStorage.getItem('token') == null){
+
+    }else {
+
+      this.auth.token = token
+
+    }
+  }
+
 }

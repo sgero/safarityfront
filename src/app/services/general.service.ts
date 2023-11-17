@@ -76,6 +76,11 @@ export class GeneralService {
     return this.http.post<Auth>(this.apiUrl+"/auth/register", data, { headers: headers })
   }
 
+  logout(data: Auth){
+    return this.http.post<void>(this.apiUrl+"/auth/logout", data);
+    localStorage.removeItem('token')
+  }
+
   // private apiUrl = '/evento/listar'; //
   //
   // // constructor(private http: HttpClient) {}
