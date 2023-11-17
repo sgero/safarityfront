@@ -60,16 +60,8 @@ export class GeneralService {
 
   // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
   shouldShowNavItem(nav: any): boolean {
-    switch (nav.role) {
-      case 'ADMIN':
-        return this.userRole === 'ADMIN';
-      case 'PARTICIPANTE':
-        return this.userRole === 'PARTICIPANTE';
-      case 'ORGANIZACION':
-        return this.userRole === 'ORGANIZACION';
-      default:
-        return true; // Mostrar por defecto si no se especifica un rol
-    }
+    return this.userRole === nav.role;
+
   }
 
   login(data: Usuario) {
