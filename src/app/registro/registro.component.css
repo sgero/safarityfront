@@ -199,3 +199,55 @@ body{
     width: 100%;
   }
 }
+
+
+.contenedor {
+  position: relative;
+}
+.container-circulos {
+  display: flex;
+  align-items: center;
+}
+.circulo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  position: absolute;
+  margin-left:180px;
+  /*padding-bottom: 50px;*/
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.circulo a {
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.circulo.paso1 {
+  background-color: #a100ff;
+  /*top: 0;*/
+  left: 0;
+}
+
+.circulo.paso2 {
+  background-color: #c7c0b2;
+  /*top: 0;*/
+  left: 30px; /* Ajusta según sea necesario */
+}
+
+.forms {
+  position: relative;
+  z-index: 1;
+}
+
+.boton {
+  margin-top: 20px;
+}
