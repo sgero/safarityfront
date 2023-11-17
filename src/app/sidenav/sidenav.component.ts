@@ -1,6 +1,6 @@
-import { Component, OnDestroy, ChangeDetectorRef, OnInit } from '@angular/core';
-import { MediaMatcher } from '@angular/cdk/layout';
-import { GeneralService } from '../services/general.service';
+import {Component, OnDestroy, ChangeDetectorRef, OnInit} from '@angular/core';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {GeneralService} from '../services/general.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -41,30 +41,30 @@ export class SidenavComponent implements OnInit, OnDestroy {
   private initializeFillerNav() {
     if (localStorage.getItem("rol") === 'ADMIN') {
       this.fillerNav = [
-        { name: 'PANEL ADMINISTRADOR', route: 'inicio', icon: 'home' },
-        { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
+        {name: 'PANEL ADMINISTRADOR', route: 'inicio', icon: 'home'},
+        {name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar'}
       ];
     } else if (localStorage.getItem("rol") === 'ORGANIZACION') {
       this.fillerNav = [
-        { name: 'PANEL ORGANIZACION', route: 'inicio', icon: 'home' },
-        { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
-        { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
-        { name: 'Crear Evento', route: 'crearEvento', icon: 'perm_contact_calendar' },
-        { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar', onclick: 'logout()' }
+        {name: 'PANEL ORGANIZACION', route: 'inicio', icon: 'home'},
+        {name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar'},
+        {name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar'},
+        {name: 'Crear Evento', route: 'crearEvento', icon: 'perm_contact_calendar'},
+        {name: 'Logout', route: 'logout', icon: 'perm_contact_calendar', onclick: this.logout.bind(this)}
       ];
     } else if (localStorage.getItem("rol") === 'PARTICIPANTE') {
       this.fillerNav = [
-        { name: 'PANEL PARTICIPANTE', route: 'inicio', icon: 'home' },
-        { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
-        { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
-        { name: 'Favoritos', route: 'favoritos', icon: 'perm_contact_calendar' },
-        { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar', onclick: 'logout()' }
+        {name: 'PANEL PARTICIPANTE', route: 'inicio', icon: 'home'},
+        {name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar'},
+        {name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar'},
+        {name: 'Favoritos', route: 'favoritos', icon: 'perm_contact_calendar'},
+        {name: 'Logout', route: 'logout', icon: 'perm_contact_calendar', onclick: 'logout()'}
       ];
     } else {
       // Default fillerNav for other roles or situations
       this.fillerNav = [
-        { name: 'Home', route: 'inicio', icon: 'home' },
-        { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
+        {name: 'Home', route: 'inicio', icon: 'home'},
+        {name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar'}
       ];
     }
   }
@@ -83,6 +83,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         return true; // Mostrar por defecto si no se especifica un rol
     }
   }
+
   // Métodos para cambiar el rol cuando el usuario se loguea como admin, participante u organización
   setRoleAsAdmin() {
     this.generalService.setRoleAsAdmin();
@@ -104,20 +105,28 @@ export class SidenavComponent implements OnInit, OnDestroy {
   shouldRun = true;
 
   auth = {
-    token:''
+    token: ''
   };
 
-  logout(){
+  logout() {
 
     const token = localStorage.getItem('token') ?? '';
 
-    if (localStorage.getItem('token') == null){
+    if (localStorage.getItem('token') == null) {
 
-    }else {
+    } else {
 
       this.auth.token = token
 
     }
+
+    this.generalService.logout(this.auth).subscribe(
+      data => {
+
+      console.log(data);
+
+    });
+
   }
 
 }
