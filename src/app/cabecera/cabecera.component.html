@@ -19,28 +19,65 @@
     </div>
 
 
+<!--    <div class="barradirecciones">-->
+
+<!--      <div class="icon">-->
+
+<!--        <div class="dropdown">-->
+
+<!--          <p routerLink="/explorar">Explorar</p>-->
+
+<!--          <div class="dropdown-content">-->
+<!--            <a routerLink="/explorar">Eventos</a>-->
+<!--            <a href="#">Organizaciones</a>-->
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--      </div>-->
+
+<!--      <div class="icon">-->
+<!--        <div class="dropdown">-->
+
+
+
+<!--          <p routerLink="registro">Registro</p>-->
+
+<!--          <div class="dropdown-content">-->
+<!--            <a routerLink="/registro">Participante</a>-->
+<!--            <a routerLink="/organizacion-reg">Organización</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="icon">-->
+<!--        <p routerLink="/login">Acceder</p>-->
+<!--      </div>-->
+
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--</header>-->
+
+
+
+
     <div class="barradirecciones">
-
       <div class="icon">
-
         <div class="dropdown">
-
           <p routerLink="/explorar">Explorar</p>
-
           <div class="dropdown-content">
             <a routerLink="/explorar">Eventos</a>
             <a href="#">Organizaciones</a>
           </div>
-
         </div>
-
       </div>
 
-      <div class="icon">
+      <!-- Mostrar Registro solo si no está autenticado -->
+      <div class="icon" *ngIf="!usuarioAutenticado">
         <div class="dropdown">
-
           <p routerLink="registro">Registro</p>
-
           <div class="dropdown-content">
             <a routerLink="/registro">Participante</a>
             <a routerLink="/organizacion-reg">Organización</a>
@@ -48,12 +85,16 @@
         </div>
       </div>
 
-      <div class="icon">
+      <!-- Mostrar Acceder solo si no está autenticado -->
+      <div class="icon" *ngIf="!usuarioAutenticado">
         <p routerLink="/login">Acceder</p>
       </div>
 
+      <!-- Mostrar Bienvenido y Logout solo si está autenticado -->
+      <div *ngIf="usuarioAutenticado">
+        <p>Bienvenido {{ usuarioAlias }}</p>
+        <button (click)="logout()">Logout</button>
+      </div>
     </div>
-
   </div>
-
 </header>
