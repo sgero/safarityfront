@@ -27,6 +27,14 @@ export class GeneralService {
 
   constructor(private http: HttpClient) {}  // Agrega http como dependencia en el constructor
 
+
+  // Método para registrar Organizacion
+  registrarOrganizacion(organizacionData: Organizacion): Observable<any> {
+    return this.http.post(`${this.apiUrl}/registro-organizacion`, organizacionData);
+  }
+
+
+
   setRoleAsAdmin() {
     this.userRole = 'ADMIN';
     this.roleChangeSubject.next();  // Notifica a los suscriptores sobre el cambio de rol
