@@ -47,13 +47,28 @@
             </div>
 
             <div class="input-box">
+              <i class="fas fa-map-marker"></i>
+              <input type="text" placeholder="Dirección" name="direccion" id="direccion" [(ngModel)]="participante.direccion" required>
+            </div>
+
+            <div class="input-box">
               <i class="fas fa-envelope"></i>
               <input type="email" placeholder="Email" name="email" id="email" [(ngModel)]="participante.email" required>
             </div>
 
             <div class="input-box">
+              <i class="fas fa-id-card"></i>
+              <input type="text" placeholder="DNI" name="dni" id="dni" [(ngModel)]="participante.dni" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-phone"></i>
+              <input type="tel" placeholder="Teléfono" name="telefono" id="telefono" [(ngModel)]="participante.telefono" required>
+            </div>
+
+            <div class="input-box">
               <i class="fas fa-calendar"></i>
-              <input type="date" placeholder="Fecha Nacimiento" name="fecha_nacimiento" id="fecha_nacimiento" [(ngModel)]="participante.fecha_nacimento" required>
+              <input type="date" placeholder="Fecha Nacimiento" name="fecha_nacimiento" id="fecha_nacimiento" [(ngModel)]="participante.fecha_nacimiento" required>
             </div>
 
             <div class="boton input-box">

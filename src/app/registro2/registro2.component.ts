@@ -10,7 +10,20 @@ import {RegistroService} from "../services/registro.service";
 })
 export class Registro2Component{
 
-  participante = { nombre: '', apellidos: '', email: '', fecha_nacimento: '', usuario:{alias:'', password:''}};
+  participante = {
+    nombre: '',
+    apellidos: '',
+    direccion: '',
+    email: '',
+    dni: '',
+    telefono: '',
+    fecha_nacimiento: '',
+    usuarioDTO: {
+      alias:'',
+      password:''
+    }
+  };
+
   errorMensaje?: string;
 
   constructor(private service:GeneralService, public router: Router, private service1:RegistroService) {
@@ -23,9 +36,9 @@ export class Registro2Component{
       return;
     }
 
-    this.participante.fecha_nacimento = this.formatDate(this.participante.fecha_nacimento);
-    this.participante.usuario.alias = this.service1.datosPaso1.alias
-    this.participante.usuario.password = this.service1.datosPaso1.password
+    this.participante.fecha_nacimiento = this.formatDate(this.participante.fecha_nacimiento);
+    this.participante.usuarioDTO.alias = this.service1.datosPaso1.alias
+    this.participante.usuarioDTO.password = this.service1.datosPaso1.password
     this.service.register(this.participante).subscribe(data => {console.log(data);
       // Realizar acciones adicionales según la respuesta del servidor
       if (data.token) {

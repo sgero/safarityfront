@@ -107,14 +107,20 @@ input{
   transition: 0.3s;
 }
 
-.dropdown p:hover {
+.dropdown-content a:hover {
+  color: #262626;
+  background-color: #C5AECF;
+}
+
+.barradirecciones p {
+
+  cursor: pointer;
+
+}
+
+.barradirecciones p:hover{
 
   color: #9c5ee7;
   transition: 0.3s;
 
-}
-
-.dropdown-content a:hover {
-  color: #262626;
-  background-color: #C5AECF;
 }

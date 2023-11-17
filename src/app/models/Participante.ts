@@ -8,8 +8,8 @@ export class Participante {
   email?: string;
   dni?: string;
   telefono?: string;
-  fecha_nacimiento?: string;
-  usuario: Usuario = new Usuario();
+  fecha_nacimiento ?: string;
+  usuarioDTO: Usuario = new Usuario();
   activo?: boolean;
 
 
