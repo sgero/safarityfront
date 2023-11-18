@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import { Subject } from 'rxjs';
-import { of} from 'rxjs';
+import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 import { Organizacion } from "../models/Organizacion";
 import { Evento } from "../models/Evento";
-import {catchError, Observable, throwError} from 'rxjs';
+import {catchError,  throwError} from 'rxjs';
 import {Usuario} from "../models/Usuario";
 import {Auth} from "../models/Auth";
 import {Participante} from "../models/Participante";
@@ -22,11 +21,7 @@ export class GeneralService {
   roleChange = this.roleChangeSubject.asObservable();
 
   // Lógica de autenticación y gestión de roles
-  private userRole: string = 'usuario';  // Valor predeterminado
-
-  private usuarioAutenticado: boolean = false;
-
-  private usuarioAlias: string = '';
+  private userRole: string = 'rol';  // Valor predeterminado
 
 
   constructor(private http: HttpClient) {
@@ -61,10 +56,23 @@ export class GeneralService {
   // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
   shouldShowNavItem(nav: any): boolean {
     return this.userRole === nav.role;
-
   }
 
+  getUserAlias(): string {
+    return this.usuarioAlias$.toString();
+  }
+
+  private usuarioAutenticadoSubject = new BehaviorSubject<boolean>(false);
+  usuarioAutenticado$: Observable<boolean> = this.usuarioAutenticadoSubject.asObservable();
+
+  private usuarioAliasSubject = new BehaviorSubject<string>('');
+  usuarioAlias$: Observable<string> = this.usuarioAliasSubject.asObservable();
+
+
   login(data: Usuario) {
+    this.usuarioAutenticadoSubject.next(true);
+    this.usuarioAliasSubject.next(String(data.alias));
+
     return this.http.post<Auth>(this.apiUrl + "/auth/login", data);
   }
 
@@ -74,10 +82,10 @@ export class GeneralService {
     return this.http.post<Auth>(this.apiUrl+"/auth/register", data, { headers: headers })
   }
 
-  logout(data: Auth){
-    return this.http.post<void>(this.apiUrl+"/auth/logout", data);
-    localStorage.removeItem('token')
-  }
+//  logout(data: Auth){
+ //   return this.http.post<void>(this.apiUrl+"/auth/logout", data);
+  //  localStorage.removeItem('token')
+ // }
 
   // private apiUrl = '/evento/listar'; //
   //
@@ -85,6 +93,11 @@ export class GeneralService {
   // getEventos(): Observable<any[]> {
   //   return this.http.get<any[]>(this.apiUrl);
   // }
+
+
+  logout(token: String){
+    return this.http.post<void>(`${this.apiUrl}/auth/logout`, {token: token});
+  }
 
 
   // Métodos para obtener datos relacionados con Organización y Evento

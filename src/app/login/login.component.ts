@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   userRole: string = 'rol';
   visibleNavItems: any[] = [];
 
+
   mostrarContrasena(){
 
     var eye = document.getElementById("eye")
@@ -41,18 +42,20 @@ export class LoginComponent implements OnInit {
     // Llama al método para construir la barra de navegación
     this.buildNavbar();
   }
+
   login() {
     this.service.login(this.usuario).subscribe(data => {
       // Manejar la respuesta del servicio
       console.log(data);
 
       // Realizar acciones adicionales según la respuesta del servidor
-      if (data.token && data.info !== undefined) {
+      if (data.token && data.info !== undefined && data.rol !== undefined) {
         // El inicio de sesión fue exitoso, puedes almacenar el token en localStorage o en una cookie
         localStorage.setItem('token', data.token);// El inicio de sesión fue exitoso, almacena el token y el rol
-        localStorage.setItem('rol', data.info!.toString()); // Almacena el rol del usuario
+        localStorage.setItem('info', data.info); // Almacena la información del usuario
+        localStorage.setItem('rol', data.rol.toString()); // Almacena el rol del usuario
 
-        this.userRole = data.info.toString();
+        this.userRole = data.rol.toString();
         // Redirigir al usuario
         this.router.navigate(['/inicio']);
       } else {
@@ -62,7 +65,6 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-
 
   // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
   shouldShowNavItem(nav: any): boolean {
@@ -90,6 +92,8 @@ export class LoginComponent implements OnInit {
     // Filtra los elementos de menú según el rol del usuario
     this.visibleNavItems = navItems.filter(nav => this.shouldShowNavItem(nav));
   }
+
+
   checkForm(){
     let usuario = (<HTMLInputElement>document.getElementById("usuario")).value
     let clave = (<HTMLInputElement>document.getElementById("pwd")).value
@@ -108,9 +112,20 @@ export class LoginComponent implements OnInit {
       return false;
     }
     return true;
+
+    if(clave == "") {
+      alert("Error: debe introducir una contraseña!");
+      this.router.navigate(['/login']);
+      document.getElementById("pwd")!.focus();
+      return false;
+    }
+    return true;
   }
 
   crearusuario() {
 
   }
+
+
+
 }
