@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {GeneralService} from "../services/general.service";
+import {Usuario} from "../models/Usuario";
 
 @Component({
   selector: 'app-login',
@@ -42,31 +44,7 @@ export class LoginComponent {
       return false;
     }
 
-    var re = /^[A-Za-z][A-Za-z0-9]*$/;
-    if(!re.test(usuario)) {
-      alert(usuario + " no es válido, debe tener una longitud mínima de 8 carácteres y ser alfanumerico");
-      this.router.navigate(['/login']);
-      document.getElementById("usuario")!.focus()
-      return false;
-    }
-
-    function checkPassword(valor: any){
-      var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-      if(myregex.test(valor)){
-        return true;
-      }else{
-        alert(valor + " no es valido, debe incluir al menos 8 dígitos, mayúscula y números.");
-        return false;
-      }
-    }
-
-    if(clave != "") {
-      if(!checkPassword(clave)) {
-        this.router.navigate(['/login']);
-        document.getElementById("pwd")!.focus();
-        return false;
-      }
-    }else {
+    if(clave == "") {
       alert("Error: debe introducir una contraseña!");
       this.router.navigate(['/login']);
       document.getElementById("pwd")!.focus();

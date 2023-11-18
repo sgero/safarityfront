@@ -199,3 +199,11 @@ body{
     width: 100%;
   }
 }
+
+.fa-eye{
+
+  position: relative !important;
+  color: black !important;
+  cursor: pointer;
+
+}
