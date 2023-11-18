@@ -92,8 +92,13 @@
 
       <!-- Mostrar Bienvenido y Logout solo si está autenticado -->
       <div *ngIf="usuarioAutenticado">
-        <p>Bienvenido {{ usuarioAlias }}</p>
-        <button (click)="logout()">Logout</button>
+        <div>
+          <p>Bienvenido {{ usuarioAlias }}</p>
+          <button (click)="logout()">Logout</button>
+
+        </div>
+
+
       </div>
     </div>
   </div>

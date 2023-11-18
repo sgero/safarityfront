@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import {Observable, of, Subject} from 'rxjs';
+import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 import { Organizacion } from "../models/Organizacion";
 import { Evento } from "../models/Evento";
 import {Usuario} from "../models/Usuario";
@@ -51,10 +51,23 @@ export class GeneralService {
     return this.userRole;
   }
 
+  private usuarioAutenticadoSubject = new BehaviorSubject<boolean>(false);
+  usuarioAutenticado$: Observable<boolean> = this.usuarioAutenticadoSubject.asObservable();
+
+  private usuarioAliasSubject = new BehaviorSubject<string>('');
+  usuarioAlias$: Observable<string> = this.usuarioAliasSubject.asObservable();
+
+
   login(data: Usuario) {
+    this.usuarioAutenticadoSubject.next(true);
+    this.usuarioAliasSubject.next('nombre');
     return this.http.post<Auth>(this.apiUrl + "/auth/login", data);
   }
 
+
+  logout(token: String){
+    return this.http.post<void>(`${this.apiUrl}/auth/logout`, {token: token});
+  }
 
 
   // Métodos para obtener datos relacionados con Organización y Evento
