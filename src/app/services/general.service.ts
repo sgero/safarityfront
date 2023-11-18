@@ -23,6 +23,8 @@ export class GeneralService {
   // Lógica de autenticación y gestión de roles
   private userRole: string = 'rol';  // Valor predeterminado
 
+  auth: { token: string } = { token: '' };
+
 
   constructor(private http: HttpClient) {
   }  // Agrega http como dependencia en el constructor

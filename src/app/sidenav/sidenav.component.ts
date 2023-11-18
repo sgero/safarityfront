@@ -13,6 +13,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
   userRole: string = 'usuario';
   fillerNav: any[] = [];
 
+  auth: { token: string } = { token: '' };
+
   private _mobileQueryListener: () => void;
 
   constructor(
@@ -27,6 +29,13 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
   // En SidenavComponent
   ngOnInit() {
+
+    // Assuming you want to initialize auth from localStorage during component initialization
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) {
+      this.auth.token = storedToken;
+    }
+
     // Suscríbete a los cambios de rol
     this.generalService.roleChange.subscribe(() => {
       // Actualiza el rol y el menú cuando cambia el rol
@@ -111,29 +120,43 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
   shouldRun = true;
 
-  auth = {
-    token: ''
-  };
+
+ // logout() {
+
+   // const token = localStorage.getItem('token') ?? '';
+
+   // if (localStorage.getItem('token') == null) {
+
+   // } else {
+
+    //  this.auth.token = token
+
+    //}
+
+    //this.generalService.logout(this.auth).subscribe(
+     // data => {
+
+      // console.log(data);
+
+    // });
+
+  //}
+
 
   logout() {
+    const token = localStorage.getItem('token') || '';
 
-    const token = localStorage.getItem('token') ?? '';
-
-    if (localStorage.getItem('token') == null) {
-
-    } else {
-
-      this.auth.token = token
-
-    }
-
-    this.generalService.logout(this.auth).subscribe(
+    this.generalService.logout(token).subscribe(
       data => {
-
-      console.log(data);
-
-    });
-
+        console.log('Logout successful', data);
+        // Additional logout logic if needed
+      },
+      error => {
+        console.error('Logout failed', error);
+      }
+    );
   }
+
+
 
 }
