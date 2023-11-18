@@ -9,8 +9,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div class="contenedor">
 
+
+<div class="contenedor">
+  <div class="container-circulos">
+    <div class="circulo paso1">
+      <a href="registro"> I </a>
+    </div>
+
+    <!-- Círculo Paso 2 -->
+    <div class="circulo paso2">
+      <a href="registro2"> II </a>
+    </div>
+
+  </div>
   <input type="checkbox" id="vuelta">
 
   <div class="principal">
@@ -32,36 +44,51 @@
 
         <div class="titulo">Registrar</div>
 
-        <form action="#">
+        <form (ngSubmit)="register()">
 
           <div class="input-boxes">
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" required>
+              <input type="text" placeholder="Nombre" name="nombre" id="nombre" [(ngModel)]="participante.nombre" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Apellidos" required>
+              <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" [(ngModel)]="participante.apellidos" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-map-marker"></i>
+              <input type="text" placeholder="Dirección" name="direccion" id="direccion" [(ngModel)]="participante.direccion" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" required>
+              <input type="email" placeholder="Email" name="email" id="email" [(ngModel)]="participante.email" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-id-card"></i>
+              <input type="text" placeholder="DNI" name="dni" id="dni" [(ngModel)]="participante.dni" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-phone"></i>
+              <input type="tel" placeholder="Teléfono" name="telefono" id="telefono" [(ngModel)]="participante.telefono" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-calendar"></i>
-              <input type="date" placeholder="Fecha" required>
+              <input type="date" placeholder="Fecha Nacimiento" name="fecha_nacimiento" id="fecha_nacimiento" [(ngModel)]="participante.fecha_nacimiento" required>
             </div>
 
             <div class="boton input-box">
-              <input routerLink="/registro2" type="submit" value="Registrate">
+              <input type="submit" value="Registrate">
             </div>
 
             <div class="texto sign-up-text">¿Tienes ya una cuenta?
-              <label routerLink="/login" for="vuelta">Inicia Sesión</label>
+              <label for="vuelta">Inicia Sesión</label>
             </div>
 
           </div>

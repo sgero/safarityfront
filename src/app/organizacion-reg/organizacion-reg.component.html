@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Registrar Organización | SAFARITY </title>
+  <link rel="stylesheet" type="text/css" href="organizacion-reg.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="contenedor">
+
+  <div class="principal">
+
+    <div class="alante">
+      <img src="assets/img/safacrowd2.png" alt="">
+      <div class="texto">
+        <span class="texto1">Haz lo que <br> te apasiona</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="forms">
+
+    <div class="form-content">
+
+      <div class="signup-form">
+
+        <div class="titulo">Registrar Organización</div>
+
+        <form [formGroup]="organizacionForm" (ngSubmit)="onSubmit()">
+
+          <div class="input-boxes">
+
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" name="email" id="email" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-id-card"></i>
+              <input type="text" placeholder="CIF" name="cif" id="cif" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-phone"></i>
+              <input type="tel" placeholder="Telefono" name="telefono" id="telefono" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-calendar"></i>
+              <input type="date" placeholder="Fecha Fundacion" name="fecha_fundacion" id="fecha_fundacion" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-map-marker"></i>
+              <input type="text" placeholder="Dirección" name="direccion" id="direccion" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-info"></i>
+              <input type="text" placeholder="Información" name="info" id="info" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-globe"></i>
+              <input type="text" placeholder="Página WEB" name="web" id="web" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-file-image"></i>
+              <input type="text" placeholder="Logo" name="logo" id="logo" required>
+            </div>
+
+            <div class="boton input-box">
+              <input type="submit" value="Registrar">
+            </div>
+
+            <div class="texto sign-up-text">¿Tienes ya una cuenta?
+              <label routerLink="/login">Inicia Sesión</label>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

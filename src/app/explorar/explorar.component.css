@@ -1,45 +1,45 @@
-
-.columna{
-
-  display: flex;
-  flex-direction: column;
-  margin-top: 5%;
-
+/* explorar.component.css */
+.body {
+  background-color: #f5cef5;
 }
 
 
-.linea1{
-
+.columna {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-
+  flex-direction: column; /* Cambiado a dirección de columna */
 }
 
-.linea2{
-
+.seccion {
+  flex: 1;
+  min-width: 300px;
+  margin: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 5%;
-
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
-
 
 .tarjeta {
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 20px;
   width: 200px;
-  box-shadow: 0px 0px 35px 24px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 20px 20px rgb(232, 228, 232);
+  text-align: center;
+  margin: 10px;
+  margin-left: 40px;
+}
 
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .tarjeta img {
   width: 100%;
   height: auto;
   border-radius: 5px;
+  border: 1px solid #f5cef5;
 }
 
 .tarjeta h3 {
@@ -50,4 +50,10 @@
 .tarjeta p {
   font-size: 14px;
   margin-top: 5px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 10px;
+  color: #9c5ee7;
 }

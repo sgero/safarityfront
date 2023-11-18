@@ -113,13 +113,10 @@ body{
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 20px;
   height: 3px;
-  width: 25px;
+  width: 31px;
   background: #7d2ae8;
-}
-.forms .signup-form .titulo:before{
-  width: 20px;
 }
 .forms .form-content .input-boxes{
   margin-top: 30px;
@@ -143,14 +140,18 @@ body{
   border-bottom: 2px solid rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
+
 .form-content .input-box input:focus,
 .form-content .input-box input:valid{
   border-color: #7d2ae8;
 }
+
 .form-content .input-box i{
   position: absolute;
   color: #7d2ae8;
   font-size: 17px;
+  text-align: center;
+  width: 20px;
 }
 .forms .form-content .texto{
   font-size: 14px;
@@ -175,9 +176,11 @@ body{
   cursor: pointer;
   transition: all 0.4s ease;
 }
+
 .forms .form-content .boton input:hover{
   background: #5b13b9;
 }
+
 .forms .form-content label{
   color: #5b13b9;
   cursor: pointer;
@@ -201,66 +204,12 @@ body{
   .form-content .signup-form{
     width: 100%;
   }
-  .form-content .signup-form{
-    display: none;
-  }
-  .contenedor #vuelta:checked ~ .forms .signup-form{
-    display: block;
-  }
-  .contenedor #vuelta:checked ~ .forms .login-form{
-    display: none;
-  }
 }
 
+.fa-eye{
 
-.contenedor {
-  position: relative;
-}
-.container-circulos {
-  display: flex;
-  align-items: center;
-}
-.circulo {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 10px;
-  position: absolute;
-  margin-left:180px;
-  /*padding-bottom: 50px;*/
-  margin-bottom: 50px;
-  margin-top: 20px;
-}
+  position: relative !important;
+  color: black !important;
+  cursor: pointer;
 
-
-.circulo a {
-  text-decoration: none;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-.circulo.paso1 {
-  background-color: #c7c0b2;
-  /*top: 0;*/
-  left: 0;
-}
-
-.circulo.paso2 {
-  background-color: #a100ff;
-  /*top: 0;*/
-  left: 30px; /* Ajusta según sea necesario */
-}
-
-.forms {
-  position: relative;
-  z-index: 1;
-}
-
-.boton {
-  margin-top: 20px;
 }
