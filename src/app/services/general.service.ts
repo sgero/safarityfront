@@ -51,6 +51,10 @@ export class GeneralService {
     return this.userRole;
   }
 
+  getUserAlias(): string {
+    return this.usuarioAlias$.toString();
+  }
+
   private usuarioAutenticadoSubject = new BehaviorSubject<boolean>(false);
   usuarioAutenticado$: Observable<boolean> = this.usuarioAutenticadoSubject.asObservable();
 
@@ -60,7 +64,8 @@ export class GeneralService {
 
   login(data: Usuario) {
     this.usuarioAutenticadoSubject.next(true);
-    this.usuarioAliasSubject.next('nombre');
+    this.usuarioAliasSubject.next(String(data.alias));
+
     return this.http.post<Auth>(this.apiUrl + "/auth/login", data);
   }
 
