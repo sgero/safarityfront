@@ -39,22 +39,25 @@ export class SidenavComponent implements OnInit, OnDestroy {
   }
 
   private initializeFillerNav() {
-    if (this.userRole === 'ADMIN') {
+    if (localStorage.getItem('rol') === 'ADMIN') {
       this.fillerNav = [
-        { name: 'PANEL ADMINISTRADOR', route: 'inicio', icon: 'home' },
+        { name: 'PANEL DE ADMIN', route: '', icon: 'home' },
+        { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
       ];
-    } else if (this.userRole === 'ORGANIZACION') {
+    } else if (localStorage.getItem('rol') === 'ORGANIZACION') {
       this.fillerNav = [
-        { name: 'PANEL ORGANIZACION', route: 'inicio', icon: 'home' },
+        { name: 'PANEL DE ORGANIZACION', route: '', icon: 'home' },
+        { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
         { name: 'Crear Evento', route: 'crearEvento', icon: 'perm_contact_calendar' },
         { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar' }
       ];
-    } else if (this.userRole === 'PARTICIPANTE') {
+    } else if (localStorage.getItem('rol') === 'PARTICIPANTE') {
       this.fillerNav = [
-        { name: 'PANEL PARTICIPANTE', route: 'inicio', icon: 'home' },
+        { name: 'PANEL DE PARTICIPANTE', route: '', icon: 'home' },
+        { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
         { name: 'Favoritos', route: 'favoritos', icon: 'perm_contact_calendar' },
@@ -63,11 +66,15 @@ export class SidenavComponent implements OnInit, OnDestroy {
     } else {
       // Default fillerNav for other roles or situations
       this.fillerNav = [
+        { name: 'PANEL DE USUARIO', route: '', icon: 'home' },
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
       ];
     }
   }
+
+
+
 
   // Métodos para cambiar el rol cuando el usuario se loguea como admin, participante u organización
   setRoleAsAdmin() {

@@ -19,11 +19,7 @@ export class GeneralService {
   roleChange = this.roleChangeSubject.asObservable();
 
   // Lógica de autenticación y gestión de roles
-  private userRole: string = 'usuario';  // Valor predeterminado
-
-  private usuarioAutenticado: boolean = false;
-
-  private usuarioAlias: string = '';
+  private userRole: string = 'rol';  // Valor predeterminado
 
 
   constructor(private http: HttpClient) {
@@ -55,23 +51,10 @@ export class GeneralService {
     return this.userRole;
   }
 
-  // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
-  shouldShowNavItem(nav: any): boolean {
-    switch (nav.role) {
-      case 'ADMIN':
-        return this.userRole === 'ADMIN';
-      case 'PARTICIPANTE':
-        return this.userRole === 'PARTICIPANTE';
-      case 'ORGANIZACION':
-        return this.userRole === 'ORGANIZACION';
-      default:
-        return true; // Mostrar por defecto si no se especifica un rol
-    }
-  }
-
   login(data: Usuario) {
     return this.http.post<Auth>(this.apiUrl + "/auth/login", data);
   }
+
 
 
   // Métodos para obtener datos relacionados con Organización y Evento
@@ -97,7 +80,6 @@ export class GeneralService {
   getUsuarioByAlias(alias: string): Observable<Usuario> {
     return this.http.get<Usuario>(`${this.apiUrl}/usuario/listar/${alias}`);
   }
-
 
 
 
