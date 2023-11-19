@@ -1,0 +1,72 @@
+
+<link rel="stylesheet" href="">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial">
+
+</head>
+
+
+<body>
+
+<h1>Buscador de Eventos</h1>
+
+
+<div class="columna">
+
+  <form (ngSubmit)="buscar()">
+    <div>
+      <div>
+        <label for="busqueda">Nombre:</label>
+        <input type="text" id="busqueda" name="busqueda" [(ngModel)]="busqueda.busqueda" required>
+        <label for="tipoevento">Tipo de Evento:</label>
+        <select id="tipoEvento" name="tipoEvento" [(ngModel)]="busqueda.tipoEvento" required>
+          <option value="CARRERA">CARRERA</option>
+          <option value="SUBASTA">SUBASTA</option>
+          <option value="MERCADILLO">MERCADILLO</option>
+          <option value="CONCIERTO">CONCIERTO</option>
+          <option value="RECOGIDA">RECOGIDA</option>
+          <option value="ESPECTACULO">ESPECTACULO</option>
+          <option value="OTRO">OTRO</option>
+        </select>
+      </div>
+      <div>
+        <label for="tipopago">Tipo de Pago:</label>
+        <select id="tipoPago" name="tipoPago" [(ngModel)]="busqueda.tipoPago" required>
+          <option value="GRATIS">GRATIS</option>
+          <option value="DONATIVO">DONATIVO</option>
+          <option value="PRECIO_FIJO">PRECIO FIJO</option>
+        </select>
+        <label for="meses">Meses:</label>
+        <select id="meses" name="meses" [(ngModel)]="busqueda.fecha" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+
+  <div class="seccion">
+    <h2>EVENTOS:</h2>
+    <div *ngFor="let e of eventos" class="tarjeta">
+      <img src="{{e.imagen}}">
+      <h3>{{e.nombre}}</h3>
+      <p>{{e.aforo}}</p>
+    </div>
+  </div>
+
+</div>
+</body>

@@ -1,0 +1,104 @@
+/* Estilo para el buscador de eventos */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.columna {
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+input,
+select {
+  width: calc(50% - 10px);
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #7d2ae8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5b13b9;
+}
+
+.seccion {
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.tarjeta {
+  margin-top: 15px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
