@@ -85,21 +85,20 @@ export class GeneralService {
     return this.http.post<Auth>(this.apiUrl+"/auth/register", data, { headers: headers })
   }
 
-//  logout(data: Auth){
- //   return this.http.post<void>(this.apiUrl+"/auth/logout", data);
-  //  localStorage.removeItem('token')
- // }
-
-  // private apiUrl = '/evento/listar'; //
-  //
-  // // constructor(private http: HttpClient) {}
-  // getEventos(): Observable<any[]> {
-  //   return this.http.get<any[]>(this.apiUrl);
-  // }
+  registerOrg(data: Organizacion){
+    console.log('Datos enviados al backend:', data);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<Auth>(this.apiUrl+"/auth/registerOrganizacion", data, { headers: headers })
+  }
 
 
   logout(token: String){
-    return this.http.post<void>(`${this.apiUrl}/auth/logout`, {token: token});
+    return this.http.post<void>(`${this.apiUrl}/auth/logout`, {token: token}).pipe(
+      catchError(error => {
+        console.error('Error en la solicitud de logout:', error);
+        throw error; // Puedes manejar el error según tus necesidades
+      })
+    );
   }
 
 

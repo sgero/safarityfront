@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title> Registrar Organización | SAFARITY </title>
-  <link rel="stylesheet" type="text/css" href="organizacion-reg.component.css">
+  <link rel="stylesheet" type="text/css" href="organizacion-reg2.component.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -30,53 +30,53 @@
 
         <div class="titulo">Registrar Organización</div>
 
-        <form [formGroup]="organizacionForm" (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="register()">
 
           <div class="input-boxes">
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+              <input type="text" placeholder="Nombre" name="nombre" id="nombre" [(ngModel)]="organizacion.nombre" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" name="email" id="email" required>
+              <input type="email" placeholder="Email" name="email" id="email" [(ngModel)]="organizacion.email" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-id-card"></i>
-              <input type="text" placeholder="CIF" name="cif" id="cif" required>
+              <input type="text" placeholder="CIF" name="cif" id="cif" [(ngModel)]="organizacion.cif" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-phone"></i>
-              <input type="tel" placeholder="Telefono" name="telefono" id="telefono" required>
+              <input type="tel" placeholder="Telefono" name="telefono" id="telefono" [(ngModel)]="organizacion.telefono" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-calendar"></i>
-              <input type="date" placeholder="Fecha Fundacion" name="fecha_fundacion" id="fecha_fundacion" required>
+              <input type="date" placeholder="Fecha Fundacion" name="fecha_fundacion" id="fecha_fundacion" [(ngModel)]="organizacion.fechaFundacion" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-map-marker"></i>
-              <input type="text" placeholder="Dirección" name="direccion" id="direccion" required>
+              <input type="text" placeholder="Dirección" name="direccion" id="direccion" [(ngModel)]="organizacion.direccion" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-info"></i>
-              <input type="text" placeholder="Información" name="info" id="info" required>
+              <input type="text" placeholder="Información" name="info" id="info" [(ngModel)]="organizacion.info" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-globe"></i>
-              <input type="text" placeholder="Página WEB" name="web" id="web" required>
+              <input type="text" placeholder="Página WEB" name="web" id="web" [(ngModel)]="organizacion.sitioWeb" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-file-image"></i>
-              <input type="text" placeholder="Logo" name="logo" id="logo" required>
+              <input type="text" placeholder="Logo" name="logo" id="logo" [(ngModel)]="organizacion.logo" required>
             </div>
 
             <div class="boton input-box">

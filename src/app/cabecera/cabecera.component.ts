@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {GeneralService} from "../services/general.service";
-import {Observable} from "rxjs";
-import {Auth} from "../models/Auth";
-import {getTokenAtPosition} from "@angular/compiler-cli/src/ngtsc/util/src/typescript";
 import {Router} from "@angular/router";
 
 @Component({

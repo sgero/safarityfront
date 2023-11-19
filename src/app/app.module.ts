@@ -33,8 +33,9 @@ import { Registro2Component } from './registro2/registro2.component';
 import { ExplorarComponent } from './explorar/explorar.component';
 import {SidenavComponent} from "./sidenav/sidenav.component";
 import { MiperfilComponent } from './miperfil/miperfil.component';
-import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.component";
+import {OrganizacionReg2Component} from "./organizacion-reg2/organizacion-reg2.component";
 import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
+import { OrganizacionReg1Component } from './organizacion-reg1/organizacion-reg1.component';
 
 
 
@@ -47,22 +48,18 @@ import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component
     FooterComponent,
     RegistroComponent,
     ExplorarComponent,
-    RegistroComponent,
-    IndexComponent,
-    FooterComponent,
     LoginComponent,
     Registro2Component,
-    LoginComponent,
     SidenavComponent,
-    OrganizacionRegComponent,
+    OrganizacionReg2Component,
     BuscadoreventoComponent,
     MiperfilComponent,
+    OrganizacionReg1Component,
 
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
