@@ -41,13 +41,13 @@ export class SidenavComponent implements OnInit, OnDestroy {
   private initializeFillerNav() {
     if (localStorage.getItem('rol') === 'ADMIN') {
       this.fillerNav = [
-        { name: 'PANEL DE ADMIN', route: '', icon: 'home' },
+        { name: 'PANEL DE ADMIN', route: '', icon: '' },
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
       ];
     } else if (localStorage.getItem('rol') === 'ORGANIZACION') {
       this.fillerNav = [
-        { name: 'PANEL DE ORGANIZACION', route: '', icon: 'home' },
+        { name: 'PANEL DE ORGANIZACION', route: '', icon: '' },
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
@@ -56,7 +56,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
       ];
     } else if (localStorage.getItem('rol') === 'PARTICIPANTE') {
       this.fillerNav = [
-        { name: 'PANEL DE PARTICIPANTE', route: '', icon: 'home' },
+        { name: 'PANEL DE PARTICIPANTE', route: '', icon: '' },
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
@@ -66,7 +66,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
     } else {
       // Default fillerNav for other roles or situations
       this.fillerNav = [
-        { name: 'PANEL DE USUARIO', route: '', icon: 'home' },
+        { name: 'PANEL DE USUARIO', route: '', icon: '' },
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
       ];
