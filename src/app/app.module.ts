@@ -36,6 +36,7 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
 import {OrganizacionReg2Component} from "./organizacion-reg2/organizacion-reg2.component";
 import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
 import { OrganizacionReg1Component } from './organizacion-reg1/organizacion-reg1.component';
+import { DetallesEventoComponent } from './detalles-evento/detalles-evento.component';
 
 
 
@@ -55,6 +56,7 @@ import { OrganizacionReg1Component } from './organizacion-reg1/organizacion-reg1
     BuscadoreventoComponent,
     MiperfilComponent,
     OrganizacionReg1Component,
+    DetallesEventoComponent,
 
   ],
   imports: [

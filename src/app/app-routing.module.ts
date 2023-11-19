@@ -22,7 +22,8 @@ const routes: Routes = [
   {path:'explorar', component : ExplorarComponent},
   { path: 'organizacion-reg1', component: OrganizacionReg1Component },
   { path: 'organizacion-reg2', component: OrganizacionReg2Component },
-  { path: 'buscadorevento', component: BuscadoreventoComponent }
+  { path: 'buscadorevento', component: BuscadoreventoComponent },
+  { path: 'eventoDetalles/:id', component: BuscadoreventoComponent },
 ];
 
 

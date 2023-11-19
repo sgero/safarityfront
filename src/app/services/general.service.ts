@@ -31,12 +31,6 @@ export class GeneralService {
   }  // Agrega http como dependencia en el constructor
 
 
-  // Método para registrar Organizacion
-  registrarOrganizacion(organizacionData: Organizacion): Observable<any> {
-    return this.http.post(`${this.apiUrl}/registro-organizacion`, organizacionData);
-  }
-
-
   setRoleAsAdmin() {
     this.userRole = 'ADMIN';
     this.roleChangeSubject.next();  // Notifica a los suscriptores sobre el cambio de rol
@@ -132,7 +126,9 @@ export class GeneralService {
     return this.http.post<Evento[]>(`${this.apiUrl}/evento/buscar`, data);
   }
 
-
+  obtenerEventoPorId(eventoId: number): Observable<Evento> {
+    return this.http.post<Evento>(`${this.apiUrl}/evento/mostrarCalculado`, { id: eventoId });
+  }
 
 
 }
