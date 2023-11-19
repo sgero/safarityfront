@@ -34,6 +34,7 @@ import { ExplorarComponent } from './explorar/explorar.component';
 import {SidenavComponent} from "./sidenav/sidenav.component";
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.component";
+import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
 
 
 
@@ -44,13 +45,19 @@ import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.comp
     IndexComponent,
     CabeceraComponent,
     FooterComponent,
+    RegistroComponent,
     ExplorarComponent,
     RegistroComponent,
+    IndexComponent,
+    FooterComponent,
     LoginComponent,
     Registro2Component,
+    LoginComponent,
     SidenavComponent,
     OrganizacionRegComponent,
-    MiperfilComponent
+    BuscadoreventoComponent,
+    MiperfilComponent,
+
   ],
   imports: [
     HttpClientModule,

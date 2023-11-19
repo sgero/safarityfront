@@ -7,6 +7,7 @@ import {catchError,  throwError} from 'rxjs';
 import {Usuario} from "../models/Usuario";
 import {Auth} from "../models/Auth";
 import {Participante} from "../models/Participante";
+import {Busqueda} from "../models/Busqueda";
 
 @Injectable({
   providedIn: 'root'
@@ -127,6 +128,10 @@ export class GeneralService {
   }
 
 
+  //Métodos para obtener búsqueda de eventos
+  getBuscar(data: Busqueda) {
+    return this.http.post<Evento[]>(`${this.apiUrl}/evento/buscar`, data);
+  }
 
 
 

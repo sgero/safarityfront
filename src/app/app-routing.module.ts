@@ -6,6 +6,7 @@ import {LoginComponent} from "./login/login.component";
 import {Registro2Component} from "./registro2/registro2.component";
 import {ExplorarComponent} from "./explorar/explorar.component";
 import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.component";
+import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
 
 // Rutas de navegación
 
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:'registro2', component : Registro2Component},
   {path:'login', component : LoginComponent},
   {path:'explorar', component : ExplorarComponent},
-  { path: 'organizacion-reg', component: OrganizacionRegComponent }
+  { path: 'organizacion-reg', component: OrganizacionRegComponent },
+  { path: 'buscadorevento', component: BuscadoreventoComponent }
 ];
 
 
