@@ -1,3 +1,5 @@
+import {Usuario} from "./Usuario";
+
 export class Participante {
   id?: bigint;
   nombre?: string;
@@ -6,8 +8,8 @@ export class Participante {
   email?: string;
   dni?: string;
   telefono?: string;
-  fecha_nacimiento?: string;
-  id_usuario?: number;
+  fecha_nacimiento ?: string;
+  usuarioDTO: Usuario = new Usuario();
   activo?: boolean;
 
 

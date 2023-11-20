@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="eventos.component.css">
+
+<body>
+<div class="columna">
+
+  <div class="seccion">
+
+    <h2>EVENTOS:</h2>
+
+    <div class="tar-evento">
+
+      <div *ngFor="let e of eventos" class="tarjeta">
+        <a [routerLink]="['/detallesEvento', e.id]">
+          <img src="{{e.imagen}}">
+          <h3>{{e.nombre}}</h3>
+          <p>{{e.aforo}}</p>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</body>

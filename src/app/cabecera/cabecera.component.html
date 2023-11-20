@@ -6,7 +6,7 @@
 
       <a routerLink="/inicio">
 
-        <img src="./assets/img/logoSafarity2.png" >
+        <img src="./assets/img/logoSafarity2.png"alt="" >
 
       </a>
 
@@ -19,30 +19,47 @@
     </div>
 
 
-
     <div class="barradirecciones">
-
       <div class="icon">
 
         <div class="dropdown">
-
-          <p routerLink="/explorar">Explorar</p>
+          <p routerLink="/buscador">Buscador</p>
 
           <div class="dropdown-content">
-            <a routerLink="/explorar">Eventos</a>
-            <a href="#">Organizaciones</a>
+            <a routerLink="/eventos">Eventos</a>
+            <a routerLink="/organizaciones">Organizaciones</a>
           </div>
 
         </div>
 
       </div>
-      <div class="icon">
-        <a routerLink="/login">Acceder</a>
-      </div>
-      <div class="icon">
-        <a routerLink="/registro">Registro</a>
+
+      <!-- Mostrar Registro solo si no está autenticado -->
+      <div class="icon" *ngIf="!usuarioAutenticado">
+        <div class="dropdown">
+          <p>Registro</p>
+          <div class="dropdown-content">
+            <a routerLink="/registro">Participante</a>
+            <a routerLink="/organizacion-reg1">Organización</a>
+          </div>
+        </div>
       </div>
 
+      <!-- Mostrar Acceder solo si no está autenticado -->
+      <div class="icon" *ngIf="!usuarioAutenticado">
+        <p routerLink="/login">Acceder</p>
+      </div>
+
+      <!-- Mostrar Bienvenido y Logout solo si está autenticado -->
+      <div *ngIf="usuarioAutenticado">
+        <div>
+          <p>Bienvenido {{ usuarioAlias }}</p>
+          <button (click)="logout()">Logout</button>
+
+        </div>
+
+
+      </div>
     </div>
 
   </div>

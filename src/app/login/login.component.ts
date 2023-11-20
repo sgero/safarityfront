@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Usuario} from "../models/Usuario";
 import {GeneralService} from "../services/general.service";
-import{Rol} from "../models/Rol";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   usuario = { alias: '', password: '' };
   errorMensaje?: string;
+  userRole: string = 'rol';
+  visibleNavItems: any[] = [];
+
+
   mostrarContrasena(){
 
     var eye = document.getElementById("eye")
@@ -32,39 +35,63 @@ export class LoginComponent {
 
 
 
-
   constructor(private service:GeneralService, public router: Router) {
   }
 
+  ngOnInit() {
+    // Llama al método para construir la barra de navegación
+    this.buildNavbar();
+  }
+
   login() {
-    this.service.login(this.usuario).subscribe((data: any) => {
+    this.service.login(this.usuario).subscribe(data => {
       // Manejar la respuesta del servicio
       console.log(data);
 
       // Realizar acciones adicionales según la respuesta del servidor
-      if (data.token && data.rol) {
-        // El inicio de sesión fue exitoso, puedes almacenar el token y el rol en localStorage
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('role', data.rol.toString()); // Convierte el int a cadena
+      if (data.token && data.info !== undefined && data.rol !== undefined) {
+        // El inicio de sesión fue exitoso, puedes almacenar el token en localStorage o en una cookie
+        localStorage.setItem('token', data.token);// El inicio de sesión fue exitoso, almacena el token y el rol
+        localStorage.setItem('info', data.info); // Almacena la información del usuario
+        localStorage.setItem('rol', data.rol.toString()); // Almacena el rol del usuario
 
-        // Redirigir al usuario según su rol
-        if (data.rol === 0) {
-          this.router.navigate(['/inicio']);
-        } else if (data.rol === 1) {
-          this.router.navigate(['/inicio']);
-        } else if (data.rol === 2) {
-          // Manejar otros roles o redirigir a una ruta por defecto
-          this.router.navigate(['/inicio']);
-        }
+        this.userRole = data.rol.toString();
+        // Redirigir al usuario
+        this.router.navigate(['/inicio']);
       } else {
         // El inicio de sesión no fue exitoso, manejar según sea necesario
         this.errorMensaje = data.info;
-        alert(this.errorMensaje);
+        alert(this.errorMensaje = data.info)
       }
     });
   }
 
+  // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
+  shouldShowNavItem(nav: any): boolean {
+    switch (nav.role) {
+      case 'ADMIN':
+        return this.userRole === 'ADMIN';
+      case 'PARTICIPANTE':
+        return this.userRole === 'PARTICIPANTE';
+      case 'ORGANIZACION':
+        return this.userRole === 'ORGANIZACION';
+      default:
+        return true; // Mostrar por defecto si no se especifica un rol
+    }
+  }
+  // Lógica para construir la barra de navegación
+  buildNavbar() {
+    const navItems = [
+      // ... otros elementos de menú ...
+      { label: 'Explorar', route: '/explorar', role: 'PARTICIPANTE' },
+      { label: 'Registro', route: '/registro', role: 'ADMIN' },
+      // ... otros elementos de menú ...
+    ];
 
+
+    // Filtra los elementos de menú según el rol del usuario
+    this.visibleNavItems = navItems.filter(nav => this.shouldShowNavItem(nav));
+  }
 
 
   checkForm(){
@@ -78,31 +105,15 @@ export class LoginComponent {
       return false;
     }
 
-    var re = /^[A-Za-z][A-Za-z0-9]*$/;
-    if(!re.test(usuario)) {
-      alert(usuario + " no es válido, debe tener una longitud mínima de 8 carácteres y ser alfanumerico");
+    if(clave == "") {
+      alert("Error: debe introducir una contraseña!");
       this.router.navigate(['/login']);
-      document.getElementById("usuario")!.focus()
+      document.getElementById("pwd")!.focus();
       return false;
     }
+    return true;
 
-    function checkPassword(valor: any){
-      var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-      if(myregex.test(valor)){
-        return true;
-      }else{
-        alert(valor + " no es valido, debe incluir al menos 8 dígitos, mayúscula y números.");
-        return false;
-      }
-    }
-
-    if(clave != "") {
-      if(!checkPassword(clave)) {
-        this.router.navigate(['/login']);
-        document.getElementById("pwd")!.focus();
-        return false;
-      }
-    }else {
+    if(clave == "") {
       alert("Error: debe introducir una contraseña!");
       this.router.navigate(['/login']);
       document.getElementById("pwd")!.focus();
@@ -110,4 +121,11 @@ export class LoginComponent {
     }
     return true;
   }
+
+  crearusuario() {
+
+  }
+
+
+
 }

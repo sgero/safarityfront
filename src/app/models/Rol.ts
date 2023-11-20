@@ -1,5 +1,7 @@
+// roles.enum.ts
 export enum Rol {
-  ADMIN = 'ADMIN',
-  ORGANIZACION = 'ORGANIZACION',
-  PARTICIPANTE = 'PARTICIPANTE'
+  Admin = 'ADMIN',
+  Participante = 'PARTICIPANTE',
+  Organizacion = 'ORGANIZACION'
+  // Agrega otros roles según tus necesidades
 }

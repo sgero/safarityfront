@@ -2,10 +2,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+
 
 /**
  * Material Modules
@@ -31,6 +34,14 @@ import { ExplorarComponent } from './explorar/explorar.component';
 import {SidenavComponent} from "./sidenav/sidenav.component";
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import { DetallesEventoComponent } from './detalles-evento/detalles-evento.component';
+import { BuscadorEventoComponent } from './buscador-evento/buscador-evento.component';
+import {OrganizacionReg2Component} from "./organizacion-reg2/organizacion-reg2.component";
+import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
+import { OrganizacionReg1Component } from './organizacion-reg1/organizacion-reg1.component';
+import { EventosComponent } from './eventos/eventos.component';
+import { OrganizacionesComponent } from './organizaciones/organizaciones.component';
+import { BuscadorComponent } from './buscador/buscador.component';
+
 
 
 
@@ -42,15 +53,18 @@ import { DetallesEventoComponent } from './detalles-evento/detalles-evento.compo
     FooterComponent,
     RegistroComponent,
     ExplorarComponent,
-    RegistroComponent,
-    IndexComponent,
-    FooterComponent,
     LoginComponent,
     Registro2Component,
-    LoginComponent,
     SidenavComponent,
+    OrganizacionReg2Component,
+    BuscadoreventoComponent,
     MiperfilComponent,
     DetallesEventoComponent,
+    BuscadorEventoComponent,
+    OrganizacionReg1Component,
+    EventosComponent,
+    OrganizacionesComponent,
+    BuscadorComponent
 
   ],
   imports: [
@@ -64,7 +78,12 @@ import { DetallesEventoComponent } from './detalles-evento/detalles-evento.compo
     MatButtonModule,
     MatListModule,
     MatSidenavModule,
-    MaterialModule
+    ReactiveFormsModule,
+    MaterialModule,
+    RouterModule.forRoot([ // Configura tus rutas aquí
+      { path: 'login', component: LoginComponent },
+      // Otras rutas
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

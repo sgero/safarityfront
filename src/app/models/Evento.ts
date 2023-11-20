@@ -1,3 +1,5 @@
+import {Organizacion} from "./Organizacion";
+
 export class Evento {
   id?: bigint;
   nombre?: string;
@@ -9,9 +11,12 @@ export class Evento {
   fecha_venta?: string;
   fecha_inicio?: string;
   fecha_fin?: string;
+  entradasDisponibles?: number;
+  entradasVendidas?: number;
   tipoEvento?: string;
   tipoPago?: string;
-  id_organizacion?: bigint;
+  totalRecaudado?: number;
+  organizacionDTO?: Organizacion = new Organizacion();
   activo?: boolean;
 
 
@@ -34,24 +39,24 @@ export class Evento {
   // }
 
   //imprime por pantalla los eventos que traigo desde mi backend
-  toString(): string {
-
-    return `Evento[id=${this.id},
-     nombre=${this.nombre},
-      direccion=${this.direccion},
-        descripcion=${this.descripcion},
-          imagen=${this.imagen},
-          aforo=${this.aforo},
-            fecha_lanzamiento=${this.fecha_lanzamiento},
-            fecha_venta=${this.fecha_venta},
-              fecha_inicio=${this.fecha_inicio},
-              fecha_fin=${this.fecha_fin},
-                tipoEvento=${this.tipoEvento},
-                tipoPago=${this.tipoPago},
-                  id_organizacion=${this.id_organizacion},
-                  activo=${this.activo}]`;
-
-  }
+  // toString(): string {
+  //
+  //   return `Evento[id=${this.id},
+  //    nombre=${this.nombre},
+  //     direccion=${this.direccion},
+  //       descripcion=${this.descripcion},
+  //         imagen=${this.imagen},
+  //         aforo=${this.aforo},
+  //           fecha_lanzamiento=${this.fecha_lanzamiento},
+  //           fecha_venta=${this.fecha_venta},
+  //             fecha_inicio=${this.fecha_inicio},
+  //             fecha_fin=${this.fecha_fin},
+  //               tipoEvento=${this.tipoEvento},
+  //               tipoPago=${this.tipoPago},
+  //                 id_organizacion=${this.id_organizacion},
+  //                 activo=${this.activo}]`;
+  //
+  // }
 
 
 

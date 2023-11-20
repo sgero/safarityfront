@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { GeneralService} from "../services/general.service";
+import { Component } from '@angular/core';
 import {Evento} from "../models/Evento";
+import {ActivatedRoute} from "@angular/router";
+import {GeneralService} from "../services/general.service";
 
 @Component({
   selector: 'app-detalles-evento',
@@ -12,31 +12,26 @@ export class DetallesEventoComponent {
 
   evento: any;
 
-  constructor(private route: ActivatedRoute, private eventoService: GeneralService) {
-    // if (this.route.snapshot.paramMap.get('id') !== null){
-    //   this.eventoService.getEventoPorId(+this.route.snapshot.paramMap.get('id')).subscribe(data => {
-    //   this.evento = data;
-    // });}
-  }
-
-
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private eventoService:GeneralService
+  ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      const eventId = params['id'];
-      if (eventId) {
-        this.eventoService.getEventoPorId(+eventId).subscribe(
-          (evento: Evento) => {
-            this.evento = evento;
+    this.activatedRoute.params.subscribe(params => {
+      const eventoId = +params['id']; // Convierte el parámetro de la URL a número
+
+      if (eventoId) {
+        this.eventoService.obtenerEventoPorId(eventoId).subscribe(
+          data => {
+            this.evento = data;
           },
           error => {
             console.error('Error al obtener el evento:', error);
           }
         );
-      } else {
-        console.error('ID de evento no válido.');
       }
     });
   }
-}
 
+}
