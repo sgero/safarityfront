@@ -59,12 +59,10 @@
       <!--    </div>-->
 
       <div *ngFor="let evento of eventos" (mouseover)="pausarActualizacion()" (mouseout)="reanudarActualizacion()" class="miniatura">
-      <!-- <div *ngFor="let evento of eventos" class="miniatura">-->
-
 
         <span>{{evento.nombre}}</span>
         <br>
-        <a [routerLink]="['/eventoDetalles', evento.id]"> <!-- Añadido para redireccionar -->
+        <a [routerLink]="['/detallesEvento', evento.id]">
           <img [src]="evento.imagen" alt="{{evento.nombre}}">
         </a>
         <br>

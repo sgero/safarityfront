@@ -5,6 +5,8 @@ import {RegistroComponent} from "./registro/registro.component";
 import {LoginComponent} from "./login/login.component";
 import {Registro2Component} from "./registro2/registro2.component";
 import {ExplorarComponent} from "./explorar/explorar.component";
+import {DetallesEventoComponent} from "./detalles-evento/detalles-evento.component";
+import {BuscadorEventoComponent} from "./buscador-evento/buscador-evento.component";
 import {OrganizacionReg2Component} from "./organizacion-reg2/organizacion-reg2.component";
 import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
 import {OrganizacionReg1Component} from "./organizacion-reg1/organizacion-reg1.component";
@@ -22,8 +24,8 @@ const routes: Routes = [
   {path:'explorar', component : ExplorarComponent},
   { path: 'organizacion-reg1', component: OrganizacionReg1Component },
   { path: 'organizacion-reg2', component: OrganizacionReg2Component },
-  { path: 'buscadorevento', component: BuscadoreventoComponent },
-  { path: 'eventoDetalles/:id', component: BuscadoreventoComponent },
+  { path: 'detallesEvento/:id', component: DetallesEventoComponent },
+  { path: 'buscadorEvento', component: BuscadorEventoComponent }
 ];
 
 
