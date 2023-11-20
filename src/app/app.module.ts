@@ -34,6 +34,8 @@ import { ExplorarComponent } from './explorar/explorar.component';
 import {SidenavComponent} from "./sidenav/sidenav.component";
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.component";
+import { DetallesEventoComponent } from './detalles-evento/detalles-evento.component';
+import { BuscadorEventoComponent } from './buscador-evento/buscador-evento.component';
 
 
 
@@ -55,6 +57,8 @@ import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.comp
     SidenavComponent,
     OrganizacionRegComponent,
     MiperfilComponent,
+    DetallesEventoComponent,
+    BuscadorEventoComponent,
 
   ],
   imports: [

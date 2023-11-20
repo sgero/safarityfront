@@ -5,6 +5,7 @@ import { Organizacion } from "../models/Organizacion";
 import { Evento } from "../models/Evento";
 import {Usuario} from "../models/Usuario";
 import {Auth} from "../models/Auth";
+import {Busqueda} from "../models/Busqueda";
 
 @Injectable({
   providedIn: 'root'
@@ -76,4 +77,13 @@ export class GeneralService {
   getEvento(): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiUrl}/evento/listar`);
   }
+
+  obtenerEventoPorId(eventoId: number): Observable<Evento> {
+    return this.http.post<Evento>(`${this.apiUrl}/evento/mostrarCalculado`, { id: eventoId });
+  }
+
+  getBuscar(data: Busqueda) {
+    return this.http.post<Evento[]>(`${this.apiUrl}/evento/buscar`, data);
+  }
+
 }

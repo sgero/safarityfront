@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Eventos</title>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" class="favicon">
+  <link rel="stylesheet" href="detalles-evento.component.css">
+
+</head>
+<body>
+
+<div class="body">
+
+  <div *ngIf="evento" class="miniatura">
+    <span>{{evento.nombre}}</span>
+    <br>
+    <a>
+      <img [src]="evento.imagen" alt="{{evento.nombre}}">
+    </a>
+    <br>
+  </div>
+
+</div>
+
+</body>
+</html>
