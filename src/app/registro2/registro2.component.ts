@@ -56,7 +56,9 @@ export class Registro2Component{
 
   private formatDate(dateString: string): string {
     const date = new Date(dateString);
-    const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    const day = date.getDate().toString().padStart(2, '0'); // Asegura que siempre haya dos dígitos en el día
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Asegura que siempre haya dos dígitos en el mes
+    const formattedDate = `${day}/${month}/${date.getFullYear()}`;
     return formattedDate;
   }
 
