@@ -102,3 +102,9 @@ p {
   color: #666;
   margin-top: 5px;
 }
+
+.icono{
+
+  flex-wrap: wrap;
+
+}

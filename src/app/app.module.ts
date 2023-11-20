@@ -38,6 +38,9 @@ import { BuscadorEventoComponent } from './buscador-evento/buscador-evento.compo
 import {OrganizacionReg2Component} from "./organizacion-reg2/organizacion-reg2.component";
 import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
 import { OrganizacionReg1Component } from './organizacion-reg1/organizacion-reg1.component';
+import { EventosComponent } from './eventos/eventos.component';
+import { OrganizacionesComponent } from './organizaciones/organizaciones.component';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 
 
@@ -58,7 +61,10 @@ import { OrganizacionReg1Component } from './organizacion-reg1/organizacion-reg1
     MiperfilComponent,
     DetallesEventoComponent,
     BuscadorEventoComponent,
-    OrganizacionReg1Component
+    OrganizacionReg1Component,
+    EventosComponent,
+    OrganizacionesComponent,
+    BuscadorComponent
 
   ],
   imports: [

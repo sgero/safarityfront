@@ -13,10 +13,14 @@
 <div class="columna">
 
   <form (ngSubmit)="buscar(); $event.preventDefault()">
-    <div>
+
+    <div class="form-evento">
+
       <div>
+
         <label for="busqueda">Nombre:</label>
         <input type="text" id="busqueda" name="busqueda" [(ngModel)]="busqueda.busqueda" required>
+
         <label for="tipoevento">Tipo de Evento:</label>
         <select id="tipoEvento" name="tipoEvento" [(ngModel)]="busqueda.tipoEvento" required>
           <option value="CARRERA">CARRERA</option>
@@ -27,16 +31,16 @@
           <option value="ESPECTACULO">ESPECTACULO</option>
           <option value="OTRO">OTRO</option>
         </select>
-      </div>
-      <div>
+
         <label for="tipopago">Tipo de Pago:</label>
         <select id="tipoPago" name="tipoPago" [(ngModel)]="busqueda.tipoPago" required>
           <option value="GRATIS">GRATIS</option>
           <option value="DONATIVO">DONATIVO</option>
           <option value="PRECIO_FIJO">PRECIO FIJO</option>
         </select>
+
         <label for="meses">Meses:</label>
-        <select id="meses" name="meses"  [(ngModel)]="busqueda.fecha" required>
+        <select id="meses" name="meses" [(ngModel)]="busqueda.fecha" required>
           <option value="1">ENERO</option>
           <option value="2">FEBRERO</option>
           <option value="3">MARZO</option>
@@ -50,29 +54,40 @@
           <option value="11">NOVIEMBRE</option>
           <option value="12">DICIEMBRE</option>
         </select>
+
       </div>
+
     </div>
-    <div>
-      <button type="submit">Enviar</button>
+
+    <div class="boton">
+
+      <button type="submit">Buscar</button>
+
     </div>
+
   </form>
 
   <div class="iconos">
 
 
-    <div class="icono" >
+    <div class="icono">
 
       <div *ngFor="let evento of eventos" class="miniatura">
 
         <span>{{evento.nombre}}</span>
+
         <br>
+
         <a [routerLink]="['/detallesEvento', evento.id]">
           <img [src]="evento.imagen" alt="{{evento.nombre}}">
         </a>
+
         <br>
+
       </div>
 
     </div>
+
   </div>
 
 </div>

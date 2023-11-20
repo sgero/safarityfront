@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-/*html, body { height: 100%; }*/
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100% ;
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+}
 
 .mat-drawer-content {
 
@@ -11,9 +19,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .favicon {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
+
+  border-radius: 20px;
 
 }
