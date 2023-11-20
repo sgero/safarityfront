@@ -87,7 +87,7 @@ export class GeneralService {
 
 
   logout(token: String){
-    return this.http.post<void>(`${this.apiUrl}/auth/logout`, {token: token}).pipe(
+    return this.http.post<void>(`${this.apiUrl}/usuario/logout`, {token: token}).pipe(
       catchError(error => {
         console.error('Error en la solicitud de logout:', error);
         throw error; // Puedes manejar el error según tus necesidades
