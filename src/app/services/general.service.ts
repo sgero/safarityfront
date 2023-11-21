@@ -130,5 +130,8 @@ export class GeneralService {
     return this.http.post<Evento>(`${this.apiUrl}/evento/mostrarCalculado`, { id: eventoId });
   }
 
+  buscarOrganizacion(data: Busqueda) {
+  return this.http.post<Organizacion[]>(`${this.apiUrl}/organizacion/buscar`, data);
+}
 
 }

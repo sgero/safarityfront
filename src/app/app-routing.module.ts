@@ -13,6 +13,7 @@ import {OrganizacionReg1Component} from "./organizacion-reg1/organizacion-reg1.c
 import {EventosComponent} from "./eventos/eventos.component";
 import {OrganizacionesComponent} from "./organizaciones/organizaciones.component";
 import {BuscadorComponent} from "./buscador/buscador.component";
+import {BuscadororganizacionComponent} from "./buscadororganizacion/buscadororganizacion.component";
 
 // Rutas de navegación
 
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'buscadorEvento', component: BuscadorEventoComponent },
   { path: 'eventos', component: EventosComponent },
   { path: 'organizaciones', component: OrganizacionesComponent },
-  { path: 'buscador', component: BuscadorComponent }
+  { path: 'buscador', component: BuscadorComponent },
+  { path: 'buscadororg', component: BuscadororganizacionComponent }
 ];
 
 

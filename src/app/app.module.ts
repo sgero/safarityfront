@@ -41,6 +41,7 @@ import { OrganizacionReg1Component } from './organizacion-reg1/organizacion-reg1
 import { EventosComponent } from './eventos/eventos.component';
 import { OrganizacionesComponent } from './organizaciones/organizaciones.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { BuscadororganizacionComponent } from './buscadororganizacion/buscadororganizacion.component';
 
 
 
@@ -64,7 +65,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
     OrganizacionReg1Component,
     EventosComponent,
     OrganizacionesComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    BuscadororganizacionComponent
 
   ],
   imports: [
