@@ -23,6 +23,7 @@
 
         <label for="tipoevento">Tipo de Evento:</label>
         <select id="tipoEvento" name="tipoEvento" [(ngModel)]="busqueda.tipoEvento" required>
+          <option value="">Seleccionar</option>
           <option value="CARRERA">CARRERA</option>
           <option value="SUBASTA">SUBASTA</option>
           <option value="MERCADILLO">MERCADILLO</option>
@@ -34,6 +35,7 @@
 
         <label for="tipopago">Tipo de Pago:</label>
         <select id="tipoPago" name="tipoPago" [(ngModel)]="busqueda.tipoPago" required>
+          <option value="">Seleccionar</option>
           <option value="GRATIS">GRATIS</option>
           <option value="DONATIVO">DONATIVO</option>
           <option value="PRECIO_FIJO">PRECIO FIJO</option>
@@ -41,6 +43,8 @@
 
         <label for="meses">Meses:</label>
         <select id="meses" name="meses" [(ngModel)]="busqueda.fecha" required>
+          <option value="0">Seleccionar</option>
+<!--          <option [ngValue]="null">Seleccionar</option>-->
           <option value="1">ENERO</option>
           <option value="2">FEBRERO</option>
           <option value="3">MARZO</option>
