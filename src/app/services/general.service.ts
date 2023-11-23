@@ -81,6 +81,7 @@ export class GeneralService {
     return this.http.get<Organizacion[]>(`${this.apiUrl}/organizacion/listar`);
   }
 
+  //OBSERVABLE ES PARA PETICIONES ASINCRONAS (se muestra a su tiempo sin esperar todos los datos del servidor)
   getEvento(): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiUrl}/evento/listar`);
   }
