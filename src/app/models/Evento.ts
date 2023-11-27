@@ -22,6 +22,7 @@ export class Evento {
   activo?: boolean;
 
 
+
   // constructor(id: bigint, nombre: string, direccion: string, descripcion: string, imagen: string, aforo: number, fecha_lanzamiento: string, fecha_venta: string, fecha_inicio: string, fecha_fin: string, tipoEvento: string, tipoPago: string, id_organizacion: bigint, activo: boolean) {
   //   this.id = id;
   //   this.nombre = nombre;
