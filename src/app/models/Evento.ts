@@ -6,6 +6,7 @@ export class Evento {
   direccion?: string;
   descripcion?: string;
   imagen?: string;
+  precio?: number;
   aforo?: number;
   fecha_lanzamiento?: string;
   fecha_venta?: string;
@@ -16,6 +17,7 @@ export class Evento {
   tipoEvento?: string;
   tipoPago?: string;
   totalRecaudado?: number;
+  organizacion?: string | null;
   organizacionDTO?: Organizacion = new Organizacion();
   activo?: boolean;
 

@@ -42,6 +42,8 @@ import { EventosComponent } from './eventos/eventos.component';
 import { OrganizacionesComponent } from './organizaciones/organizaciones.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { BuscadororganizacionComponent } from './buscadororganizacion/buscadororganizacion.component';
+import { CreareventoComponent } from './crearevento/crearevento.component';
+import { CrearticketComponent } from './crearticket/crearticket.component';
 
 
 
@@ -66,7 +68,9 @@ import { BuscadororganizacionComponent } from './buscadororganizacion/buscadoror
     EventosComponent,
     OrganizacionesComponent,
     BuscadorComponent,
-    BuscadororganizacionComponent
+    BuscadororganizacionComponent,
+    CreareventoComponent,
+    CrearticketComponent
 
   ],
   imports: [
