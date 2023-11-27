@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GeneralService} from "../services/general.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {interval} from "rxjs";
 
@@ -15,7 +15,7 @@ export class IndexComponent implements OnInit {
   eventos: any = [];
   mouseSobreEvento: boolean = false;
 
-  constructor(private service: GeneralService, private router: Router) {
+  constructor(private service: GeneralService, private router: Router, private route: ActivatedRoute,) {
   }
 
   //Me suscribo al evento y lo traigo para mostrarlo
@@ -52,6 +52,11 @@ export class IndexComponent implements OnInit {
     this.eventos = eventosAleatorios;
   }
 
+  haciaevento(){
+
+
+  }
+
   obtener5EventosAleatorios(): any[] {
     const eventosAleatorios = this.eventos.sort(() => Math.random() - 0.5).slice(0, 5);
     return eventosAleatorios;
@@ -65,6 +70,7 @@ export class IndexComponent implements OnInit {
   reanudarActualizacion() {
     this.mouseSobreEvento = false;
   }
+
 
 
 }

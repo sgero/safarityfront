@@ -145,6 +145,12 @@ input{
   transition: 0.3s;
 }
 
+.dropdown p{
+
+  cursor: pointer;
+
+}
+
 .dropdown-content a:hover {
   color: #262626;
   background-color: #C5AECF;
