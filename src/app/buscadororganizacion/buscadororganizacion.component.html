@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" href="buscadororganizacion.component.css">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial">
+
+</head>
+
+
+<body>
+
+
+
+
+<div class="columna">
+
+  <form (ngSubmit)="buscar()">
+    <div>
+      <div>
+        <label for="busqueda">Nombre:</label>
+        <input type="text" id="busqueda" name="busqueda" [(ngModel)]="busqueda.busqueda" required>
+      </div>
+    </div>
+    <div>
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+
+  <div class="seccion">
+    <h2>ORGANIZACIONES:</h2>
+    <div *ngFor="let o of organizaciones" class="tarjeta">
+      <img src="{{o.logo}}">
+      <h3>{{o.nombre}}</h3>
+      <p>{{o.cif}}</p>
+    </div>
+  </div>
+
+
+</div>
+</body>
+
