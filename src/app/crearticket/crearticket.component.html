@@ -1,36 +1,34 @@
 <body>
 
-<form>
+<form (ngSubmit)="crear()">
   <h2>Ticket</h2>
   <label for="dinero_aportado">Dinero Aportado:</label>
-  <input type="number" id="dinero_aportado" name="dinero_aportado">
-
-  <label for="fecha_compra">Fecha de Compra:</label>
-  <input type="date" id="fecha_compra" name="fecha_compra">
+  <input type="number" id="dinero_aportado" name="dinero_aportado" [(ngModel)]="ticket.dineroAportado">
 
   <h2>Asistente</h2>
   <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre">
+  <input type="text" id="nombre" name="nombre" [(ngModel)]="ticket.asistenteDTO.nombre">
 
   <label for="apellidos">Apellidos:</label>
-  <input type="text" id="apellidos" name="apellidos">
+  <input type="text" id="apellidos" name="apellidos" [(ngModel)]="ticket.asistenteDTO.apellidos">
 
   <label for="direccion">Dirección:</label>
-  <input type="text" id="direccion" name="direccion">
+  <input type="text" id="direccion" name="direccion" [(ngModel)]="ticket.asistenteDTO.direccion">
 
   <label for="email">Email:</label>
-  <input type="email" id="email" name="email">
+  <input type="email" id="email" name="email" [(ngModel)]="ticket.asistenteDTO.email">
 
   <label for="dni">DNI:</label>
-  <input type="text" id="dni" name="dni">
+  <input type="text" id="dni" name="dni" [(ngModel)]="ticket.asistenteDTO.dni">
 
   <label for="telefono">Teléfono:</label>
-  <input type="tel" id="telefono" name="telefono">
+  <input type="tel" id="telefono" name="telefono" [(ngModel)]="ticket.asistenteDTO.telefono">
 
   <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-  <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+  <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" [(ngModel)]="ticket.asistenteDTO.fecha_nacimiento">
 
   <button type="submit">Enviar</button>
+
 </form>
 
 </body>

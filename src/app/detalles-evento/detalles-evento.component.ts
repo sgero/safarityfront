@@ -21,6 +21,8 @@ export class DetallesEventoComponent {
     this.activatedRoute.params.subscribe(params => {
       const eventoId = +params['id']; // Convierte el parámetro de la URL a número
 
+      localStorage.setItem('id_evento', String(eventoId))
+
       if (eventoId) {
         this.eventoService.obtenerEventoPorId(eventoId).subscribe(
           data => {

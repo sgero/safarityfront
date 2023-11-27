@@ -8,6 +8,7 @@ import {Usuario} from "../models/Usuario";
 import {Auth} from "../models/Auth";
 import {Participante} from "../models/Participante";
 import {Busqueda} from "../models/Busqueda";
+import {Ticket} from "../models/Ticket";
 
 @Injectable({
   providedIn: 'root'
@@ -137,4 +138,9 @@ export class GeneralService {
   crearEvento(data: Evento){
     return this.http.post<Evento>(`${this.apiUrl}/evento/crear`, data);
   }
+
+  crearTicket(data: Ticket){
+    return this.http.post<Ticket>(`${this.apiUrl}/ticket/crear`, data);
+  }
+
 }
