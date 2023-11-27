@@ -14,7 +14,7 @@ import {Busqueda} from "../models/Busqueda";
 })
 export class GeneralService {
   private apiUrl = 'http://localhost:8080';
-
+  rol : string | null = ''
   // Implementa un Subject para notificar cambios de rol
   private roleChangeSubject = new Subject<void>();
 
@@ -93,6 +93,15 @@ export class GeneralService {
         throw error; // Puedes manejar el error según tus necesidades
       })
     );
+  }
+
+  getlocal():string | null {
+
+    if (!this.rol){
+      this.rol= localStorage.getItem('rol')
+    }
+    return this.rol;
+
   }
 
 

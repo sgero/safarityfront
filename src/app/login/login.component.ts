@@ -57,7 +57,8 @@ export class LoginComponent implements OnInit {
 
         this.userRole = data.rol.toString();
         // Redirigir al usuario
-        this.router.navigate(['/inicio']);
+        this.router.navigate(['/inicio']).then(()=>window.location.href='/inicio');
+
       } else {
         // El inicio de sesión no fue exitoso, manejar según sea necesario
         this.errorMensaje = data.info;
