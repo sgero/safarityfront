@@ -60,7 +60,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
-        { name: 'Crear Evento', route: 'crearEvento', icon: 'perm_contact_calendar' },
+        { name: 'Crear Evento', route: 'crearevento', icon: 'perm_contact_calendar' },
         { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar' }
       ];
     } else if (localStorage.getItem('rol') === 'PARTICIPANTE') {
