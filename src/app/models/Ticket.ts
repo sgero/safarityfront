@@ -4,8 +4,8 @@ export class Ticket {
   id?: bigint;
   dineroAportado?: number;
   fecha?: string;
-  participanteDTO?: bigint;
-  eventoDTO?: bigint;
+  participanteDTO?: number;
+  eventoDTO?: number;
   asistenteDTO?: Asistente = new Asistente();
   activo?: boolean;
 

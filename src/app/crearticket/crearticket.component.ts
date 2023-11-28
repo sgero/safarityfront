@@ -12,8 +12,8 @@ export class CrearticketComponent {
   ticket= {
     dineroAportado: +'',
     fecha:'',
-    participanteDTO: BigInt(''),
-    eventoDTO: BigInt(''),
+    participanteDTO: +'',
+    eventoDTO: +'',
     asistenteDTO:{
       nombre:'',
       apellidos:'',
@@ -32,8 +32,8 @@ export class CrearticketComponent {
 
   crear(){
 
-    this.ticket.eventoDTO = BigInt(localStorage.getItem('id_evento') || '');
-    this.ticket.participanteDTO = BigInt(1);
+    this.ticket.eventoDTO = Number((localStorage.getItem('id_evento') || ''));
+    this.ticket.participanteDTO = 1;
 
     this.service.crearTicket(this.ticket).subscribe(data => {console.log(data);
       this.ticketmostrar = data;

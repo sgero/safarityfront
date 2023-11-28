@@ -1,34 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Comprar Ticket | SAFARITY </title>
+  <link rel="stylesheet" type="text/css" href="crearticket.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
+<div class="contenedor">
 
-<form (ngSubmit)="crear()">
-  <h2>Ticket</h2>
-  <label for="dinero_aportado">Dinero Aportado:</label>
-  <input type="number" id="dinero_aportado" name="dinero_aportado" [(ngModel)]="ticket.dineroAportado">
+  <div class="principal">
 
-  <h2>Asistente</h2>
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" [(ngModel)]="ticket.asistenteDTO.nombre">
+    <div class="alante">
+      <img src="assets/img/safacrowd2.png" alt="">
+      <div class="texto">
+        <span class="texto1">Hazte con <br> tu ticket</span>
+      </div>
+    </div>
 
-  <label for="apellidos">Apellidos:</label>
-  <input type="text" id="apellidos" name="apellidos" [(ngModel)]="ticket.asistenteDTO.apellidos">
+  </div>
 
-  <label for="direccion">Dirección:</label>
-  <input type="text" id="direccion" name="direccion" [(ngModel)]="ticket.asistenteDTO.direccion">
+  <div class="forms">
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" [(ngModel)]="ticket.asistenteDTO.email">
+    <div class="form-content">
 
-  <label for="dni">DNI:</label>
-  <input type="text" id="dni" name="dni" [(ngModel)]="ticket.asistenteDTO.dni">
+      <div class="signup-form">
 
-  <label for="telefono">Teléfono:</label>
-  <input type="tel" id="telefono" name="telefono" [(ngModel)]="ticket.asistenteDTO.telefono">
+        <div class="titulo">Comprar Ticket</div>
 
-  <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-  <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" [(ngModel)]="ticket.asistenteDTO.fecha_nacimiento">
+        <br>
 
-  <button type="submit">Enviar</button>
+        <form (ngSubmit)="crear()">
 
-</form>
+          <h2>Ticket</h2>
+
+          <div class="input-boxes">
+
+          <div class="input-box">
+            <i class="fas fa-money"></i>
+            <input type="number" placeholder="Dinero Aportado" name="dinero_aportado" id="dinero_aportado" [(ngModel)]="ticket.dineroAportado" required>
+          </div>
+
+          </div>
+
+          <br>
+
+          <h2>Asistente</h2>
+
+          <div class="input-boxes">
+
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Nombre" name="nombre" id="nombre" [(ngModel)]="ticket.asistenteDTO.nombre" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" [(ngModel)]="ticket.asistenteDTO.apellidos" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-map-marker"></i>
+              <input type="text" placeholder="Dirección" name="direccion" id="direccion" [(ngModel)]="ticket.asistenteDTO.direccion" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" name="email" id="email" [(ngModel)]="ticket.asistenteDTO.email" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-id-card"></i>
+              <input type="text" placeholder="dni" name="dni" id="dni" [(ngModel)]="ticket.asistenteDTO.dni" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-phone"></i>
+              <input type="tel" placeholder="Telefono" name="telefono" id="telefono" [(ngModel)]="ticket.asistenteDTO.telefono" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-calendar"></i>
+              <input type="date" placeholder="Fecha Nacimiento" name="fecha_nacimiento" id="fecha_nacimiento" [(ngModel)]="ticket.asistenteDTO.fecha_nacimiento" required>
+            </div>
+
+            <div class="boton input-box">
+              <input type="submit" value="Comprar">
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 </body>
+</html>
