@@ -12,7 +12,7 @@ export class CabeceraComponent implements OnInit{
 
 
   usuarioAutenticado: any; // Variable para verificar si el usuario está autenticado
-  usuarioAlias: string = ''; // Variable para almacenar el alias del usuario autenticado
+  usuarioAlias: any; // Variable para almacenar el alias del usuario autenticado
   auth = {token: ''}
   rol : any
   constructor(private authService: GeneralService, public router: Router) {}
@@ -25,7 +25,7 @@ export class CabeceraComponent implements OnInit{
 
 
     this.authService.usuarioAlias$.subscribe((alias) => {
-      this.usuarioAlias = alias;
+      this.usuarioAlias = localStorage.getItem('alias');
 
 
     });
