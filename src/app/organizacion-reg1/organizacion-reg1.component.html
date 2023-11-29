@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Registrar Organizacion | SAFARITY </title>
+  <link rel="stylesheet" type="text/css" href="organizacion-reg1.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+
+
+
+<div class="contenedor">
+  <div class="container-circulos">
+    <div class="circulo paso1">
+      <a href="organizacion-reg1"> I </a>
+    </div>
+
+    <!-- Círculo Paso 2 -->
+    <div class="circulo paso2">
+      <a href="organizacion-reg2"> II </a>
+    </div>
+  </div>
+
+  <input type="checkbox" id="vuelta">
+
+  <div class="principal">
+
+    <div class="alante">
+      <img src="assets/img/safacrowd2.png" alt="">
+      <div class="texto">
+        <span class="texto1">Haz lo que <br> te apasiona</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="forms">
+
+    <div class="form-content">
+
+      <div class="signup-form">
+
+        <div class="titulo">Registrar Organizacion</div>
+
+        <form name="form1" id="form1" (ngSubmit)="guardarDatos()">
+
+          <div class="input-boxes">
+
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              <input type="text" id="username" name="username" placeholder="Usuario" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="pwd1" id="pwd1" placeholder="Contraseña" required>
+              <i class="fas fa-eye" id="eye" (mousedown)="mostrarContrasena()" (mouseup)="arriba()"></i>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="pwd2" id="pwd2" placeholder="Repetir contraseña" required>
+              <i class="fas fa-eye" id="eye2" (mousedown)="mostrarContrasena2()" (mouseup)="arriba2()"></i>
+            </div>
+
+
+
+            <div class="boton input-box">
+              <input type="submit" value="Continuar" (click)="checkForm()">
+            </div>
+
+            <div class="texto sign-up-text">¿Tienes ya una cuenta?
+              <label routerLink="/login" for="vuelta">Inicia Sesión</label>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

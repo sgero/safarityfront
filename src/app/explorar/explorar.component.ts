@@ -33,6 +33,12 @@ export class ExplorarComponent implements OnInit {
       this.eventos = data;
     })
 
+//   constructor(private  service:OrganizacionService, private router:Router) {
+//     this.service.getOrganizacion().subscribe(data=> {this.organizaciones=data;})
+// }
+
+
+
   }
 
 }

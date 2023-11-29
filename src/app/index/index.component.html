@@ -9,70 +9,69 @@
 </head>
 <body>
 
-<div class="body">
-  <div class="conten">
-    <div class="ctexto">
-      <p>
-        Hola, Bienvenido/a a nuestro portal solidario.
-        ¡Esperamos que puedas tener una magnífica experiencia en nuestro sitio web!
-        Un saludo de todo el equipo.
-      </p>
+  <div class="body">
+    <div class="conten">
+      <div class="ctexto">
+        <p>
+          Hola, Bienvenido/a a nuestro portal solidario.
+          ¡Esperamos que puedas tener una magnífica experiencia en nuestro sitio web!
+          Un saludo de todo el equipo.
+        </p>
+
+        <br>
+
+
+      </div>
+
+      <div class="imagen">
+        <img src="assets/img/cuore.jpg">
+      </div>
+    </div>
+
+    <br>
+    <div class="listeventos">
+      <img src="assets/img/caridad.png">
 
       <br>
 
+      <h1 class="levento">NUESTROS EVENTOS</h1>
 
+      <br>
     </div>
-
-    <div class="imagen">
-      <img src="assets/img/cuore.jpg">
-    </div>
-  </div>
-
-  <br>
-  <div class="listeventos">
-    <img src="assets/img/caridad.png">
-
-    <br>
-
-    <h1 class="levento">NUESTROS EVENTOS</h1>
-
-    <br>
-  </div>
-  <div class="iconos">
+    <div class="iconos">
 
 
-    <div class="icono" >
+      <div class="icono" >
 
 
-      <!--    Mostrar Eventos-->
-      <!--    <div *ngFor="let evento of eventos">-->
-      <!--      <span>{{evento.nombre}}</span>-->
-      <!--      <span>{{evento.imagen}}</span>-->
-      <!--      <span>{{evento.descripcion}}</span>-->
-      <!--    </div>-->
+        <!--    Mostrar Eventos-->
+        <!--    <div *ngFor="let evento of eventos">-->
+        <!--      <span>{{evento.nombre}}</span>-->
+        <!--      <span>{{evento.imagen}}</span>-->
+        <!--      <span>{{evento.descripcion}}</span>-->
+        <!--    </div>-->
 
-      <!--    <div *ngFor="let evento of eventos" class="miniatura">-->
-      <!--      <span>{{evento.nombre}}</span>-->
-      <!--      <br>-->
-      <!--      <img [src]="evento.imagen" alt="{{evento.nombre}}">-->
-      <!--      <br>-->
-      <!--    </div>-->
+        <!--    <div *ngFor="let evento of eventos" class="miniatura">-->
+        <!--      <span>{{evento.nombre}}</span>-->
+        <!--      <br>-->
+        <!--      <img [src]="evento.imagen" alt="{{evento.nombre}}">-->
+        <!--      <br>-->
+        <!--    </div>-->
 
-      <div *ngFor="let evento of eventos" (mouseover)="pausarActualizacion()" (mouseout)="reanudarActualizacion()" class="miniatura">
-      <!-- <div *ngFor="let evento of eventos" class="miniatura">-->
+        <div *ngFor="let evento of eventos" (mouseover)="pausarActualizacion()" (mouseout)="reanudarActualizacion()" class="miniatura">
 
+          <span>{{evento.nombre}}</span>
+          <br>
+          <a [routerLink]="['/detallesEvento', evento.id]">
+            <img [src]="evento.imagen" alt="{{evento.nombre}}">
+          </a>
+          <br>
+        </div>
 
-        <span>{{evento.nombre}}</span>
-        <br>
-        <a [routerLink]="['/eventos', evento.id]"> <!-- Añadido para redireccionar -->
-          <img [src]="evento.imagen" alt="{{evento.nombre}}">
-        </a>
-        <br>
       </div>
-
     </div>
   </div>
-</div>
 
 </body>
+
 </html>

@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial">
+
+</head>
+<body>
+
+<form (ngSubmit)="crear()">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" [(ngModel)]="evento.nombre" required>
+
+  <label for="direccion">Dirección:</label>
+  <input type="text" id="direccion" name="direccion" [(ngModel)]="evento.direccion" required>
+
+  <label for="descripcion">Descripción:</label>
+  <input type="text" id="descripcion" name="descripcion" [(ngModel)]="evento.descripcion" required>
+
+  <label for="imagen">Imagen:</label>
+  <input type="text" id="imagen" name="imagen" [(ngModel)]="evento.imagen" required>
+
+  <label for="precio">Precio:</label>
+  <input type="number" id="precio" name="precio"  [(ngModel)]="evento.precio" required>
+
+  <label for="aforo">Aforo:</label>
+  <input type="number" id="aforo" name="aforo" [(ngModel)]="evento.aforo" required>
+
+  <label for="fecha_lanzamiento">Fecha de Lanzamiento:</label>
+  <input type="date" id="fecha_lanzamiento" name="fecha_lanzamiento" [(ngModel)]="evento.fecha_lanzamiento" required>
+
+  <label for="fecha_venta">Fecha de Venta:</label>
+  <input type="date" id="fecha_venta" name="fecha_venta" [(ngModel)]="evento.fecha_venta" required>
+
+  <label for="fecha_inicio">Fecha de Inicio:</label>
+  <input type="date" id="fecha_inicio" name="fecha_inicio"  [(ngModel)]="evento.fecha_inicio" required>
+
+  <label for="fecha_fin">Fecha de Fin:</label>
+  <input type="date" id="fecha_fin" name="fecha_fin" [(ngModel)]="evento.fecha_fin" required >
+
+  <label for="tipoEvento">Tipo de Evento:</label>
+  <select id="tipoEvento" name="tipoEvento" [(ngModel)]="evento.tipoEvento" required>
+    <option value="CARRERA">Carrera</option>
+    <option value="SUBASTA">Subasta</option>
+    <option value="MERCADILLO">Mercadillo</option>
+    <option value="CONCIERTO">Concierto</option>
+    <option value="RECOGIDA">Recogida</option>
+    <option value="ESPECTACULO">Espectáculo</option>
+    <option value="OTRO">Otro</option>
+  </select>
+
+  <label for="tipoPago">Tipo de Pago:</label>
+  <select id="tipoPago" name="tipoPago" [(ngModel)]="evento.tipoPago" required>
+    <option value="GRATIS">Gratis</option>
+    <option value="DONATIVO">Donativo</option>
+    <option value="PRECIO_FIJO">Precio Fijo</option>
+  </select>
+
+  <button type="submit" (click)="formatDate()">Enviar</button>
+</form>
+
+</body>

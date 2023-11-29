@@ -124,6 +124,8 @@ input{
   display: inline-block;
   position: relative;
 }
+
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -132,25 +134,53 @@ input{
   z-index: 9;
   font-weight: lighter;
   background-color: rgba(255, 255, 255, 0.9);
+
 }
+
+
+
 .dropdown:hover .dropdown-content {
   display: block;
+
 }
+
+
 .dropdown-content a {
   display: block;
   color: #000000;
   padding: 5px;
   text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  transition: 0.0s;
+
+
 }
 
-.dropdown p:hover {
 
-  color: #9c5ee7;
-  transition: 0.2s;
+
+
+.dropdown p{
+
+  cursor: pointer;
 
 }
 
 .dropdown-content a:hover {
-  color: #FFFFFF;
-  background-color: #9c5ee7;
+  color: #b906f1;
+  background-color: #ffffff;
+  font-weight: normal;
+}
+
+.barradirecciones p {
+
+  cursor: pointer;
+
+}
+
+.barradirecciones p:hover{
+
+  /*color: #9c5ee7;*/
+  transition: 0.3s;
+  color: #b906f1;
+
 }

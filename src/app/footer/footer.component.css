@@ -8,20 +8,21 @@ body{
   padding:30px 0px;
   font-family: 'Play', sans-serif;
   text-align:center;
-  /*margin-top: 12%;*/
+  position: absolute;
+  width: 100%;
 }
 
 .footer .row{
   width:100%;
   margin:1% 0%;
   padding:0.6% 0%;
-  color:gray;
+  color: rgb(128, 128, 128);
   font-size:0.8em;
 }
 
 .footer .row a{
   text-decoration:none;
-  color:gray;
+  color: rgb(128, 128, 128);
   transition:0.5s;
 }
 
@@ -56,4 +57,12 @@ body{
   .footer .row a i{
     margin:0% 3%;
   }
+}
+
+footer{
+
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
 }

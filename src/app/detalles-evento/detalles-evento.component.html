@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Evento</title>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" class="favicon">
+  <link rel="stylesheet" href="detalles-evento.component.css">
+</head>
+<body>
+
+<div class="body">
+
+  <div *ngIf="evento" class="evento-container">
+
+    <div class="thumbnail">
+
+      <div class="event-info">
+        <h1>{{evento.nombre}}</h1>
+        <p class="address">{{evento.direccion}}</p>
+      </div>
+
+      <div class="image-container">
+        <img [src]="evento.imagen" alt="{{evento.nombre}}">
+      </div>
+
+    </div>
+
+    <div class="details-container">
+
+      <div class="detail">
+        <span class="label">Fecha de lanzamiento de entradas:</span>
+        <span class="value">{{evento.fecha_lanzamiento}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="label">Fecha fin de venta de entradas:</span>
+        <span class="value">{{evento.fecha_fin}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="label">Fecha de Inicio del evento:</span>
+        <span class="value">{{evento.fecha_inicio}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="label">Entradas vendidas:</span>
+        <span class="value">{{evento.entradasVendidas}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="label">Entradas disponibles:</span>
+        <span class="value">{{evento.entradasDisponibles}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="label">Tipo de evento:</span>
+        <span class="value">{{evento.tipoEvento}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="label">Pago:</span>
+        <span class="value">{{evento.tipoPago}}</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

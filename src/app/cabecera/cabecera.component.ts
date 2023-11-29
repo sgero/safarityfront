@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GeneralService} from "../services/general.service";
-import {Observable} from "rxjs";
-import {Auth} from "../models/Auth";
-import {getTokenAtPosition} from "@angular/compiler-cli/src/ngtsc/util/src/typescript";
 import {Router} from "@angular/router";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-cabecera',
@@ -13,22 +11,29 @@ import {Router} from "@angular/router";
 export class CabeceraComponent implements OnInit{
 
 
-  usuarioAutenticado: boolean = false; // Variable para verificar si el usuario está autenticado
-  usuarioAlias: string = ''; // Variable para almacenar el alias del usuario autenticado
+  usuarioAutenticado: any; // Variable para verificar si el usuario está autenticado
+  usuarioAlias: any; // Variable para almacenar el alias del usuario autenticado
   auth = {token: ''}
-
-
+  rol : any
   constructor(private authService: GeneralService, public router: Router) {}
 
   ngOnInit(): void {
-    this.authService.usuarioAutenticado$.subscribe((autenticado) => {
-      this.usuarioAutenticado = autenticado;
-    });
+    if (localStorage.getItem('rol')!= null){
+
+      this.usuarioAutenticado = true;
+
+
 
     this.authService.usuarioAlias$.subscribe((alias) => {
-      this.usuarioAlias = alias;
+      this.usuarioAlias = localStorage.getItem('alias');
+
+
     });
+
   }
+
+  }
+
 
   logout() {
 
@@ -38,7 +43,8 @@ export class CabeceraComponent implements OnInit{
     localStorage.removeItem('rol');
     localStorage.removeItem('info');
     //localStorage.clear();
-    this.router.navigate(['/inicio']);
+    this.usuarioAutenticado = false;
+    this.router.navigate(['/inicio']).then(()=>window.location.href='/inicio');
 
   }
 

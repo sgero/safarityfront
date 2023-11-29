@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 import { Organizacion } from "../models/Organizacion";
 import { Evento } from "../models/Evento";
+import {catchError,  throwError} from 'rxjs';
 import {Usuario} from "../models/Usuario";
 import {Auth} from "../models/Auth";
+import {Participante} from "../models/Participante";
 import {Busqueda} from "../models/Busqueda";
+import {Ticket} from "../models/Ticket";
+import {TicketDev} from "../models/TicketDev";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralService {
   private apiUrl = 'http://localhost:8080';
-
+  rol : string | null = ''
   // Implementa un Subject para notificar cambios de rol
   private roleChangeSubject = new Subject<void>();
 
@@ -22,15 +26,11 @@ export class GeneralService {
   // Lógica de autenticación y gestión de roles
   private userRole: string = 'rol';  // Valor predeterminado
 
+  auth: { token: string } = { token: '' };
+
 
   constructor(private http: HttpClient) {
   }  // Agrega http como dependencia en el constructor
-
-
-  // Método para registrar Organizacion
-  registrarOrganizacion(organizacionData: Organizacion): Observable<any> {
-    return this.http.post(`${this.apiUrl}/registro-organizacion`, organizacionData);
-  }
 
 
   setRoleAsAdmin() {
@@ -52,6 +52,11 @@ export class GeneralService {
     return this.userRole;
   }
 
+  // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
+  shouldShowNavItem(nav: any): boolean {
+    return this.userRole === nav.role;
+  }
+
   getUserAlias(): string {
     return this.usuarioAlias$.toString();
   }
@@ -70,9 +75,35 @@ export class GeneralService {
     return this.http.post<Auth>(this.apiUrl + "/auth/login", data);
   }
 
+  register(data: Participante){
+    console.log('Datos enviados al backend:', data);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<Auth>(this.apiUrl+"/auth/register", data, { headers: headers })
+  }
+
+  registerOrg(data: Organizacion){
+    console.log('Datos enviados al backend:', data);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<Auth>(this.apiUrl+"/auth/registerOrganizacion", data, { headers: headers })
+  }
+
 
   logout(token: String){
-    return this.http.post<void>(`${this.apiUrl}/auth/logout`, {token: token});
+    return this.http.post<void>(`${this.apiUrl}/usuario/logout`, {token: token}).pipe(
+      catchError(error => {
+        console.error('Error en la solicitud de logout:', error);
+        throw error; // Puedes manejar el error según tus necesidades
+      })
+    );
+  }
+
+  getlocal():string | null {
+
+    if (!this.rol){
+      this.rol= localStorage.getItem('rol')
+    }
+    return this.rol;
+
   }
 
 
@@ -107,5 +138,19 @@ export class GeneralService {
     return this.http.post<Evento[]>(`${this.apiUrl}/evento/buscar`, data);
   }
 
+  obtenerEventoPorId(eventoId: number): Observable<Evento> {
+    return this.http.post<Evento>(`${this.apiUrl}/evento/mostrarCalculado`, { id: eventoId });
+  }
 
+  buscarOrganizacion(data: Busqueda) {
+  return this.http.post<Organizacion[]>(`${this.apiUrl}/organizacion/buscar`, data);
+  }
+
+  crearEvento(data: Evento){
+    return this.http.post<Evento>(`${this.apiUrl}/evento/crear`, data);
+  }
+
+  listaTicketParticipante(data: TicketDev): Observable<Ticket[]>{
+    return this.http.post<Ticket[]>(`${this.apiUrl}/ticket/listarPTickets`, data);
+  }
 }

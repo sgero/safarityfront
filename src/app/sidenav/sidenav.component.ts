@@ -13,6 +13,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
   userRole: string = 'usuario';
   fillerNav: any[] = [];
 
+  auth: { token: string } = { token: '' };
+
   private _mobileQueryListener: () => void;
 
   constructor(
@@ -27,6 +29,13 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
   // En SidenavComponent
   ngOnInit() {
+
+    // Assuming you want to initialize auth from localStorage during component initialization
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) {
+      this.auth.token = storedToken;
+    }
+
     // Suscríbete a los cambios de rol
     this.generalService.roleChange.subscribe(() => {
       // Actualiza el rol y el menú cuando cambia el rol
@@ -51,7 +60,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
-        { name: 'Crear Evento', route: 'crearEvento', icon: 'perm_contact_calendar' },
+        { name: 'Crear Evento', route: 'crearevento', icon: 'perm_contact_calendar' },
         { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar' }
       ];
     } else if (localStorage.getItem('rol') === 'PARTICIPANTE') {
@@ -59,7 +68,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         { name: 'PANEL DE PARTICIPANTE', route: '', icon: '' },
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
-        { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
+        { name: 'Mis Tickets', route: 'listatickets', icon: 'perm_contact_calendar' },
         { name: 'Favoritos', route: 'favoritos', icon: 'perm_contact_calendar' },
         { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar' }
       ];
@@ -75,6 +84,21 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
 
 
+
+
+  // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
+  shouldShowNavItem(nav: any): boolean {
+    switch (nav.role) {
+      case 'ADMIN':
+        return localStorage.getItem("rol") === 'ADMIN';
+      case 'PARTICIPANTE':
+        return localStorage.getItem("rol") === 'PARTICIPANTE';
+      case 'ORGANIZACION':
+        return localStorage.getItem("rol") === 'ORGANIZACION';
+      default:
+        return true; // Mostrar por defecto si no se especifica un rol
+    }
+  }
 
   // Métodos para cambiar el rol cuando el usuario se loguea como admin, participante u organización
   setRoleAsAdmin() {
@@ -95,4 +119,44 @@ export class SidenavComponent implements OnInit, OnDestroy {
   }
 
   shouldRun = true;
+
+
+ // logout() {
+
+   // const token = localStorage.getItem('token') ?? '';
+
+   // if (localStorage.getItem('token') == null) {
+
+   // } else {
+
+    //  this.auth.token = token
+
+    //}
+
+    //this.generalService.logout(this.auth).subscribe(
+     // data => {
+
+      // console.log(data);
+
+    // });
+
+  //}
+
+
+  logout() {
+    const token = localStorage.getItem('token') || '';
+
+    this.generalService.logout(token).subscribe(
+      data => {
+        console.log('Logout successful', data);
+        // Additional logout logic if needed
+      },
+      error => {
+        console.error('Logout failed', error);
+      }
+    );
+  }
+
+
+
 }

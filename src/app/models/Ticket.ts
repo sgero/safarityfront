@@ -1,11 +1,12 @@
+import {Asistente} from "./Asistente";
 
 export class Ticket {
   id?: bigint;
-  es_disponible?: boolean;
   dinero_aportado?: number;
   fecha_compra?: string;
   id_participante?: bigint;
   id_evento?: bigint;
+  asistenteDTO?: Asistente = new Asistente();
   activo?: boolean;
 
 

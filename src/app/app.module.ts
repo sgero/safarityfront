@@ -33,8 +33,18 @@ import { Registro2Component } from './registro2/registro2.component';
 import { ExplorarComponent } from './explorar/explorar.component';
 import {SidenavComponent} from "./sidenav/sidenav.component";
 import { MiperfilComponent } from './miperfil/miperfil.component';
-import {OrganizacionRegComponent} from "./organizacion-reg/organizacion-reg.component";
+import { DetallesEventoComponent } from './detalles-evento/detalles-evento.component';
+import { BuscadorEventoComponent } from './buscador-evento/buscador-evento.component';
+import {OrganizacionReg2Component} from "./organizacion-reg2/organizacion-reg2.component";
 import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
+import { OrganizacionReg1Component } from './organizacion-reg1/organizacion-reg1.component';
+import { EventosComponent } from './eventos/eventos.component';
+import { OrganizacionesComponent } from './organizaciones/organizaciones.component';
+import { BuscadorComponent } from './buscador/buscador.component';
+import { BuscadororganizacionComponent } from './buscadororganizacion/buscadororganizacion.component';
+import { CreareventoComponent } from './crearevento/crearevento.component';
+import { CrearticketComponent } from './crearticket/crearticket.component';
+import { ListaticketsComponent } from './listatickets/listatickets.component';
 
 
 
@@ -47,16 +57,22 @@ import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component
     FooterComponent,
     RegistroComponent,
     ExplorarComponent,
-    RegistroComponent,
-    IndexComponent,
-    FooterComponent,
     LoginComponent,
     Registro2Component,
-    LoginComponent,
     SidenavComponent,
-    OrganizacionRegComponent,
+    OrganizacionReg2Component,
     BuscadoreventoComponent,
     MiperfilComponent,
+    DetallesEventoComponent,
+    BuscadorEventoComponent,
+    OrganizacionReg1Component,
+    EventosComponent,
+    OrganizacionesComponent,
+    BuscadorComponent,
+    BuscadororganizacionComponent,
+    CreareventoComponent,
+    CrearticketComponent,
+    ListaticketsComponent
 
   ],
   imports: [

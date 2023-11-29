@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Eventos</title>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" class="favicon">
+  <link rel="stylesheet" href="buscador-evento.component.css">
+
+</head>
+<body>
+
+<div class="columna">
+
+  <form (ngSubmit)="buscar(); $event.preventDefault()">
+
+    <div class="form-evento">
+
+      <div>
+
+        <label for="busqueda">Nombre:</label>
+        <input type="text" id="busqueda" name="busqueda" [(ngModel)]="busqueda.busqueda" required>
+
+        <label for="tipoevento">Tipo de Evento:</label>
+        <select id="tipoEvento" name="tipoEvento" [(ngModel)]="busqueda.tipoEvento" required>
+          <option value="">Seleccionar</option>
+          <option value="CARRERA">CARRERA</option>
+          <option value="SUBASTA">SUBASTA</option>
+          <option value="MERCADILLO">MERCADILLO</option>
+          <option value="CONCIERTO">CONCIERTO</option>
+          <option value="RECOGIDA">RECOGIDA</option>
+          <option value="ESPECTACULO">ESPECTACULO</option>
+          <option value="OTRO">OTRO</option>
+        </select>
+
+        <label for="tipopago">Tipo de Pago:</label>
+        <select id="tipoPago" name="tipoPago" [(ngModel)]="busqueda.tipoPago" required>
+          <option value="">Seleccionar</option>
+          <option value="GRATIS">GRATIS</option>
+          <option value="DONATIVO">DONATIVO</option>
+          <option value="PRECIO_FIJO">PRECIO FIJO</option>
+        </select>
+
+        <label for="meses">Meses:</label>
+        <select id="meses" name="meses" [(ngModel)]="busqueda.fecha" required>
+          <option value="0">Seleccionar</option>
+<!--          <option [ngValue]="null">Seleccionar</option>-->
+          <option value="1">ENERO</option>
+          <option value="2">FEBRERO</option>
+          <option value="3">MARZO</option>
+          <option value="4">ABRIL</option>
+          <option value="5">MAYO</option>
+          <option value="6">JUNIO</option>
+          <option value="7">JULIO</option>
+          <option value="8">AGOSTO</option>
+          <option value="9">SEPTIEMBRE</option>
+          <option value="10">OCTUBRE</option>
+          <option value="11">NOVIEMBRE</option>
+          <option value="12">DICIEMBRE</option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <div class="boton">
+
+      <button type="submit">Buscar</button>
+
+    </div>
+
+  </form>
+
+  <div class="iconos">
+
+
+    <div class="icono">
+
+      <div *ngFor="let evento of eventos" class="miniatura">
+
+        <span>{{evento.nombre}}</span>
+
+        <br>
+
+        <a [routerLink]="['/detallesEvento', evento.id]">
+          <img [src]="evento.imagen" alt="{{evento.nombre}}">
+        </a>
+
+        <br>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

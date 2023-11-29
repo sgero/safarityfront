@@ -1,9 +1,6 @@
-
 export class Busqueda {
   busqueda?: string;
-  tipoEvento?: string;
+  tipoEvento?: any;
   tipoPago?: string;
   fecha?: number;
 }
-
-

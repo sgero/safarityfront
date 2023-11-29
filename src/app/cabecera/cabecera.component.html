@@ -6,7 +6,7 @@
 
       <a routerLink="/inicio">
 
-        <img src="./assets/img/logoSafarity2.png">
+        <img src="./assets/img/logoSafarity2.png"alt="" >
 
       </a>
 
@@ -19,68 +19,28 @@
     </div>
 
 
-<!--    <div class="barradirecciones">-->
-
-<!--      <div class="icon">-->
-
-<!--        <div class="dropdown">-->
-
-<!--          <p routerLink="/explorar">Explorar</p>-->
-
-<!--          <div class="dropdown-content">-->
-<!--            <a routerLink="/explorar">Eventos</a>-->
-<!--            <a href="#">Organizaciones</a>-->
-<!--          </div>-->
-
-<!--        </div>-->
-
-<!--      </div>-->
-
-<!--      <div class="icon">-->
-<!--        <div class="dropdown">-->
-
-
-
-<!--          <p routerLink="registro">Registro</p>-->
-
-<!--          <div class="dropdown-content">-->
-<!--            <a routerLink="/registro">Participante</a>-->
-<!--            <a routerLink="/organizacion-reg">Organización</a>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="icon">-->
-<!--        <p routerLink="/login">Acceder</p>-->
-<!--      </div>-->
-
-<!--    </div>-->
-
-<!--  </div>-->
-
-<!--</header>-->
-
-
-
-
     <div class="barradirecciones">
       <div class="icon">
+
         <div class="dropdown">
-          <p routerLink="/buscadorevento">Buscador</p>
+          <p routerLink="/buscador">Buscador</p>
+
           <div class="dropdown-content">
-            <a routerLink="/explorar">Eventos</a>
-            <a routerLink="/explorar">Organizaciones</a>
+            <a routerLink="/eventos">Eventos</a>
+            <a routerLink="/organizaciones">Organizaciones</a>
           </div>
+
         </div>
+
       </div>
 
       <!-- Mostrar Registro solo si no está autenticado -->
       <div class="icon" *ngIf="!usuarioAutenticado">
         <div class="dropdown">
-          <p routerLink="registro">Registro</p>
+          <p>Registro</p>
           <div class="dropdown-content">
             <a routerLink="/registro">Participante</a>
-            <a routerLink="/organizacion-reg">Organización</a>
+            <a routerLink="/organizacion-reg1">Organización</a>
           </div>
         </div>
       </div>
@@ -101,5 +61,7 @@
 
       </div>
     </div>
+
   </div>
+
 </header>

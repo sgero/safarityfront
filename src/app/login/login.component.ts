@@ -49,15 +49,17 @@ export class LoginComponent implements OnInit {
       console.log(data);
 
       // Realizar acciones adicionales según la respuesta del servidor
-      if (data.token && data.info !== undefined && data.rol !== undefined) {
+      if (data.token && data.info !== undefined && data.rol !== undefined && data.alias !== undefined) {
         // El inicio de sesión fue exitoso, puedes almacenar el token en localStorage o en una cookie
         localStorage.setItem('token', data.token);// El inicio de sesión fue exitoso, almacena el token y el rol
         localStorage.setItem('info', data.info); // Almacena la información del usuario
         localStorage.setItem('rol', data.rol.toString()); // Almacena el rol del usuario
+        localStorage.setItem('alias',data.alias);
 
         this.userRole = data.rol.toString();
         // Redirigir al usuario
-        this.router.navigate(['/inicio']);
+        this.router.navigate(['/inicio']).then(()=>window.location.href='/inicio');
+
       } else {
         // El inicio de sesión no fue exitoso, manejar según sea necesario
         this.errorMensaje = data.info;
@@ -105,31 +107,15 @@ export class LoginComponent implements OnInit {
       return false;
     }
 
-    var re = /^[A-Za-z][A-Za-z0-9]*$/;
-    if(!re.test(usuario)) {
-      alert(usuario + " no es válido, debe tener una longitud mínima de 8 carácteres y ser alfanumerico");
+    if(clave == "") {
+      alert("Error: debe introducir una contraseña!");
       this.router.navigate(['/login']);
-      document.getElementById("usuario")!.focus()
+      document.getElementById("pwd")!.focus();
       return false;
     }
+    return true;
 
-    function checkPassword(valor: any){
-      var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-      if(myregex.test(valor)){
-        return true;
-      }else{
-        alert(valor + " no es valido, debe incluir al menos 8 dígitos, mayúscula y números.");
-        return false;
-      }
-    }
-
-    if(clave != "") {
-      if(!checkPassword(clave)) {
-        this.router.navigate(['/login']);
-        document.getElementById("pwd")!.focus();
-        return false;
-      }
-    }else {
+    if(clave == "") {
       alert("Error: debe introducir una contraseña!");
       this.router.navigate(['/login']);
       document.getElementById("pwd")!.focus();
@@ -138,6 +124,9 @@ export class LoginComponent implements OnInit {
     return true;
   }
 
+  crearusuario() {
+
+  }
 
 
 

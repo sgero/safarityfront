@@ -1,0 +1,18 @@
+<body>
+
+  <h2>Mis Tickets</h2>
+
+  <div *ngFor="let ticket of tickets" class="miniatura">
+    <a [routerLink]="">
+    <span>Total pagado: {{ticket.dineroAportado}} €</span>
+    <span>Fecha de compra: {{ticket.fecha}}</span>
+    <br>
+      <h3>Asistente:</h3>
+      <span>{{ticket.asistenteDTO.nombre}}</span>
+
+    </a>
+
+  </div>
+
+
+</body>
