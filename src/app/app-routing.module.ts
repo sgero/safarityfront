@@ -16,6 +16,7 @@ import {BuscadorComponent} from "./buscador/buscador.component";
 import {BuscadororganizacionComponent} from "./buscadororganizacion/buscadororganizacion.component";
 import {CreareventoComponent} from "./crearevento/crearevento.component";
 import {CrearticketComponent} from "./crearticket/crearticket.component";
+import {ListaticketsComponent} from "./listatickets/listatickets.component";
 
 // Rutas de navegación
 
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'buscador', component: BuscadorComponent },
   { path: 'buscadororg', component: BuscadororganizacionComponent },
   { path: 'crearevento', component: CreareventoComponent },
-  { path: 'crearticket', component: CrearticketComponent }
+  { path: 'crearticket', component: CrearticketComponent },
+  { path: 'listatickets', component: ListaticketsComponent }
 ];
 
 
