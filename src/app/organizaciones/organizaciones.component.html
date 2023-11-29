@@ -5,11 +5,17 @@
 
   <div class="seccion">
     <h2>ORGANIZACIONES:</h2>
-    <div *ngFor="let organizacion of organizaciones" class="tarjeta">
-      <img src="{{organizacion.logo}}">
-      <h3>{{organizacion.nombre}}</h3>
-      <p>CIF: {{organizacion.cif}}</p>
+
+    <div class="tar-organizacion">
+      <div *ngFor="let organizacion of organizaciones" class="tarjeta">
+        <img src="{{organizacion.logo}}">
+        <h3>{{organizacion.nombre}}</h3>
+        <p>CIF: {{organizacion.cif}}</p>
+      </div>
+
     </div>
+
+
   </div>
 
 </div>
