@@ -49,11 +49,12 @@ export class LoginComponent implements OnInit {
       console.log(data);
 
       // Realizar acciones adicionales según la respuesta del servidor
-      if (data.token && data.info !== undefined && data.rol !== undefined) {
+      if (data.token && data.info !== undefined && data.rol !== undefined && data.alias !== undefined) {
         // El inicio de sesión fue exitoso, puedes almacenar el token en localStorage o en una cookie
         localStorage.setItem('token', data.token);// El inicio de sesión fue exitoso, almacena el token y el rol
         localStorage.setItem('info', data.info); // Almacena la información del usuario
         localStorage.setItem('rol', data.rol.toString()); // Almacena el rol del usuario
+        localStorage.setItem('alias',data.alias);
 
         this.userRole = data.rol.toString();
         // Redirigir al usuario
