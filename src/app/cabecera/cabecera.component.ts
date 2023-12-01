@@ -42,10 +42,15 @@ export class CabeceraComponent implements OnInit{
     localStorage.removeItem('token');
     localStorage.removeItem('rol');
     localStorage.removeItem('info');
+    localStorage.removeItem('alias');
     //localStorage.clear();
     this.usuarioAutenticado = false;
     this.router.navigate(['/inicio']).then(()=>window.location.href='/inicio');
 
+  }
+  barra ='';
+  mandarBusqueda(){
+    this.router.navigate(['/explorar', this.barra]);
   }
 
 }
