@@ -1,0 +1,22 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  padding: 20px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+h1, h2 {
+  color: #333;
+}
+p {
+  color: #666;
+  line-height: 1.6;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 10px;
+}
