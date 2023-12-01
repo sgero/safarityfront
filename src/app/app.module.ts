@@ -47,6 +47,7 @@ import { CrearticketComponent } from './crearticket/crearticket.component';
 import { ListaticketsComponent } from './listatickets/listatickets.component';
 import { DetallesTicketComponent } from './detalles-ticket/detalles-ticket.component';
 import {LogoutComponent} from "./logout/logout.component";
+import { BusquedageneralComponent } from './busquedageneral/busquedageneral.component';
 
 
 
@@ -76,7 +77,8 @@ import {LogoutComponent} from "./logout/logout.component";
     CrearticketComponent,
     ListaticketsComponent,
     DetallesTicketComponent,
-    LogoutComponent
+    LogoutComponent,
+    BusquedageneralComponent
 
   ],
   imports: [

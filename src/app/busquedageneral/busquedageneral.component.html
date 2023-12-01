@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="busquedageneral.component.css">
+
+<body>
+<div class="columna">
+
+  <div class="seccion">
+    <h2>ORGANIZACIONES:</h2>
+    <div *ngFor="let organizacion of organizaciones" class="tarjeta">
+      <img src="{{organizacion.logo}}">
+      <h3>{{organizacion.nombre}}</h3>
+      <p>{{organizacion.cif}}</p>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <h2>EVENTOS:</h2>
+    <div *ngFor="let e of eventos" class="tarjeta">
+      <img src="{{e.imagen}}">
+      <h3>{{e.nombre}}</h3>
+      <p>{{e.aforo}}</p>
+    </div>
+  </div>
+
+</div>
+</body>
+
+

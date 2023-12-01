@@ -50,7 +50,7 @@ export class CabeceraComponent implements OnInit{
   }
   barra ='';
   mandarBusqueda(){
-    this.router.navigate(['/explorar', this.barra]);
+    this.router.navigate(['/busquedageneral', this.barra]);
   }
 
 }

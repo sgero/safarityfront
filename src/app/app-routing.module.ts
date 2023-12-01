@@ -20,6 +20,7 @@ import {ListaticketsComponent} from "./listatickets/listatickets.component";
 import {DetallesTicketComponent} from "./detalles-ticket/detalles-ticket.component";
 import {LogoutComponent} from "./logout/logout.component";
 import {ContactoComponent} from "./contacto/contacto.component";
+import {BusquedageneralComponent} from "./busquedageneral/busquedageneral.component";
 
 // Rutas de navegación
 
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path:'login', component : LoginComponent},
   {path:'registro2', component : Registro2Component},
   {path:'login', component : LoginComponent},
-  {path:'explorar/:busqueda', component : ExplorarComponent},
+  {path:'explorar', component : ExplorarComponent},
   { path: 'organizacion-reg1', component: OrganizacionReg1Component },
   { path: 'organizacion-reg2', component: OrganizacionReg2Component },
   { path: 'detallesEvento/:id', component: DetallesEventoComponent },
@@ -45,7 +46,8 @@ const routes: Routes = [
   { path: 'listatickets', component: ListaticketsComponent },
   { path: 'detallesTicket/:id', component: DetallesTicketComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'contacto', component: ContactoComponent}
+  { path: 'contacto', component: ContactoComponent},
+  { path: 'busquedageneral/:busqueda', component: BusquedageneralComponent}
 ];
 
 
