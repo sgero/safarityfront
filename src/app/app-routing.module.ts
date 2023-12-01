@@ -26,6 +26,7 @@ import {OurservicesComponent} from "./ourservices/ourservices.component";
 import {PrivacypolicyComponent} from "./privacypolicy/privacypolicy.component";
 import {TermsconditionsComponent} from "./termsconditions/termsconditions.component";
 import {CareerComponent} from "./career/career.component";
+import {DetallesOrganizacionComponent} from "./detalles-organizacion/detalles-organizacion.component";
 
 // Rutas de navegación
 
@@ -58,7 +59,8 @@ const routes: Routes = [
   { path: 'termsconditions', component: TermsconditionsComponent},
   { path: 'career', component: CareerComponent},
   { path: 'contacto', component: ContactoComponent},
-  { path: 'busquedageneral/:busqueda', component: BusquedageneralComponent}
+  { path: 'busquedageneral/:busqueda', component: BusquedageneralComponent},
+  { path: 'miperfilorg', component: DetallesOrganizacionComponent}
 ];
 
 

@@ -173,4 +173,8 @@ export class GeneralService {
     return this.http.put<string>(`${this.apiUrl}/ticket/eliminar`, data)
   }
 
+  mostrarOrganizacion(data: string){
+    return this.http.post<Organizacion>(`${this.apiUrl}/organizacion/mostrarcalculado`, data)
+  }
+
 }
