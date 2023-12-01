@@ -21,6 +21,7 @@ input, textarea {
   padding: 8px;
   margin-bottom: 16px;
   box-sizing: border-box;
+  resize: none;
 }
 button {
   background-color: #4CAF50;
