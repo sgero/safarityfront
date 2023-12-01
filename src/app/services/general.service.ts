@@ -153,4 +153,13 @@ export class GeneralService {
   listaTicketParticipante(data: TicketDev): Observable<Ticket[]>{
     return this.http.post<Ticket[]>(`${this.apiUrl}/ticket/listarPTickets`, data);
   }
+
+  mostrarTicket(ticketID: number){
+    return this.http.post<Ticket>(`${this.apiUrl}/ticket/mostrarTicket`, {id: ticketID})
+  }
+
+  eliminarTicket(data: TicketDev): Observable<string>{
+    return this.http.put<string>(`${this.apiUrl}/ticket/eliminar`, data)
+  }
+
 }
