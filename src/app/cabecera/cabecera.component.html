@@ -12,11 +12,11 @@
 
     </div>
 
-    <div class="barrabuscadora">
+    <form class="barrabuscadora" (ngSubmit)="mandarBusqueda()">
 
-      <input type="search" class="barra" placeholder="Buscar">
+      <input type="text" class="barra" placeholder="Buscar" id="barra" name="barra" [(ngModel)]="barra" required>
 
-    </div>
+    </form>
 
 
     <div class="barradirecciones">

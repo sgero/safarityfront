@@ -1,6 +1,7 @@
 import { Component, OnDestroy, ChangeDetectorRef, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { GeneralService } from '../services/general.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sidenav',
@@ -12,6 +13,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
   userRole: string = 'usuario';
   fillerNav: any[] = [];
+  usuarioAutenticado: any; // Variable para verificar si el usuario está autenticado
 
   auth: { token: string } = { token: '' };
 
@@ -20,7 +22,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
-    private generalService: GeneralService
+    private generalService: GeneralService,
+    public router: Router
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -143,20 +146,32 @@ export class SidenavComponent implements OnInit, OnDestroy {
   //}
 
 
+  // logout() {
+  //   const token = localStorage.getItem('token') || '';
+  //
+  //   this.generalService.logout(token).subscribe(
+  //     data => {
+  //       console.log('Logout successful', data);
+  //       // Additional logout logic if needed
+  //     },
+  //     error => {
+  //       console.error('Logout failed', error);
+  //     }
+  //   );
+  // }
+
   logout() {
-    const token = localStorage.getItem('token') || '';
 
-    this.generalService.logout(token).subscribe(
-      data => {
-        console.log('Logout successful', data);
-        // Additional logout logic if needed
-      },
-      error => {
-        console.error('Logout failed', error);
-      }
-    );
+    //this.auth.token = localStorage.getItem('token') || '';
+    this.generalService.logout(localStorage.getItem('token') || '');
+    localStorage.removeItem('token');
+    localStorage.removeItem('rol');
+    localStorage.removeItem('info');
+    //localStorage.clear();
+    this.usuarioAutenticado = false;
+    this.router.navigate(['/inicio']).then(()=>window.location.href='/inicio');
+
   }
-
 
 
 }

@@ -112,6 +112,7 @@ export class GeneralService {
     return this.http.get<Organizacion[]>(`${this.apiUrl}/organizacion/listar`);
   }
 
+  //OBSERVABLE ES PARA PETICIONES ASINCRONAS (se muestra a su tiempo sin esperar todos los datos del servidor)
   getEvento(): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiUrl}/evento/listar`);
   }
@@ -163,4 +164,13 @@ export class GeneralService {
     return this.http.post<Participante>(`${this.apiUrl}/participante/participanteToken`, token);
 
   }
+
+  mostrarTicket(ticketID: number){
+    return this.http.post<Ticket>(`${this.apiUrl}/ticket/mostrarTicket`, {id: ticketID})
+  }
+
+  eliminarTicket(data: TicketDev): Observable<string>{
+    return this.http.put<string>(`${this.apiUrl}/ticket/eliminar`, data)
+  }
+
 }

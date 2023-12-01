@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Evento} from "../models/Evento";
 import {ActivatedRoute} from "@angular/router";
 import {GeneralService} from "../services/general.service";
@@ -8,7 +8,7 @@ import {GeneralService} from "../services/general.service";
   templateUrl: './detalles-evento.component.html',
   styleUrls: ['./detalles-evento.component.css']
 })
-export class DetallesEventoComponent {
+export class DetallesEventoComponent implements OnInit{
 
   evento: any;
 

@@ -1,5 +1,5 @@
 export class TicketDev{
-  ticketID?: bigint;
+  ticketID?: number;
   devolucion?: string;
   tokenP?: string | null;
 }
