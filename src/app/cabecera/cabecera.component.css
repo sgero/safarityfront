@@ -70,7 +70,7 @@ header{
 }
 
 .icon {
-  margin: 0 15px;
+  margin: 0 35px;
 
 
 }
@@ -183,4 +183,48 @@ input{
   transition: 0.3s;
   color: #b906f1;
 
+}
+
+.boton p{
+
+  cursor: pointer;
+  color: black !important;
+
+}
+
+.boton p:hover{
+
+  transition: 0.3s;
+  color: #b906f1 !important;
+
+}
+
+.boton{
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  position: relative;
+  gap: 10%;
+
+}
+.boton button{
+  color: #fff;
+  background: #7d2ae8;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.boton button:hover{
+  background: #5b13b9;
 }
