@@ -1,0 +1,62 @@
+<body>
+
+<div class="body">
+
+  <div *ngIf="ticket" class="evento-container">
+
+    <div class="thumbnail">
+
+      <div class="event-info">
+        <h1>Dinero aportado: {{ticket.dineroAportado}} €</h1>
+        <p class="address">Fecha de Compra: {{ticket.fecha}}</p>
+      </div>
+
+
+    </div>
+    <h2>ASISTENTE:</h2>
+    <div class="details-container">
+
+      <div class="detail">
+        <span class="value">{{ticket.asistenteDTO.nombre}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="value">{{ticket.asistenteDTO.apellidos}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="value">{{ticket.asistenteDTO.direccion}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="value">{{ticket.asistenteDTO.email}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="value">{{ticket.asistenteDTO.dni}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="value">{{ticket.asistenteDTO.telefono}}</span>
+      </div>
+
+      <div class="detail">
+        <span class="value">{{ticket.asistenteDTO.fecha_nacimiento}}</span>
+      </div>
+
+    </div>
+    <div class="botones">
+      <button id="bbutton" (click)="vistaFormulario()">Cancelar</button>
+
+    <form id="form" (ngSubmit)="eliminarTicket()">
+      <span>¿Desea retirar su donación?</span>
+      <input type="checkbox" value="SI" id="devolucion" name="devolucion" [(ngModel)]="mticket.devolucion" required>
+      <button type="submit">Continuar</button>
+    </form>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
