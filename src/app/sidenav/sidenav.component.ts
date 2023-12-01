@@ -167,6 +167,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
     localStorage.removeItem('token');
     localStorage.removeItem('rol');
     localStorage.removeItem('info');
+    localStorage.removeItem('alias');
     //localStorage.clear();
     this.usuarioAutenticado = false;
     this.router.navigate(['/inicio']).then(()=>window.location.href='/inicio');
