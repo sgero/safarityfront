@@ -29,7 +29,7 @@ const routes: Routes = [
   {path:'login', component : LoginComponent},
   {path:'registro2', component : Registro2Component},
   {path:'login', component : LoginComponent},
-  {path:'explorar', component : ExplorarComponent},
+  {path:'explorar/:busqueda', component : ExplorarComponent},
   { path: 'organizacion-reg1', component: OrganizacionReg1Component },
   { path: 'organizacion-reg2', component: OrganizacionReg2Component },
   { path: 'detallesEvento/:id', component: DetallesEventoComponent },
