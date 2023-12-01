@@ -17,6 +17,7 @@ export class DetallesOrganizacionComponent implements OnInit{
     if (this.alias)
     this.service.mostrarOrganizacion(this.alias).subscribe(data =>{
       this.organizacion = data;
+      console.log(data)
     });
   }
 
