@@ -124,6 +124,8 @@ input{
   display: inline-block;
   position: relative;
 }
+
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -132,18 +134,30 @@ input{
   z-index: 9;
   font-weight: lighter;
   background-color: rgba(255, 255, 255, 0.9);
+
 }
+
+
+
 .dropdown:hover .dropdown-content {
   display: block;
+
 }
+
+
 .dropdown-content a {
   display: block;
   color: #000000;
   padding: 5px;
   text-decoration: none;
-  background-color: rgba(217, 205, 234, 0.87);
-  transition: 0.3s;
+  background-color: rgb(255, 255, 255);
+  transition: 0.0s;
+
+
 }
+
+
+
 
 .dropdown p{
 
@@ -152,8 +166,9 @@ input{
 }
 
 .dropdown-content a:hover {
-  color: #262626;
-  background-color: #C5AECF;
+  color: #b906f1;
+  background-color: #ffffff;
+  font-weight: normal;
 }
 
 .barradirecciones p {
@@ -164,7 +179,8 @@ input{
 
 .barradirecciones p:hover{
 
-  color: #9c5ee7;
+  /*color: #9c5ee7;*/
   transition: 0.3s;
+  color: #b906f1;
 
 }

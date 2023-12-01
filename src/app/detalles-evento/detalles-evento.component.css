@@ -177,7 +177,7 @@
 
 .miniatura:hover {
   border: 3px solid #b906f1;
-  transform: scale(1.2);
+  transform: scale(1.1);
 
 }
 
@@ -325,7 +325,7 @@
 
 .thumbnail,
 .details-container {
-  background-color: #fff;
+  background-color: #C5B2CC;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -341,6 +341,7 @@
 }
 
 .event-info h1 {
+
   font-size: 1.5em;
   margin-bottom: 10px;
 }

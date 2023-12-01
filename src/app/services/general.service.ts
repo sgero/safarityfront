@@ -9,6 +9,8 @@ import {Auth} from "../models/Auth";
 import {Participante} from "../models/Participante";
 import {Busqueda} from "../models/Busqueda";
 import {Ticket} from "../models/Ticket";
+import {Ticket} from "../models/Ticket";
+import {TicketDev} from "../models/TicketDev";
 
 @Injectable({
   providedIn: 'root'
@@ -152,4 +154,8 @@ export class GeneralService {
     return this.http.post<Ticket>(`${this.apiUrl}/ticket/crear`, data);
   }
 
+
+  listaTicketParticipante(data: TicketDev): Observable<Ticket[]>{
+    return this.http.post<Ticket[]>(`${this.apiUrl}/ticket/listarPTickets`, data);
+  }
 }

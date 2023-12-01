@@ -29,6 +29,16 @@
   margin: 10px;
   margin-left: 40px;
   transition: .3s ease;
+  background: #C5B2CC;
+}
+
+.tar-organizacion {
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
 }
 
 .tarjeta a{

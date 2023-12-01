@@ -68,7 +68,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         { name: 'PANEL DE PARTICIPANTE', route: '', icon: '' },
         { name: 'Home', route: 'inicio', icon: 'home' },
         { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' },
-        { name: 'Mis Eventos', route: 'misEventos', icon: 'perm_contact_calendar' },
+        { name: 'Mis Tickets', route: 'listatickets', icon: 'perm_contact_calendar' },
         { name: 'Favoritos', route: 'favoritos', icon: 'perm_contact_calendar' },
         { name: 'Logout', route: 'logout', icon: 'perm_contact_calendar' }
       ];
