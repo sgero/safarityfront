@@ -53,34 +53,34 @@ export class SidenavComponent implements OnInit, OnDestroy {
   private initializeFillerNav() {
     if (localStorage.getItem('rol') === 'ADMIN') {
       this.fillerNav = [
-        { name: 'PANEL DE ADMIN', route: '', icon: '' },
+        { name: 'PANEL DE ADMIN', route: '', icon: 'admin_panel_settings' },
         { name: 'Home', route: 'inicio', icon: 'roofing' },
-        { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
+        { name: 'Contacto', route: 'contacto', icon: 'blur_on' }
       ];
     } else if (localStorage.getItem('rol') === 'ORGANIZACION') {
       this.fillerNav = [
-        { name: 'PANEL DE ORGANIZACION', route: '', icon: '' },
+        { name: 'PANEL DE ORGANIZACION', route: '', icon: 'corporate_fare' },
         { name: 'Home', route: 'inicio', icon: 'roofing' },
-        { name: 'Mi Perfil', route: 'miperfilorg', icon: 'blur_on' },
-        { name: 'Mis Eventos', route: 'misEventos', icon: 'checkroom' },
-        { name: 'Crear Evento', route: 'crearevento', icon: 'celebration' },
+        { name: 'Mi Perfil', route: 'miperfilorg', icon: 'manage_accounts' },
+        { name: 'Mis Eventos', route: 'misEventos', icon: 'event_note' },
+        { name: 'Crear Evento', route: 'crearevento', icon: 'add_circle_outline' },
         { name: 'Logout', route: 'logout', icon: 'close' }
       ];
     } else if (localStorage.getItem('rol') === 'PARTICIPANTE') {
       this.fillerNav = [
-        { name: 'PANEL DE PARTICIPANTE', route: '', icon: '' },
+        { name: 'PANEL DE PARTICIPANTE', route: '', icon: 'face' },
         { name: 'Home', route: 'inicio', icon: 'roofing' },
-        { name: 'Mi Perfil', route: 'miperfil', icon: 'blur_on' },
-        { name: 'Mis Tickets', route: 'listatickets', icon: 'checkroom' },
-        { name: 'Favoritos', route: 'favoritos', icon: 'card_membership' },
+        { name: 'Mi Perfil', route: 'miperfil', icon: 'manage_accounts' },
+        { name: 'Mis Tickets', route: 'listatickets', icon: 'file_present' },
+        { name: 'Favoritos', route: 'favoritos', icon: 'local_activity' },
         { name: 'Logout', route: 'logout', icon: 'close' }
       ];
     } else {
       // Default fillerNav for other roles or situations
       this.fillerNav = [
-        { name: 'PANEL DE USUARIO', route: '', icon: '' },
+        { name: 'PANEL DE USUARIO', route: '', icon: 'landscape' },
         { name: 'Home', route: 'inicio', icon: 'roofing' },
-        { name: 'Contacto', route: 'contacto', icon: 'perm_contact_calendar' }
+        { name: 'Contacto', route: 'contacto', icon: 'blur_on' }
       ];
     }
   }
