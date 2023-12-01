@@ -20,6 +20,11 @@ import {ListaticketsComponent} from "./listatickets/listatickets.component";
 import {DetallesTicketComponent} from "./detalles-ticket/detalles-ticket.component";
 import {LogoutComponent} from "./logout/logout.component";
 import {ContactoComponent} from "./contacto/contacto.component";
+import {MiperfilComponent} from "./miperfil/miperfil.component";
+import {OurservicesComponent} from "./ourservices/ourservices.component";
+import {PrivacypolicyComponent} from "./privacypolicy/privacypolicy.component";
+import {TermsconditionsComponent} from "./termsconditions/termsconditions.component";
+import {CareerComponent} from "./career/career.component";
 
 // Rutas de navegación
 
@@ -45,7 +50,14 @@ const routes: Routes = [
   { path: 'listatickets', component: ListaticketsComponent },
   { path: 'detallesTicket/:id', component: DetallesTicketComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'contacto', component: ContactoComponent}
+  { path: 'contacto', component: ContactoComponent},
+  { path: 'miperfil', component: MiperfilComponent},
+  { path: 'ourservices', component: OurservicesComponent},
+  { path: 'privacypolicy', component: PrivacypolicyComponent},
+  { path: 'termsconditions', component: TermsconditionsComponent},
+  { path: 'career', component: CareerComponent}
+
+
 ];
 
 
