@@ -1,0 +1,26 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  padding: 20px;
+
+}
+h1, h2 {
+  color: #333;
+}
+p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.titulo {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #b906f1;
+}
+
+.cuerpito {
+  margin-left: 25%;
+  margin-right: 25%;
+
+}
