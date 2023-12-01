@@ -21,6 +21,7 @@ import {DetallesTicketComponent} from "./detalles-ticket/detalles-ticket.compone
 import {LogoutComponent} from "./logout/logout.component";
 import {ContactoComponent} from "./contacto/contacto.component";
 import {BusquedageneralComponent} from "./busquedageneral/busquedageneral.component";
+import {DetallesOrganizacionComponent} from "./detalles-organizacion/detalles-organizacion.component";
 
 // Rutas de navegación
 
@@ -47,7 +48,8 @@ const routes: Routes = [
   { path: 'detallesTicket/:id', component: DetallesTicketComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'contacto', component: ContactoComponent},
-  { path: 'busquedageneral/:busqueda', component: BusquedageneralComponent}
+  { path: 'busquedageneral/:busqueda', component: BusquedageneralComponent},
+  { path: 'miperfilorg', component: DetallesOrganizacionComponent}
 ];
 
 
