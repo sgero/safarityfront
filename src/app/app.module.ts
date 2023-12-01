@@ -46,6 +46,7 @@ import { CreareventoComponent } from './crearevento/crearevento.component';
 import { CrearticketComponent } from './crearticket/crearticket.component';
 import { ListaticketsComponent } from './listatickets/listatickets.component';
 import { DetallesTicketComponent } from './detalles-ticket/detalles-ticket.component';
+import {LogoutComponent} from "./logout/logout.component";
 
 
 
@@ -74,7 +75,8 @@ import { DetallesTicketComponent } from './detalles-ticket/detalles-ticket.compo
     CreareventoComponent,
     CrearticketComponent,
     ListaticketsComponent,
-    DetallesTicketComponent
+    DetallesTicketComponent,
+    LogoutComponent
 
   ],
   imports: [

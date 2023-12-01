@@ -18,6 +18,8 @@ import {CreareventoComponent} from "./crearevento/crearevento.component";
 import {CrearticketComponent} from "./crearticket/crearticket.component";
 import {ListaticketsComponent} from "./listatickets/listatickets.component";
 import {DetallesTicketComponent} from "./detalles-ticket/detalles-ticket.component";
+import {LogoutComponent} from "./logout/logout.component";
+import {ContactoComponent} from "./contacto/contacto.component";
 
 // Rutas de navegación
 
@@ -41,7 +43,9 @@ const routes: Routes = [
   { path: 'crearevento', component: CreareventoComponent },
   { path: 'crearticket', component: CrearticketComponent },
   { path: 'listatickets', component: ListaticketsComponent },
-  { path: 'detallesTicket/:id', component: DetallesTicketComponent }
+  { path: 'detallesTicket/:id', component: DetallesTicketComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'contacto', component: ContactoComponent}
 ];
 
 
