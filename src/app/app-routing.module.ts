@@ -60,7 +60,8 @@ const routes: Routes = [
   { path: 'career', component: CareerComponent},
   { path: 'contacto', component: ContactoComponent},
   { path: 'busquedageneral/:busqueda', component: BusquedageneralComponent},
-  { path: 'miperfilorg', component: DetallesOrganizacionComponent}
+  { path: 'miperfilorg', component: DetallesOrganizacionComponent},
+
 ];
 
 
