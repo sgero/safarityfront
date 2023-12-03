@@ -177,4 +177,8 @@ export class GeneralService {
     return this.http.post<Organizacion>(`${this.apiUrl}/organizacion/mostrarcalculado`, data)
   }
 
+  generateTicketListPdf() {
+    return this.http.get(`${this.apiUrl}/ticket/generate-pdf`, { responseType: 'blob' });
+  }
+
 }

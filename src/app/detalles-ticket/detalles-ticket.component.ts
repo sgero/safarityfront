@@ -64,4 +64,6 @@ export class DetallesTicketComponent implements OnInit{
       }
     });
   }
+
+
 }
