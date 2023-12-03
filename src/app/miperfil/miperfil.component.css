@@ -1,0 +1,9 @@
+.body {
+  min-height:800px;
+}
+
+.perfil {
+  display: flex;
+
+  margin-left: 25%;
+}
