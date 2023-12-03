@@ -181,4 +181,15 @@ export class GeneralService {
     return this.http.get(`${this.apiUrl}/ticket/generate-pdf`, { responseType: 'blob' });
   }
 
+
+  obtenerPerfil(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+
+
 }

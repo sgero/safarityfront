@@ -1,0 +1,20 @@
+<!-- miperfil.component.html -->
+
+<div *ngIf="usuario">
+  <h2>Perfil de {{ usuario.alias }}</h2>
+
+  <div>
+    <p><strong>ID:</strong> {{ usuario.id }}</p>
+    <p><strong>Alias:</strong> {{ usuario.alias }}</p>
+    <p><strong>Password:</strong> {{ usuario.password }}</p>
+    <p><strong>Rol:</strong> {{ usuario.rol }}</p>
+    <p><strong>Activo:</strong> {{ usuario.activo ? 'Sí' : 'No' }}</p>
+
+    <!-- Detalles adicionales -->
+    <p *ngIf="usuario.token">
+      <strong>Token:</strong> {{ usuario.token.tokenValue }}
+    </p>
+
+    <!-- Otros campos según sea necesario -->
+  </div>
+</div>
