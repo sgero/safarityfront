@@ -27,6 +27,7 @@ import {PrivacypolicyComponent} from "./privacypolicy/privacypolicy.component";
 import {TermsconditionsComponent} from "./termsconditions/termsconditions.component";
 import {CareerComponent} from "./career/career.component";
 import {DetallesOrganizacionComponent} from "./detalles-organizacion/detalles-organizacion.component";
+import {TicketListComponent} from "./ticket-list/ticket-list.component";
 
 // Rutas de navegación
 
@@ -61,6 +62,7 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent},
   { path: 'busquedageneral/:busqueda', component: BusquedageneralComponent},
   { path: 'miperfilorg', component: DetallesOrganizacionComponent},
+  { path: 'ticket-list', component: TicketListComponent},
 
 ];
 

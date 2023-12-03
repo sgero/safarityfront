@@ -49,6 +49,7 @@ import { DetallesTicketComponent } from './detalles-ticket/detalles-ticket.compo
 import {LogoutComponent} from "./logout/logout.component";
 import { BusquedageneralComponent } from './busquedageneral/busquedageneral.component';
 import { DetallesOrganizacionComponent } from './detalles-organizacion/detalles-organizacion.component';
+import {TicketListComponent} from "./ticket-list/ticket-list.component";
 
 
 
@@ -80,6 +81,7 @@ import { DetallesOrganizacionComponent } from './detalles-organizacion/detalles-
     DetallesTicketComponent,
     LogoutComponent,
     BusquedageneralComponent,
+    TicketListComponent,
     DetallesOrganizacionComponent
 
   ],
