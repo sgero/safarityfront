@@ -28,6 +28,7 @@ import {TermsconditionsComponent} from "./termsconditions/termsconditions.compon
 import {CareerComponent} from "./career/career.component";
 import {DetallesOrganizacionComponent} from "./detalles-organizacion/detalles-organizacion.component";
 import {TicketListComponent} from "./ticket-list/ticket-list.component";
+import {AuthGuard} from "./models/AuthGuard";
 
 // Rutas de navegación
 
@@ -63,6 +64,16 @@ const routes: Routes = [
   { path: 'miperfil/:id', component: MiperfilComponent},
   { path: 'miperfilorg', component: DetallesOrganizacionComponent},
   { path: 'ticket-list', component: TicketListComponent},
+
+  {
+    path: 'ruta-protegida',
+    component: MiperfilComponent,
+    canActivateChild: [AuthGuard],
+    children: [
+      // Otras rutas protegidas
+
+    ],
+  },
 
 ];
 

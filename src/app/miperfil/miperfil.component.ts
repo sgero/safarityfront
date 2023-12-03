@@ -5,7 +5,8 @@ import {GeneralService} from "../services/general.service";
 @Component({
   selector: 'app-miperfil',
   templateUrl: './miperfil.component.html',
-  styleUrls: ['./miperfil.component.css']
+  styleUrls: ['./miperfil.component.css'],
+
 })
 export class MiperfilComponent implements OnInit {
   usuario: any;

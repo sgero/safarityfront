@@ -31,17 +31,12 @@ export class AuthGuard implements CanActivateChild {
   canActivateChild(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    return this.authService.isLoggedIn().pipe(
-      take(1),
-      map((isLoggedIn) => {
-        if (isLoggedIn) {
-          return true;
-        } else {
-          // Redirige a la página de inicio de sesión
-          return this.router.parseUrl('/login');
-        }
-      })
-    );
+  ): boolean | UrlTree {
+    if (this.authService.isLoggedIn()) {
+      return true;
+    } else {
+      // Redirige a la página de inicio de sesión
+      return this.router.parseUrl('/login');
+    }
   }
 }
