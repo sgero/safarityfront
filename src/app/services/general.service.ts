@@ -190,6 +190,8 @@ export class GeneralService {
     return !!localStorage.getItem('token');
   }
 
-
+  mostrarParticipante(data: string){
+    return this.http.post<Participante>(`${this.apiUrl}/participante/mostrarParticipante`, data)
+  }
 
 }

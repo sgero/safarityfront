@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {GeneralService} from "../services/general.service";
 
 @Component({
@@ -9,10 +9,18 @@ import {GeneralService} from "../services/general.service";
 
 })
 export class MiperfilComponent implements OnInit {
-  usuario: any;
-
-  constructor(private route: ActivatedRoute, private generalService: GeneralService) {}
-
+  // usuario: any;
+  //
+  // constructor(private route: ActivatedRoute, private generalService: GeneralService) {}
+  //
+  // // ngOnInit(): void {
+  // //   const id = +this.route.snapshot.params['id'];
+  // //   this.generalService.obtenerPerfil(id).subscribe((data) => {
+  // //     this.usuario = data;
+  // //   });
+  // // }
+  //
+  //
   // ngOnInit(): void {
   //   const id = +this.route.snapshot.params['id'];
   //   this.generalService.obtenerPerfil(id).subscribe((data) => {
@@ -20,11 +28,20 @@ export class MiperfilComponent implements OnInit {
   //   });
   // }
 
+  alias = localStorage.getItem('alias');
+  participante: any;
 
-  ngOnInit(): void {
-    const id = +this.route.snapshot.params['id'];
-    this.generalService.obtenerPerfil(id).subscribe((data) => {
-      this.usuario = data;
-    });
+  constructor(private generalService: GeneralService, public router: Router) {
+
   }
+
+  ngOnInit() {
+    if (this.alias)
+      this.generalService.mostrarParticipante(this.alias).subscribe(data =>{
+        this.participante = data;
+        console.log(data)
+      });
+  }
+
+
 }

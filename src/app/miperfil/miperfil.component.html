@@ -1,24 +1,19 @@
-<!-- miperfil.component.html -->
+<!-- miperfil.component.html PARTICIPANTE-->
 <h1 class="perfil">MI PERFIL</h1>
+
+
 <body>
 
+<div class="ficha">
+  <div class="dato"><strong>Nombre:</strong> {{participante.nombre}}</div>
+  <div class="dato"><strong>Apellidos:</strong> {{participante.apellidos}}</div>
+  <div class="dato"><strong>Email:</strong> {{participante.email}}</div>
+  <div class="dato"><strong>Teléfono:</strong> {{participante.telefono}}</div>
+  <div class="dato"><strong>DNI:</strong> {{participante.dni}}</div>
+  <div class="dato"><strong>Fecha de Nacimiento:</strong> {{participante.fecha_nacimiento}}</div>
+  <div class="dato"><strong>Dirección:</strong> {{participante.direccion}}</div>
+  <div class="dato"><strong>Saldo:</strong> {{participante.saldo}} €</div>
 
-<div *ngIf="usuario">
-  <h2>Perfil de {{ usuario.alias }}</h2>
-
-  <div>
-    <p><strong>ID:</strong> {{ usuario.id }}</p>
-    <p><strong>Alias:</strong> {{ usuario.alias }}</p>
-    <p><strong>Password:</strong> {{ usuario.password }}</p>
-    <p><strong>Rol:</strong> {{ usuario.rol }}</p>
-    <p><strong>Activo:</strong> {{ usuario.activo ? 'Sí' : 'No' }}</p>
-
-    <!-- Detalles adicionales -->
-    <p *ngIf="usuario.token">
-      <strong>Token:</strong> {{ usuario.token.tokenValue }}
-    </p>
-
-    <!-- Otros campos según sea necesario -->
-  </div>
 </div>
+
 </body>

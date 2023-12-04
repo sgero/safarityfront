@@ -61,7 +61,7 @@ const routes: Routes = [
   { path: 'career', component: CareerComponent},
   { path: 'contacto', component: ContactoComponent},
   { path: 'busquedageneral/:busqueda', component: BusquedageneralComponent},
-  { path: 'miperfil/:id', component: MiperfilComponent},
+  { path: 'miperfil', component: MiperfilComponent},
   { path: 'miperfilorg', component: DetallesOrganizacionComponent},
   { path: 'ticket-list', component: TicketListComponent},
 

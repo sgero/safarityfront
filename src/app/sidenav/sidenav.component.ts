@@ -70,7 +70,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
       this.fillerNav = [
         { name: 'PANEL DE PARTICIPANTE', route: '', icon: 'face' },
         { name: 'Home', route: 'inicio', icon: 'roofing' },
-        { name: 'Mi Perfil', route: 'miperfil/:id', icon: 'manage_accounts' },
+        { name: 'Mi Perfil', route: 'miperfil', icon: 'manage_accounts' },
         { name: 'Mis Tickets', route: 'listatickets', icon: 'file_present' },
         { name: 'Favoritos', route: 'favoritos', icon: 'local_activity' },
         { name: 'Logout', route: 'logout', icon: 'close' }
