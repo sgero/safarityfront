@@ -67,7 +67,7 @@ export class CrearticketComponent implements OnInit{
 
   ngOnInit() {
 
-    (<HTMLInputElement>document.getElementById('dinero_aportado')).defaultValue = (Number(localStorage.getItem('precio')) ?? '').toString();
+    (<HTMLInputElement>document.getElementById('dinero_aportado')).value = (Number(localStorage.getItem('precio')) ?? '').toString();
 
     if (localStorage.getItem('token') != null){
 

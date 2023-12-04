@@ -15,9 +15,11 @@
   <div class="seccion">
     <h2>EVENTOS:</h2>
     <div *ngFor="let e of eventos" class="tarjeta">
-      <img src="{{e.imagen}}">
-      <h3>{{e.nombre}}</h3>
-      <p>Aforo: {{e.aforo}}</p>
+      <a [routerLink]="['/detallesEvento', e.id]">
+        <img src="{{e.imagen}}">
+        <h3>{{e.nombre}}</h3>
+        <p>Aforo: {{e.aforo}}</p>
+      </a>
     </div>
   </div>
 
