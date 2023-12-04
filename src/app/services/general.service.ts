@@ -174,7 +174,7 @@ export class GeneralService {
   }
 
   mostrarOrganizacion(data: string){
-    return this.http.post<Organizacion>(`${this.apiUrl}/organizacion/mostrarcalculado`, data)
+    return this.http.post<Organizacion>(`${this.apiUrl}/organizacion/mostrarCalculado`, data)
   }
 
   generateTicketListPdf() {
