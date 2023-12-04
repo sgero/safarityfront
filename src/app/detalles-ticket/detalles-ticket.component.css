@@ -325,11 +325,13 @@
 
 .thumbnail,
 .details-container {
-  background-color: #C5B2CC;
+  background-color: #eeecec;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  border-color: #5b13b9;
+  border: 1px solid #5b13b9;
 }
 
 .thumbnail {
@@ -373,7 +375,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #C5B2CC;
+  background-color: #d9d8d8;
   padding: 10px 0px 10px 0px;
   border-radius: 10px;
   margin: 10px 0px 10px 0px;
@@ -435,4 +437,19 @@ form>input{
   transition: all 0.3s ease;
 }
 
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  background-color: #9a5bec;
+  color: #fff;
+}
 
+
+.button .btn-pdf{
+    color: #fff;
+    background: #7d2ae8;
+}

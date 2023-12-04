@@ -7,8 +7,14 @@ body {
   min-height:800px;
 }
 
+
+h1 {
+  color: #b000ff; /* Título morado */
+
+}
+
 h2 {
-  color: #333;
+  color: #9d25d0; /* Título morado */
 }
 .miniatura {
   border: 1px solid #8e44ad; /* Borde morado */
@@ -31,4 +37,5 @@ h2 {
 
 h3 {
   color: #8e44ad; /* Título morado */
+  font-weight: bold;
 }
