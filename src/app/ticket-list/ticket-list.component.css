@@ -20,3 +20,9 @@
   border-bottom: 0px solid rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
+
+
+.button .btn-pdf{
+  color: #fff;
+  background: #7d2ae8;
+}
