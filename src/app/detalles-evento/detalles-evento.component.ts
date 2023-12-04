@@ -23,10 +23,12 @@ export class DetallesEventoComponent implements OnInit{
 
       localStorage.setItem('id_evento', String(eventoId))
 
+
       if (eventoId) {
         this.eventoService.obtenerEventoPorId(eventoId).subscribe(
           data => {
             this.evento = data;
+            localStorage.setItem('precio', String(data.precio));
           },
           error => {
             console.error('Error al obtener el evento:', error);
