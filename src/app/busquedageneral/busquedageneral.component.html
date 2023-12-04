@@ -8,7 +8,7 @@
     <div *ngFor="let organizacion of organizaciones" class="tarjeta">
       <img src="{{organizacion.logo}}">
       <h3>{{organizacion.nombre}}</h3>
-      <p>{{organizacion.cif}}</p>
+      <p>CIF: {{organizacion.cif}}</p>
     </div>
   </div>
 
@@ -17,7 +17,7 @@
     <div *ngFor="let e of eventos" class="tarjeta">
       <img src="{{e.imagen}}">
       <h3>{{e.nombre}}</h3>
-      <p>{{e.aforo}}</p>
+      <p>Aforo: {{e.aforo}}</p>
     </div>
   </div>
 
