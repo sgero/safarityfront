@@ -453,3 +453,10 @@ form>input{
     color: #fff;
     background: #7d2ae8;
 }
+
+.thumbnail a {
+
+  text-decoration: none;
+  color: white;
+
+}

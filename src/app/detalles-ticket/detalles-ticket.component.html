@@ -14,31 +14,33 @@
 
 
       <h2>EVENTO:</h2>
-      <div class="details-container">
-        <div class="detail">
-          <span class="value">{{ticket.eventoDTO.nombre}}</span>
+      <a [routerLink]="['/detallesEvento', this.ticket.eventoDTO.id]">
+        <div class="details-container">
+            <div class="detail">
+              <span class="value">{{ticket.eventoDTO.nombre}}</span>
+            </div>
+
+            <div class="detail">
+              <span class="value">{{ticket.eventoDTO.fecha_inicio}}</span>
+            </div>
+
+          <!--      <div class="detail">-->
+          <!--        <span class="value">{{ticket.}}</span>-->
+          <!--      </div>-->
+
+          <!--      <div class="detail">-->
+          <!--        <span class="value">{{ticket.}}</span>-->
+          <!--      </div>-->
+
+          <!--      <div class="detail">-->
+          <!--        <span class="value">{{ticket.}}</span>-->
+          <!--      </div>-->
+
+          <!--      <div class="detail">-->
+          <!--        <span class="value">{{ticket.}}</span>-->
+          <!--      </div>-->
         </div>
-
-        <div class="detail">
-          <span class="value">{{ticket.eventoDTO.fecha_inicio}}</span>
-        </div>
-
-        <!--      <div class="detail">-->
-        <!--        <span class="value">{{ticket.}}</span>-->
-        <!--      </div>-->
-
-        <!--      <div class="detail">-->
-        <!--        <span class="value">{{ticket.}}</span>-->
-        <!--      </div>-->
-
-        <!--      <div class="detail">-->
-        <!--        <span class="value">{{ticket.}}</span>-->
-        <!--      </div>-->
-
-        <!--      <div class="detail">-->
-        <!--        <span class="value">{{ticket.}}</span>-->
-        <!--      </div>-->
-      </div>
+      </a>
       <h2>ASISTENTE:</h2>
       <div class="details-container">
 
