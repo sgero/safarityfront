@@ -17,7 +17,7 @@
   <form (ngSubmit)="buscar()">
     <div>
       <div>
-        <label for="busqueda">Nombre:</label>
+        <label for="busqueda">Búsqueda por nombre:</label>
         <input type="text" id="busqueda" name="busqueda" [(ngModel)]="busqueda.busqueda" required>
       </div>
     </div>
@@ -31,7 +31,7 @@
     <div *ngFor="let o of organizaciones" class="tarjeta">
       <img src="{{o.logo}}">
       <h3>{{o.nombre}}</h3>
-      <p>{{o.cif}}</p>
+      <p>CIF: {{o.cif}}</p>
     </div>
   </div>
 
