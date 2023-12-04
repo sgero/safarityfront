@@ -31,5 +31,7 @@
   background: #5b13b9;
   color: #fff;
   cursor: pointer;
+  border-radius: 6px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
 }
 
