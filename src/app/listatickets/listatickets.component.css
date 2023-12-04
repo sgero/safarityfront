@@ -39,3 +39,10 @@ h3 {
   color: #8e44ad; /* Título morado */
   font-weight: bold;
 }
+
+
+.titulo {
+  color: #b000ff; /* Título morado */
+  font-weight: bold;
+  margin-top: 20px;
+}

@@ -1,6 +1,10 @@
 <body>
 
-<h1>Mis Tickets</h1>
+<div class="titulo">
+  <h1>MIS TICKETS</h1>
+
+</div>
+
 
 <div *ngFor="let ticket of tickets" class="miniatura">
   <a [routerLink]="['/detallesTicket', ticket.id]">
