@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 
 form {
@@ -23,18 +24,20 @@ input {
 
 button {
   padding: 10px;
-  background-color: #4caf50;
+  background-color: #b906f1;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #a100ff;
 }
 
 .seccion {
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .tarjeta {
@@ -45,10 +48,17 @@ button:hover {
   width: 200px;
   box-sizing: border-box;
   display: inline-block;
+  background-color: #C5B2CC;
 }
 
 .tarjeta img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+}
+
+
+
+.body {
+  min-height: 800px;
 }
