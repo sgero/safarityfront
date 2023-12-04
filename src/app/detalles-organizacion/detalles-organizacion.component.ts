@@ -7,6 +7,8 @@ import {Router} from "@angular/router";
   templateUrl: './detalles-organizacion.component.html',
   styleUrls: ['./detalles-organizacion.component.css']
 })
+
+
 export class DetallesOrganizacionComponent implements OnInit{
   alias = localStorage.getItem('alias');
   organizacion: any;
