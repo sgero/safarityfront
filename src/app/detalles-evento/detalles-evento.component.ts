@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Evento} from "../models/Evento";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {GeneralService} from "../services/general.service";
 
 @Component({
@@ -11,10 +11,15 @@ import {GeneralService} from "../services/general.service";
 export class DetallesEventoComponent implements OnInit{
 
   evento: any;
+  favorito={
+    alias:"",
+    evento:+""
+  }
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private eventoService:GeneralService
+    private eventoService:GeneralService,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -36,6 +41,23 @@ export class DetallesEventoComponent implements OnInit{
         );
       }
     });
+  }
+
+  enviarfavorito(){
+
+    this.favorito.evento = Number(localStorage.getItem('id_evento') || '');
+    this.favorito.alias = localStorage.getItem('alias') || '';
+
+    this.eventoService.favorito(this.favorito).subscribe(
+      data => {
+        this.evento = data;
+        this.router.navigate(['/favoritos']);
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+
   }
 
 }

@@ -10,6 +10,7 @@ import {Participante} from "../models/Participante";
 import {Busqueda} from "../models/Busqueda";
 import {Ticket} from "../models/Ticket";
 import {TicketDev} from "../models/TicketDev";
+import {Favorito} from "../models/Favorito";
 
 @Injectable({
   providedIn: 'root'
@@ -196,6 +197,14 @@ export class GeneralService {
 
   misEventos(data: string): Observable<Evento[]>{
     return this.http.post<Evento[]>(`${this.apiUrl}/evento/listarOrganizacion`, data)
+  }
+
+  favorito(data: Favorito){
+    return this.http.post<void>(`${this.apiUrl}/evento/favorito`, data)
+  }
+
+  misFavorito(data: Favorito): Observable<Evento[]>{
+    return this.http.post<Evento[]>(`${this.apiUrl}/evento/misFavorito`, data)
   }
 
 }

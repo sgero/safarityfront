@@ -30,6 +30,7 @@ import {DetallesOrganizacionComponent} from "./detalles-organizacion/detalles-or
 import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import {AuthGuard} from "./models/AuthGuard";
 import {MiseventosComponent} from "./miseventos/miseventos.component";
+import {FavoritosComponent} from "./favoritos/favoritos.component";
 
 // Rutas de navegación
 
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'miperfilorg', component: DetallesOrganizacionComponent},
   { path: 'ticket-list', component: TicketListComponent},
   { path: 'misEventos', component: MiseventosComponent},
+  { path: 'favoritos', component: FavoritosComponent},
 
   {
     path: 'ruta-protegida',

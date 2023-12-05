@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="favoritos.component.css">
+
+<body>
+<div class="columna">
+
+  <div class="seccion">
+
+    <h2>MIS EVENTOS FAVORITOS:</h2>
+
+    <div class="tar-evento">
+
+      <div *ngFor="let e of evento" class="tarjeta">
+        <a [routerLink]="['/detallesEvento', e.id]">
+          <img src="{{e.imagen}}">
+          <h3>{{e.nombre}}</h3>
+          <p>Aforo: {{e.aforo}}</p>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</body>
