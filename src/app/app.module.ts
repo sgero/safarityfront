@@ -50,6 +50,7 @@ import {LogoutComponent} from "./logout/logout.component";
 import { BusquedageneralComponent } from './busquedageneral/busquedageneral.component';
 import { DetallesOrganizacionComponent } from './detalles-organizacion/detalles-organizacion.component';
 import {TicketListComponent} from "./ticket-list/ticket-list.component";
+import { MiseventosComponent } from './miseventos/miseventos.component';
 
 
 
@@ -82,7 +83,8 @@ import {TicketListComponent} from "./ticket-list/ticket-list.component";
     LogoutComponent,
     BusquedageneralComponent,
     TicketListComponent,
-    DetallesOrganizacionComponent
+    DetallesOrganizacionComponent,
+    MiseventosComponent
 
   ],
   imports: [

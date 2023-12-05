@@ -194,4 +194,8 @@ export class GeneralService {
     return this.http.post<Participante>(`${this.apiUrl}/participante/mostrarParticipante`, data)
   }
 
+  misEventos(data: string): Observable<Evento[]>{
+    return this.http.post<Evento[]>(`${this.apiUrl}/evento/listarOrganizacion`, data)
+  }
+
 }

@@ -29,6 +29,7 @@ import {CareerComponent} from "./career/career.component";
 import {DetallesOrganizacionComponent} from "./detalles-organizacion/detalles-organizacion.component";
 import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import {AuthGuard} from "./models/AuthGuard";
+import {MiseventosComponent} from "./miseventos/miseventos.component";
 
 // Rutas de navegación
 
@@ -64,6 +65,7 @@ const routes: Routes = [
   { path: 'miperfil', component: MiperfilComponent},
   { path: 'miperfilorg', component: DetallesOrganizacionComponent},
   { path: 'ticket-list', component: TicketListComponent},
+  { path: 'misEventos', component: MiseventosComponent},
 
   {
     path: 'ruta-protegida',
