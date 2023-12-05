@@ -51,6 +51,7 @@ import { BusquedageneralComponent } from './busquedageneral/busquedageneral.comp
 import { DetallesOrganizacionComponent } from './detalles-organizacion/detalles-organizacion.component';
 import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import {ContactoComponent} from "./contacto/contacto.component";
+import {ToastrModule} from "ngx-toastr";
 
 
 
@@ -100,6 +101,8 @@ import {ContactoComponent} from "./contacto/contacto.component";
     MatSidenavModule,
     ReactiveFormsModule,
     MaterialModule,
+    BrowserAnimationsModule, // Agrega BrowserAnimationsModule
+    ToastrModule.forRoot(),
     RouterModule.forRoot([ // Configura tus rutas aquí
       { path: 'login', component: LoginComponent },
       // Otras rutas
