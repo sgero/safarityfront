@@ -29,6 +29,7 @@ import {CareerComponent} from "./career/career.component";
 import {DetallesOrganizacionComponent} from "./detalles-organizacion/detalles-organizacion.component";
 import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import {AuthGuard} from "./models/AuthGuard";
+import {ModificareventoComponent} from "./modificarevento/modificarevento.component";
 
 // Rutas de navegación
 
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'buscador', component: BuscadorComponent },
   { path: 'buscadororg', component: BuscadororganizacionComponent },
   { path: 'crearevento', component: CreareventoComponent },
+  { path: 'modificarevento/:id', component: ModificareventoComponent},
   { path: 'crearticket', component: CrearticketComponent },
   { path: 'listatickets', component: ListaticketsComponent },
   { path: 'detallesTicket/:id', component: DetallesTicketComponent },

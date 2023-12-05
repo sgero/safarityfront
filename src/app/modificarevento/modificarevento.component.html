@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Crear Evento | SAFARITY </title>
+  <link rel="stylesheet" type="text/css" href="modificarevento.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="contenedor">
+
+  <div class="principal">
+
+    <div class="alante">
+      <img src="assets/img/safacrowd2.png" alt="">
+      <div class="texto">
+        <span class="texto1">Haz lo que <br> te apasiona</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="forms">
+
+    <div class="form-content">
+
+      <div class="signup-form">
+
+        <div class="titulo">Modificar Evento</div>
+
+        <form (ngSubmit)="modificar()">
+
+          <div class="input-boxes">
+
+            <div class="input-box">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Nombre" name="nombre" id="nombre" [(ngModel)]="evento.nombre" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-map-marker"></i>
+              <input type="text" placeholder="Dirección" name="direccion" id="direccion" [(ngModel)]="evento.direccion" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-info"></i>
+              <input type="text" placeholder="Descripción" name="descripcion" id="descripcion" [(ngModel)]="evento.descripcion" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-globe"></i>
+              <input type="text" placeholder="URL de tu Imagen" name="imagen" id="imagen" [(ngModel)]="evento.imagen" required>
+            </div>
+            <p>Recuerda que estás asignando el precio.</p>
+            <div class="input-box">
+              <i class="fa fa-usd"></i>
+              <input type="number" name="precio" id="precio" [(ngModel)]="evento.precio" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fa fa-users"></i>
+              <input type="number" name="aforo" id="aforo" [(ngModel)]="evento.aforo" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-calendar"></i>
+              <input type="date" name="fecha_lanzamiento" id="fecha_lanzamiento" [(ngModel)]="evento.fecha_lanzamiento" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-calendar"></i>
+              <input type="date"  name="fecha_venta" id="fecha_venta" [(ngModel)]="evento.fecha_venta" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-calendar"></i>
+              <input type="date" name="fecha_inicio" id="fecha_inicio" [(ngModel)]="evento.fecha_inicio" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-calendar"></i>
+              <input type="date"  name="fecha_fin" id="fecha_fin" [(ngModel)]="evento.fecha_fin" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fa fa-ravelry"></i>
+              <select id="tipo_evento" name="tipo_evento" [(ngModel)]="evento.tipoEvento" required>
+                <option value="" disabled selected>Tipo de Evento</option>
+                <option value="CARRERA">Carrera</option>
+                <option value="SUBASTA">Subasta</option>
+                <option value="MERCADILLO">Mercadillo</option>
+                <option value="CONCIERTO">Concierto</option>
+                <option value="RECOGIDA">Recogida</option>
+                <option value="ESPECTACULO">Espectáculo</option>
+                <option value="OTRO">Otro</option>
+              </select>
+            </div>
+
+            <div class="input-box">
+              <i class="fa fa-credit-card-alt"></i>
+              <select id="tipo_pago" name="tipo_pago" [(ngModel)]="evento.tipoPago" required>
+                <option value="" disabled selected>Tipo de Pago</option>
+                <option value="GRATIS">Gratis</option>
+                <option value="DONATIVO">Donativo</option>
+                <option value="PRECIO_FIJO">Precio Fijo</option>
+              </select>
+            </div>
+            <span>{{mensaje}}</span>
+
+            <div class="boton input-box">
+              <input type="submit" (click)="formatDate()" value="modificarevento">
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

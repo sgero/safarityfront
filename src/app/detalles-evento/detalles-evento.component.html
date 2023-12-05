@@ -69,6 +69,11 @@
       <button class="ticket" routerLink="/crearticket">Comprar Ticket</button>
     </div>
 
+
+    <div class="botona" *ngIf="evento.organizacionDTO.id ==  ">
+      <button class="evento" [routerLink]="['/modificarevento', evento.id]" >Modificar evento</button>
+    </div>
+
   </div>
 
 </div>
