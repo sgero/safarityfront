@@ -28,6 +28,7 @@ export class DetallesEventoComponent implements OnInit{
       if (eventoId) {
         this.eventoService.obtenerEventoPorId(eventoId).subscribe(
           data => {
+            console.log(data)
             this.evento = data;
           },
           error => {
