@@ -10,6 +10,7 @@ import {Participante} from "../models/Participante";
 import {Busqueda} from "../models/Busqueda";
 import {Ticket} from "../models/Ticket";
 import {TicketDev} from "../models/TicketDev";
+import {Mensaje} from "../models/Mensaje";
 
 @Injectable({
   providedIn: 'root'
@@ -194,4 +195,8 @@ export class GeneralService {
     return this.http.post<Participante>(`${this.apiUrl}/participante/mostrarParticipante`, data)
   }
 
+
+  mensajeUsuario(data: Mensaje){
+    return this.http.post<void>(`${this.apiUrl}/enviar-mensaje`, data)
+  }
 }
