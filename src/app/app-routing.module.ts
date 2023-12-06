@@ -64,6 +64,7 @@ const routes: Routes = [
   { path: 'miperfil', component: MiperfilComponent},
   { path: 'miperfilorg', component: DetallesOrganizacionComponent},
   { path: 'ticket-list', component: TicketListComponent},
+  { path: 'generate-pdf', component: TicketListComponent},
 
   {
     path: 'ruta-protegida',
