@@ -18,7 +18,7 @@ export class TicketListComponent {
         let downloadURL = window.URL.createObjectURL(data);
         let link = document.createElement('a');
         link.href = downloadURL;
-        link.download = 'ticket-list.pdf';
+        link.download = 'ticket.pdf';
         link.click();
       },
       (error: any) => {

@@ -179,7 +179,7 @@ export class GeneralService {
   }
 
   generateTicketListPdf() {
-    return this.http.get(`${this.apiUrl}/ticket/generate-pdf`, { responseType: 'blob' });
+    return this.http.get(`${this.apiUrl}/ticket/down-pdf`, { responseType: 'blob' });
   }
 
 
