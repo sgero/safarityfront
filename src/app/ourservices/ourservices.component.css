@@ -2,6 +2,11 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 20px;
   padding: 20px;
+  height: 70vh; /* Puedes ajustar el valor según tus necesidades, por ejemplo, 120vh o 150vh */
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
 
 }
 h1, h2 {

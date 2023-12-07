@@ -9,6 +9,12 @@ body {
   justify-content: center;
   min-height: 100vh;
   background: #f5f5f5;
+
+  height: 100vh; /* 100% de la altura de la ventana */
+  margin: 0; /* Elimina el margen predeterminado del cuerpo */
+  overflow: hidden; /* Evita el desbordamiento vertical si el contenido es más grande */
+
+
 }
 
 h1 {
@@ -25,6 +31,7 @@ h1 {
   padding: 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  min-height: 800px;
 }
 
 form {

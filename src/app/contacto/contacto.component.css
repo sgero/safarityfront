@@ -1,10 +1,28 @@
 body {
   font-family: 'Arial', sans-serif;
-  margin: 20px;
-  padding: 20px;
+  margin: 0px;
+  padding: 0px;
   margin-left: 25%;
   margin-right: 25%;
+
+  height: 70vh; /* Puedes ajustar el valor según tus necesidades, por ejemplo, 120vh o 150vh */
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
 }
+
+.cuerpo {
+  margin-top: 30px;
+  padding-top: 30px;
+  height: 60vh; /* Puedes ajustar el valor según tus necesidades, por ejemplo, 120vh o 150vh */
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
 h2 {
   color: #333;
 }

@@ -4,16 +4,25 @@
   padding: 0;
   background-color: #d0c4d5;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* 100% de la altura de la ventana */
   display: flex;
   flex-direction: column;
-  /*border-bottom-left-radius: 20px;*/
-  /*border-bottom-right-radius: 20px;*/
-  /*border-top-left-radius: 20px;*/
-  /*border-top-right-radius: 20px;*/
   margin-top: 30px;
   padding-top: 30px;
+  overflow: hidden;
+
 }
+.cuerpo {
+  margin-top: 30px;
+  padding-top: 130px;
+  height: 60vh; /* Puedes ajustar el valor según tus necesidades, por ejemplo, 120vh o 150vh */
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
 
 .numero {
   display: flex;
@@ -27,7 +36,7 @@
   flex-direction: row;
   background-color: #d0c4d5;
   width: 100%;
-  height: 100%;
+
   margin-bottom: 20px;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +45,7 @@
   padding-right: 5px;
   padding-bottom: 50px;
   flex-wrap: wrap;
+  height: 100vh;
 }
 
 

@@ -5,6 +5,11 @@ body {
   padding: 20px;
   margin-left: 25%;
   margin-right: 25%;
+  height: 70vh; /* Puedes ajustar el valor según tus necesidades, por ejemplo, 120vh o 150vh */
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
 }
 h1, h2 {
   color: #333;

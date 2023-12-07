@@ -1,3 +1,7 @@
+.body {
+  min-height: 800px;
+}
+
 h3{
 
   color: black;
@@ -20,6 +24,7 @@ h3:hover{
   gap: 50px;
   justify-content: center;
   padding-bottom: 200px;
+  min-height: 800px;
 
 }
 
