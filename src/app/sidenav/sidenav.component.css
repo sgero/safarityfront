@@ -61,3 +61,10 @@ h1.example-app-name {
   height: 100px;
 
 }
+
+
+.dark-theme {
+  background-color: #ffffff; /* Color de fondo oscuro */
+  color: #956ff6; /* Color del texto en tema oscuro */
+  /* Agrega cualquier otro estilo que desees para el tema oscuro */
+}
