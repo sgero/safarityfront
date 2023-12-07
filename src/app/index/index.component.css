@@ -15,6 +15,11 @@
   padding-top: 30px;
 }
 
+.body .img {
+    filter: grayscale(100%);
+  }
+
+
 .numero {
   display: flex;
   flex-direction: row;
@@ -34,8 +39,10 @@
   padding-top: 150px;
   padding-left: 5px;
   padding-right: 5px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
   flex-wrap: wrap;
+
 }
 
 
@@ -49,8 +56,11 @@
   font-weight: lighter;
   text-align: center;
   margin: 10px auto; /* Alinea al centro horizontalmente y ajusta el margen */
-  padding: 10px 10px 10px 10px; /* Modificado el padding para ser más sensible */
-  box-sizing: border-box; /* Evita que el padding afecte al ancho total */
+  padding: 30px 30px 30px 30px; /* Modificado el padding para ser más sensible */
+ /* box-sizing: border-box; /* Evita que el padding afecte al ancho total */
+  box-shadow: 0 4px 8px rgba(1, 1, 1, 1);
+  margin-top: 30px;
+  border-radius: 10px;
 }
 
 /* Agrega un estilo adicional para hacer el texto más responsive */
@@ -71,10 +81,7 @@
 
 .imagen > img {
   width: 65%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 10px;
 
 }
 
@@ -86,6 +93,9 @@
   background-color: #d0c4d5;
   padding: 20px 20px 20px 20px;
   align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 4px solid #7D2AE8;
+  margin-bottom: 0px;
 }
 
 
@@ -107,8 +117,10 @@
   align-items: center;
   font-family: 'Roboto', sans-serif;
   font-size: 1.5em;
-  font-weight: lighter;
+  font-weight: normal;
   text-align: center;
+  border-bottom: 0px solid #956ff6;
+  margin-left: 40px;
 
 
 
@@ -174,14 +186,14 @@
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border: 1px solid #ccc;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  border: 2px solid #956ff6;
+  box-shadow: 0px 0px 5px 0px #7D2AE8;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 }
 
 .miniatura:hover {
-  border: 3px solid #b906f1;
+  border: 3px solid #7D2AE8;
   transform: scale(1.1);
 
 }
@@ -197,6 +209,7 @@
   padding: 10px 10px 10px 10px;
   border-radius:25px;
   display:flex;
+  filter: grayscale(100%);
 }
 
 
@@ -249,7 +262,7 @@
 
 
 .miniatura > a > img:hover{
-  border: 1px solid #b906f1;
+  border: 1px solid #7D2AE8;
 
 }
 
@@ -308,6 +321,10 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding-bottom: 4%;
+    border-bottom: 4px solid #7D2AE8;
 
   }
 
@@ -322,6 +339,14 @@
 
   }
 
+#imgevent {
+  width: 7%; /* Ajusta el ancho al 100% del contenedor */
+  /* Añade un borde de 2px sólido con color #333 */
+  border-radius: 8px; /* Agrega esquinas redondeadas de 8px */
+   /* Aplica una sombra ligera */
+  /* Otros estilos personalizados */
+
+}
 
 
 
