@@ -10,6 +10,7 @@ import {Participante} from "../models/Participante";
 import {Busqueda} from "../models/Busqueda";
 import {Ticket} from "../models/Ticket";
 import {TicketDev} from "../models/TicketDev";
+import {Mensaje} from "../models/Mensaje";
 
 @Injectable({
   providedIn: 'root'
@@ -178,7 +179,7 @@ export class GeneralService {
   }
 
   generateTicketListPdf() {
-    return this.http.get(`${this.apiUrl}/ticket/generate-pdf`, { responseType: 'blob' });
+    return this.http.get(`${this.apiUrl}/ticket/down-pdf`, { responseType: 'blob' });
   }
 
 
@@ -198,4 +199,8 @@ export class GeneralService {
     return this.http.post<Evento[]>(`${this.apiUrl}/evento/listarOrganizacion`, data)
   }
 
+
+  mensajeUsuario(data: Mensaje){
+    return this.http.post<void>(`${this.apiUrl}/enviar-mensaje`, data)
+  }
 }

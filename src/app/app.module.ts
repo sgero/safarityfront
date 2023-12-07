@@ -51,6 +51,8 @@ import { BusquedageneralComponent } from './busquedageneral/busquedageneral.comp
 import { DetallesOrganizacionComponent } from './detalles-organizacion/detalles-organizacion.component';
 import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import { MiseventosComponent } from './miseventos/miseventos.component';
+import {ContactoComponent} from "./contacto/contacto.component";
+import {ToastrModule} from "ngx-toastr";
 
 
 
@@ -81,6 +83,7 @@ import { MiseventosComponent } from './miseventos/miseventos.component';
     ListaticketsComponent,
     DetallesTicketComponent,
     LogoutComponent,
+    ContactoComponent,
     BusquedageneralComponent,
     TicketListComponent,
     DetallesOrganizacionComponent,
@@ -100,6 +103,8 @@ import { MiseventosComponent } from './miseventos/miseventos.component';
     MatSidenavModule,
     ReactiveFormsModule,
     MaterialModule,
+    BrowserAnimationsModule, // Agrega BrowserAnimationsModule
+    ToastrModule.forRoot(),
     RouterModule.forRoot([ // Configura tus rutas aquí
       { path: 'login', component: LoginComponent },
       // Otras rutas

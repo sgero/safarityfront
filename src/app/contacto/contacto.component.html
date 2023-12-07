@@ -1,29 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contactanos</title>
+<!--<!DOCTYPE html>-->
+<!--<html lang="es">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Contactanos</title>-->
 
-</head>
-<body>
+<!--</head>-->
+<!--<body>-->
 
-<section id="contactanos">
+<!--<section id="contactanos">-->
+<!--  <h2>Contáctanos</h2>-->
+
+<!--  <form action="tu_script_de_envio.php" method="post">-->
+<!--    <label for="nombre">Nombre:</label>-->
+<!--    <input type="text" id="nombre" name="nombre" required>-->
+
+<!--    <label for="email">Correo Electrónico:</label>-->
+<!--    <input type="email" id="email" name="email" required>-->
+
+<!--    <label for="mensaje">Mensaje:</label>-->
+<!--    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>-->
+
+<!--    <button type="submit">Enviar Mensaje</button>-->
+<!--  </form>-->
+<!--</section>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<form (ngSubmit)="enviarFormulario()" #formularioContacto="ngForm">-->
+<!--  &lt;!&ndash; ... tus campos de formulario ... &ndash;&gt;-->
+<!--  <button type="submit">Enviar Mensaje</button>-->
+<!--</form>-->
+
+<div class="formulario-container">
   <h2>Contáctanos</h2>
+<form (ngSubmit)="enviarFormulario()" #formularioContacto="ngForm">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" [(ngModel)]="Mensaje.nombre" required>
 
-  <form action="tu_script_de_envio.php" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required>
+  <label for="email">Correo Electrónico:</label>
+  <input type="email" id="email" name="email" [(ngModel)]="Mensaje.email" required>
 
-    <label for="email">Correo Electrónico:</label>
-    <input type="email" id="email" name="email" required>
+  <label for="mensaje">Mensaje:</label>
+  <textarea id="mensaje" name="mensaje" rows="4" [(ngModel)]="Mensaje.mensaje" required></textarea>
 
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-    <button type="submit">Enviar Mensaje</button>
-  </form>
-</section>
-
-</body>
-</html>
+  <button type="submit">Enviar Mensaje</button>
+</form>
+</div>
