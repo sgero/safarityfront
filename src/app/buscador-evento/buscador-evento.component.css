@@ -7,19 +7,19 @@
   height: 100vh; /* 100% de la altura de la ventana */
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
-  padding-top: 30px;
-  overflow: hidden;
+  margin-top: 0px;
+  padding-top: 0px;
+  overflow: auto;
 
 }
 .cuerpo {
-  margin-top: 30px;
-  padding-top: 130px;
-  height: 60vh; /* Puedes ajustar el valor según tus necesidades, por ejemplo, 120vh o 150vh */
+  margin-top: 0px;
+  padding-top: 30px;
+  height: 100vh; /* Puedes ajustar el valor según tus necesidades, por ejemplo, 120vh o 150vh */
   display: flex;
   flex-direction: column;
 
-  overflow: hidden;
+  overflow: auto;
 }
 
 
