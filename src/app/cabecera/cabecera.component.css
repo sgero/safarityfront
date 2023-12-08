@@ -279,12 +279,12 @@ cursor: auto;
   height: 100%;
   outline: none;
   border: none;
-  padding: 0 30px;
+  padding: 0 20px;
   font-size: 16px;
   font-weight: 500;
   border-bottom: 2px solid rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 .boton2 button:hover{
-  background: #5b13b9;
+  background: #a100ff;
 }

@@ -20,7 +20,7 @@
 
 .cuerpo {
   margin-top: 0px;
-  padding-top: 30px;
+  padding-top: 60px;
   height: 100vh; /* Puedes ajustar el valor según tus necesidades, por ejemplo, 120vh o 150vh */
   display: flex;
   flex-direction: column;
@@ -28,7 +28,14 @@
   overflow: auto;
 }
 
-
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a100ff;
+  font-weight: bold;
+  font-size: 1.5em;
+}
 
 .numero {
   display: flex;
@@ -190,13 +197,13 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 1px solid #ccc;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 3px rgb(66, 25, 66);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 }
 
 .miniatura:hover {
-  border: 3px solid #b906f1;
+  /*border: 3px solid #b906f1;*/
   transform: scale(1.1);
 
 }
@@ -260,6 +267,7 @@
   color: black;
   text-decoration: none;
   font-style: italic;
+
 
 }
 
@@ -405,7 +413,7 @@
   transition: all 0.3s ease;
 }
 .boton button:hover{
-  background: #5b13b9;
+  background: #a100ff;
 }
 
 label{
