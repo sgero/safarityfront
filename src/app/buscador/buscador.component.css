@@ -11,6 +11,10 @@
   overflow: auto;
 }
 
+.body .img {
+  filter: grayscale(100%);
+}
+
 h3{
 
   color: black;

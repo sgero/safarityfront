@@ -3,6 +3,12 @@
 }
 
 
+
+.body .img {
+  filter: grayscale(100%);
+}
+
+
 .columna {
   display: flex;
   flex-direction: column;

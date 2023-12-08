@@ -10,6 +10,10 @@
   padding-top: 30px;
 }
 
+.body .img {
+  filter: grayscale(100%);
+}
+
 .numero {
   display: flex;
   flex-direction: row;

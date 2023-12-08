@@ -76,9 +76,14 @@ header{
 }
 
 .icon p {
-  margin: 0;
+  margin: 0px;
   cursor: pointer; /* Añadido para cambiar el cursor a puntero */
 }
+
+#acceder{
+margin-top: 3px;
+}
+
 
 input{
 
@@ -123,6 +128,7 @@ input{
 .dropdown {
   display: inline-block;
   position: relative;
+  margin-top:3px;
 }
 
 

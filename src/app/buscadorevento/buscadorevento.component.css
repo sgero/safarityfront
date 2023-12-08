@@ -17,6 +17,13 @@ body {
 
 }
 
+
+.body .img {
+  filter: grayscale(100%);
+}
+
+
+
 h1 {
   font-size: 24px;
   font-weight: 600;

@@ -2,7 +2,9 @@
 .body {
   background-color: #f5cef5;
 }
-
+.body .img {
+  filter: grayscale(100%);
+}
 
 .columna {
   display: flex;
@@ -32,6 +34,10 @@
   margin-left: 40px;
   transition: .3s ease;
   background: #C5B2CC;
+}
+
+.tarjeta .img {
+  filter: grayscale(100%);
 }
 
 .tar-evento{

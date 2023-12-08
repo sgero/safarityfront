@@ -12,6 +12,12 @@
   overflow: auto;
 
 }
+
+.body .img {
+  filter: grayscale(100%);
+}
+
+
 .cuerpo {
   margin-top: 0px;
   padding-top: 30px;
