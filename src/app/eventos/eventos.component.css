@@ -34,6 +34,8 @@
   margin-left: 40px;
   transition: .3s ease;
   background: #C5B2CC;
+  object-fit: cover;
+
 }
 
 .tarjeta .img {
@@ -73,6 +75,7 @@ img {
   height: auto;
   border-radius: 5px;
   border: 1px solid #f5cef5;
+  filter: grayscale(100%);
 }
 
 .tarjeta h3 {

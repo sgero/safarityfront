@@ -237,6 +237,7 @@
   text-align: center;
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
+  filter: grayscale(100%);
 }
 
 .miniatura > a {
