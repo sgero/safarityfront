@@ -212,12 +212,17 @@ export class GeneralService {
     return this.http.post<string>(`${this.apiUrl}/agregar`, body, { headers });
   }
 
-  obtenerEventosFavoritos(participanteId: number): Observable<Evento[]> {
+  obtenerEventosFavoritos(participanteId: number | undefined): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiUrl}/eventos/${participanteId}`);
   }
 
   agregarResenya(participanteId: number, eventoId: number, resenya: string): Observable<string> {
     const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
     return this.http.post<string>(`${this.apiUrl}/resenyas`, params, { params: { resenya } });
+  }
+
+  eliminarFavorito(id: bigint | undefined, participanteId: number | undefined) {
+    return this.http.delete(`${this.apiUrl}/eliminar/${id}/${participanteId}`);
+
   }
 }
