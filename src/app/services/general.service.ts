@@ -206,8 +206,10 @@ export class GeneralService {
 
 
   agregarFavorito(participanteId: number, eventoId: number): Observable<string> {
-    const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
-    return this.http.post<string>(`${this.apiUrl}/agregar`, params);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const body = { participanteId, eventoId };
+
+    return this.http.post<string>(`${this.apiUrl}/agregar`, body, { headers });
   }
 
   obtenerEventosFavoritos(participanteId: number): Observable<Evento[]> {
@@ -216,6 +218,6 @@ export class GeneralService {
 
   agregarResenya(participanteId: number, eventoId: number, resenya: string): Observable<string> {
     const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
-    return this.http.post<string>(`${this.apiUrl}/reseñas`, params, { params: { resenya } });
+    return this.http.post<string>(`${this.apiUrl}/resenyas`, params, { params: { resenya } });
   }
 }
