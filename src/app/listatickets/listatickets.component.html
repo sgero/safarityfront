@@ -5,16 +5,19 @@
 
 </div>
 
+<div class="miniatura2">
+  <H3>TICKETS:</H3>
+</div>
 
 <div *ngFor="let ticket of tickets" class="miniatura">
   <a [routerLink]="['/detallesTicket', ticket.id]">
 
-
+    <h2>Importe: </h2>
     <span><strong>Total pagado:</strong> {{ticket.dineroAportado}} €</span>
     <span><strong>Fecha de compra:</strong> {{ticket.fecha}}</span>
     <br>
     <h2>Evento: </h2>
-      <span><h3> {{ticket.eventoDTO.nombre}}</h3></span>
+      <span><h3 class="titulin"> {{ticket.eventoDTO.nombre}}</h3></span>
     <span><strong>Fecha del evento:</strong> {{ticket.eventoDTO.fecha_inicio}}</span>
 <br>
     <h2>Asistente:</h2>
