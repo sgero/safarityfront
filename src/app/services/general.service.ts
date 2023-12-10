@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 import { Organizacion } from "../models/Organizacion";
 import { Evento } from "../models/Evento";
@@ -202,5 +202,20 @@ export class GeneralService {
 
   mensajeUsuario(data: Mensaje){
     return this.http.post<void>(`${this.apiUrl}/enviar-mensaje`, data)
+  }
+
+
+  agregarFavorito(participanteId: number, eventoId: number): Observable<string> {
+    const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
+    return this.http.post<string>(`${this.apiUrl}/agregar`, params);
+  }
+
+  obtenerEventosFavoritos(participanteId: number): Observable<Evento[]> {
+    return this.http.get<Evento[]>(`${this.apiUrl}/eventos/${participanteId}`);
+  }
+
+  agregarResenya(participanteId: number, eventoId: number, resenya: string): Observable<string> {
+    const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
+    return this.http.post<string>(`${this.apiUrl}/reseñas`, params, { params: { resenya } });
   }
 }

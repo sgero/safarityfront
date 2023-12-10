@@ -53,6 +53,7 @@ import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import { MiseventosComponent } from './miseventos/miseventos.component';
 import {ContactoComponent} from "./contacto/contacto.component";
 import {ToastrModule} from "ngx-toastr";
+import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
 
 
 
@@ -87,7 +88,8 @@ import {ToastrModule} from "ngx-toastr";
     BusquedageneralComponent,
     TicketListComponent,
     DetallesOrganizacionComponent,
-    MiseventosComponent
+    MiseventosComponent,
+    MisFavoritosComponent
 
   ],
   imports: [
