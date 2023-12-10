@@ -31,6 +31,7 @@ import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import {AuthGuard} from "./models/AuthGuard";
 import {MiseventosComponent} from "./miseventos/miseventos.component";
 import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
+import {MonederoComponent} from "./monedero/monedero.component";
 
 // Rutas de navegación
 
@@ -69,6 +70,7 @@ const routes: Routes = [
   { path: 'misEventos', component: MiseventosComponent},
   { path: 'generate-pdf', component: TicketListComponent},
   { path: 'favoritos', component: MisFavoritosComponent},
+  { path: 'monedero', component: MonederoComponent},
 
   {
     path: 'ruta-protegida',
