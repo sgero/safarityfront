@@ -15,6 +15,7 @@ export class DetallesEventoComponent implements OnInit{
     alias:"",
     evento:+""
   }
+  comprobarEvento: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,11 +24,23 @@ export class DetallesEventoComponent implements OnInit{
   ) {}
 
   ngOnInit() {
+
+    this.favorito.evento = Number(localStorage.getItem('id_evento') || '');
+    this.favorito.alias = localStorage.getItem('alias') || '';
+
+    this.eventoService.comprobarFavorito(this.favorito).subscribe(
+      data => {
+        this.comprobarEvento = data;
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+
     this.activatedRoute.params.subscribe(params => {
       const eventoId = +params['id']; // Convierte el parámetro de la URL a número
 
       localStorage.setItem('id_evento', String(eventoId))
-
 
       if (eventoId) {
         this.eventoService.obtenerEventoPorId(eventoId).subscribe(
@@ -52,6 +65,23 @@ export class DetallesEventoComponent implements OnInit{
       data => {
         this.evento = data;
         this.router.navigate(['/favoritos']);
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+
+  }
+
+  eliminarfavorito(){
+
+    this.favorito.evento = Number(localStorage.getItem('id_evento') || '');
+    this.favorito.alias = localStorage.getItem('alias') || '';
+
+    this.eventoService.eliminarfavorito(this.favorito).subscribe(
+      data => {
+        this.evento = data;
+        this.router.navigate(['/inicio']);
       },
       error => {
         console.error('Error:', error);

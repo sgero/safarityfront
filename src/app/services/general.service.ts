@@ -234,4 +234,16 @@ export class GeneralService {
 
   }
 
+  comprobarFavorito(data: Favorito): Observable<Boolean>{
+
+    return this.http.post<Boolean>(`${this.apiUrl}/evento/comprobarFavorito`, data)
+
+  }
+
+  eliminarfavorito(data: Favorito){
+
+    return this.http.post<void>(`${this.apiUrl}/evento/eliminarFavorito`, data)
+
+  }
+
 }

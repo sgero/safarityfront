@@ -421,3 +421,10 @@
 .botona button:valid{
   border-color: #7d2ae8;
 }
+
+.botones{
+
+  display: flex;
+  justify-content: space-around;
+
+}

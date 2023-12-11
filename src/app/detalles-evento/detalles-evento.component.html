@@ -65,12 +65,20 @@
 
     </div>
 
-    <div class="botona">
-      <button class="ticket" routerLink="/crearticket">Comprar Ticket</button>
-    </div>
+    <div class="botones">
 
-    <div class="botona">
-      <button class="ticket" (click)="enviarfavorito()">Añadir a Favorito</button>
+      <div class="botona">
+        <button class="ticket" routerLink="/crearticket">Comprar Ticket</button>
+      </div>
+
+      <div class="botona" *ngIf="!comprobarEvento">
+        <button class="ticket" (click)="enviarfavorito()">Añadir a Favorito</button>
+      </div>
+
+      <div class="botona" *ngIf="comprobarEvento">
+        <button class="ticket" (click)="eliminarfavorito()">Eliminar de Favorito</button>
+      </div>
+
     </div>
 
   </div>
