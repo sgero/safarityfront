@@ -31,6 +31,7 @@ import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import {AuthGuard} from "./models/AuthGuard";
 import {MiseventosComponent} from "./miseventos/miseventos.component";
 import {FavoritosComponent} from "./favoritos/favoritos.component";
+import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
 
 // Rutas de navegación
 
@@ -67,6 +68,8 @@ const routes: Routes = [
   { path: 'miperfilorg', component: DetallesOrganizacionComponent},
   { path: 'ticket-list', component: TicketListComponent},
   { path: 'misEventos', component: MiseventosComponent},
+  { path: 'generate-pdf', component: TicketListComponent},
+  { path: 'favoritos', component: MisFavoritosComponent},
   { path: 'favoritos', component: FavoritosComponent},
 
   {

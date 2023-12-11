@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 import { Organizacion } from "../models/Organizacion";
 import { Evento } from "../models/Evento";
@@ -10,7 +10,7 @@ import {Participante} from "../models/Participante";
 import {Busqueda} from "../models/Busqueda";
 import {Ticket} from "../models/Ticket";
 import {TicketDev} from "../models/TicketDev";
-import {Favorito} from "../models/Favorito";
+import {Mensaje} from "../models/Mensaje";
 
 @Injectable({
   providedIn: 'root'
@@ -179,7 +179,7 @@ export class GeneralService {
   }
 
   generateTicketListPdf() {
-    return this.http.get(`${this.apiUrl}/ticket/generate-pdf`, { responseType: 'blob' });
+    return this.http.get(`${this.apiUrl}/ticket/down-pdf`, { responseType: 'blob' });
   }
 
 
@@ -199,12 +199,25 @@ export class GeneralService {
     return this.http.post<Evento[]>(`${this.apiUrl}/evento/listarOrganizacion`, data)
   }
 
-  favorito(data: Favorito){
-    return this.http.post<void>(`${this.apiUrl}/evento/favorito`, data)
+
+  mensajeUsuario(data: Mensaje){
+    return this.http.post<void>(`${this.apiUrl}/enviar-mensaje`, data)
   }
 
-  misFavorito(data: Favorito): Observable<Evento[]>{
-    return this.http.post<Evento[]>(`${this.apiUrl}/evento/misFavorito`, data)
+
+  agregarFavorito(participanteId: number, eventoId: number): Observable<string> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const body = { participanteId, eventoId };
+
+    return this.http.post<string>(`${this.apiUrl}/agregar`, body, { headers });
   }
 
+  obtenerEventosFavoritos(participanteId: number): Observable<Evento[]> {
+    return this.http.get<Evento[]>(`${this.apiUrl}/eventos/${participanteId}`);
+  }
+
+  agregarResenya(participanteId: number, eventoId: number, resenya: string): Observable<string> {
+    const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
+    return this.http.post<string>(`${this.apiUrl}/resenyas`, params, { params: { resenya } });
+  }
 }

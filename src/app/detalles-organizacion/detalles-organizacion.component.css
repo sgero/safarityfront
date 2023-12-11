@@ -2,6 +2,10 @@
   min-height:800px;
 }
 
+.body .img {
+  filter: grayscale(100%);
+}
+
 .perfil {
   display: flex;
 

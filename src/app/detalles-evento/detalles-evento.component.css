@@ -10,6 +10,10 @@
   padding-top: 30px;
 }
 
+.body .img {
+  filter: grayscale(100%);
+}
+
 .numero {
   display: flex;
   flex-direction: row;
@@ -62,6 +66,7 @@
   margin-right: 20px;
   display: flex;
   justify-content: center;
+
 }
 
 .imagen > img {
@@ -70,6 +75,7 @@
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+
 
 }
 
@@ -173,6 +179,10 @@
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+}
+
+.miniatura .img {
+  filter: grayscale(100%);
 }
 
 .miniatura:hover {

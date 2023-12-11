@@ -76,9 +76,14 @@ header{
 }
 
 .icon p {
-  margin: 0;
+  margin: 0px;
   cursor: pointer; /* Añadido para cambiar el cursor a puntero */
 }
+
+#acceder{
+margin-top: 3px;
+}
+
 
 input{
 
@@ -123,6 +128,7 @@ input{
 .dropdown {
   display: inline-block;
   position: relative;
+  margin-top:3px;
 }
 
 
@@ -227,4 +233,58 @@ input{
 }
 .boton button:hover{
   background: #5b13b9;
+}
+
+
+.aliaslog {
+  font-size: 1.1em;
+  color: #5b13b9;
+}
+
+.aliaslog :hover {
+  color: #9c5ee7 !important;
+  transition: 0.2s;
+}
+
+
+
+.boton2 p{
+
+cursor: auto;
+  color: #7859c7 !important;
+
+
+
+}
+
+
+
+.boton2{
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  position: relative;
+  gap: 10%;
+
+}
+.boton2 button{
+  color: #fff;
+  background: #7d2ae8;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.boton2 button:hover{
+  background: #a100ff;
 }

@@ -10,6 +10,10 @@
   padding-top: 30px;
 }
 
+.body .img {
+  filter: grayscale(100%);
+}
+
 .numero {
   display: flex;
   flex-direction: row;
@@ -444,14 +448,14 @@ form>input{
   justify-content: center;
   margin-top: 30px;
   padding-top: 30px;
-  background-color: #9a5bec;
-  color: #fff;
+  background-color: #c8bfd3;
+  color: #5f1bb7;
 }
 
 
 .button .btn-pdf{
     color: #fff;
-    background: #7d2ae8;
+    background: #5b13b9;
 }
 
 .thumbnail a {

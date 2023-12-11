@@ -1,4 +1,4 @@
-import { Component, OnDestroy, ChangeDetectorRef, OnInit } from '@angular/core';
+import {Component, OnDestroy, ChangeDetectorRef, OnInit, ElementRef, Renderer2} from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { GeneralService } from '../services/general.service';
 import {Router} from "@angular/router";
@@ -18,17 +18,24 @@ export class SidenavComponent implements OnInit, OnDestroy {
   auth: { token: string } = { token: '' };
 
   private _mobileQueryListener: () => void;
+  private snav: any;
 
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
     private generalService: GeneralService,
-    public router: Router
-  ) {
+    public router: Router,
+    private elementRef: ElementRef,
+    private renderer2: Renderer2){
+
+
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
+
+
+
 
   // En SidenavComponent
   ngOnInit() {
@@ -173,6 +180,20 @@ export class SidenavComponent implements OnInit, OnDestroy {
     this.router.navigate(['/inicio']).then(()=>window.location.href='/inicio');
 
   }
+
+  darkTheme = false;
+
+  toggleDarkTheme() {
+    if (this.elementRef && this.elementRef.nativeElement) {
+      console.log('Toggle Dark Theme Clicked');
+      this.darkTheme = !this.darkTheme;
+      console.log('Dark Theme:', this.darkTheme);
+      const themeClass = this.darkTheme ? 'dark-theme' : '';
+      this.snav.nativeElement.classList.toggle('dark-theme', this.darkTheme);
+    }
+  }
+
+
 
 
 }

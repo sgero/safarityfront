@@ -2,7 +2,9 @@
 .body {
   background-color: #f5cef5;
 }
-
+.body .img {
+  filter: grayscale(100%);
+}
 
 .columna {
   display: flex;
@@ -26,12 +28,18 @@
   border-radius: 20px;
   padding: 20px;
   width: 200px;
-  box-shadow: 0px 0px 20px 20px rgb(232, 228, 232);
+  box-shadow: 0px 0px 10px 3px rgb(66, 25, 66);
   text-align: center;
   margin: 10px;
   margin-left: 40px;
   transition: .3s ease;
   background: #C5B2CC;
+  object-fit: cover;
+
+}
+
+.tarjeta .img {
+  filter: grayscale(100%);
 }
 
 .tar-evento{
@@ -67,6 +75,7 @@ img {
   height: auto;
   border-radius: 5px;
   border: 1px solid #f5cef5;
+  filter: grayscale(100%);
 }
 
 .tarjeta h3 {

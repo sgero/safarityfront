@@ -13,7 +13,7 @@
 
 
 <div class="columna">
-
+  <h2>ORGANIZACIONES:</h2>
   <form (ngSubmit)="buscar()">
     <div>
       <div>
@@ -27,8 +27,9 @@
   </form>
 
   <div class="seccion">
-    <h2>ORGANIZACIONES:</h2>
+
     <div *ngFor="let o of organizaciones" class="tarjeta">
+
       <img src="{{o.logo}}">
       <h3>{{o.nombre}}</h3>
       <p>CIF: {{o.cif}}</p>
