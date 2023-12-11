@@ -55,6 +55,7 @@ import {ContactoComponent} from "./contacto/contacto.component";
 import {ToastrModule} from "ngx-toastr";
 import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import {MonederoComponent} from "./monedero/monedero.component";
 
 
 
@@ -91,13 +92,15 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     DetallesOrganizacionComponent,
     MiseventosComponent,
     MisFavoritosComponent,
-    FavoritosComponent
+    FavoritosComponent,
+    MonederoComponent
 
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     MatToolbarModule,

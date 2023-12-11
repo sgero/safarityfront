@@ -8,6 +8,7 @@ import {ExplorarComponent} from "./explorar/explorar.component";
 import {DetallesEventoComponent} from "./detalles-evento/detalles-evento.component";
 import {BuscadorEventoComponent} from "./buscador-evento/buscador-evento.component";
 import {OrganizacionReg2Component} from "./organizacion-reg2/organizacion-reg2.component";
+import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
 import {OrganizacionReg1Component} from "./organizacion-reg1/organizacion-reg1.component";
 import {EventosComponent} from "./eventos/eventos.component";
 import {OrganizacionesComponent} from "./organizaciones/organizaciones.component";
@@ -31,6 +32,7 @@ import {AuthGuard} from "./models/AuthGuard";
 import {MiseventosComponent} from "./miseventos/miseventos.component";
 import {FavoritosComponent} from "./favoritos/favoritos.component";
 import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
+import {MonederoComponent} from "./monedero/monedero.component";
 
 // Rutas de navegación
 
@@ -70,6 +72,7 @@ const routes: Routes = [
   { path: 'generate-pdf', component: TicketListComponent},
   { path: 'misfavoritos', component: MisFavoritosComponent},
   { path: 'favoritos', component: FavoritosComponent},
+  { path: 'monedero', component: MonederoComponent},
 
   {
     path: 'ruta-protegida',

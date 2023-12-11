@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Evento} from "../models/Evento";
 import {ActivatedRoute, Router} from "@angular/router";
 import {GeneralService} from "../services/general.service";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-detalles-evento',
@@ -15,6 +16,7 @@ export class DetallesEventoComponent implements OnInit{
     alias:"",
     evento:+""
   }
+  esParticipante: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -41,6 +43,28 @@ export class DetallesEventoComponent implements OnInit{
         );
       }
     });
+
+    // Obtener el rol del usuario actual
+    this.eventoService.getUserRol().subscribe(rol => {
+        // Mapear el nombre del rol a su valor numérico
+        console.log('Rol del usuario:', rol);
+
+        // Mapear el nombre del rol a su valor numérico
+        const rolNumerico = this.eventoService.mapRoleNameToNumber(rol);
+
+        // Verificar si el usuario tiene el rol de participante (usando el valor numérico)
+        this.esParticipante = rolNumerico === 2;
+        console.log('¿Es participante?', this.esParticipante);
+      },
+      (error: any) => {
+        // Agregamos la función de manejo de errores
+        console.error('Error al obtener el rol del usuario:', error);
+        // Imprimir más detalles sobre el error
+        if (error instanceof HttpErrorResponse) {
+          console.error('Status:', error.status);
+          console.error('Mensaje de error:', error.error);
+        }
+      });
   }
 
   enviarfavorito(){
@@ -59,5 +83,7 @@ export class DetallesEventoComponent implements OnInit{
     );
 
   }
+
+
 
 }
