@@ -24,11 +24,11 @@ export class MisFavoritosComponent implements OnInit {
       });
   }
 
-  eliminarFavorito(evento: Evento) {
-    this.favoritoService.eliminarFavorito(evento.id, this.participanteId)
-      .subscribe(() => {
-        this.obtenerEventosFavoritos();
-      });
-
-  }
+  // eliminarFavorito(evento: Evento) {
+  //   this.favoritoService.eliminarFavorito(evento.id, this.participanteId)
+  //     .subscribe(() => {
+  //       this.obtenerEventosFavoritos();
+  //     });
+  //
+  // }
 }

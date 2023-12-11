@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Evento} from "../models/Evento";
 import {ActivatedRoute, Router} from "@angular/router";
 import {GeneralService} from "../services/general.service";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-detalles-evento',
@@ -117,5 +118,5 @@ export class DetallesEventoComponent implements OnInit{
 
 
 
-  protected readonly Organizacion = Organizacion;
+  // protected readonly Organizacion = Organizacion;
 }
