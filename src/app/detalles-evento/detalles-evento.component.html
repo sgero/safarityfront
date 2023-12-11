@@ -65,9 +65,10 @@
 
     </div>
 
-    <div class="botona">
+    <div *ngIf="evento && esParticipante" class="botona">
       <button class="ticket" routerLink="/crearticket">Comprar Ticket</button>
     </div>
+
 
   </div>
 

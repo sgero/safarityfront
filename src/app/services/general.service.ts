@@ -12,6 +12,13 @@ import {Ticket} from "../models/Ticket";
 import {TicketDev} from "../models/TicketDev";
 import {Mensaje} from "../models/Mensaje";
 
+
+export enum RolEnum {
+  ADMIN = 'ADMIN',
+  ORGANIZACION = 'ORGANIZACION',
+  PARTICIPANTE = 'PARTICIPANTE'
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -224,5 +231,32 @@ export class GeneralService {
   eliminarFavorito(id: bigint | undefined, participanteId: number | undefined) {
     return this.http.delete(`${this.apiUrl}/eliminar/${id}/${participanteId}`);
 
+  }
+
+
+
+
+ // getUserRol(): Observable<number> {
+    // Este método debe devolver un observable con el rol del usuario (debe ser un número)
+    // Puedes ajustar el tipo de dato según tu implementación específica
+   // return this.http.get<number>(`${this.apiUrl}/obtener-rol`);
+  //}
+
+  getUserRol(): Observable<string> {
+    return of(this.userRole);
+  }
+
+  // Método para mapear el nombre del rol a su valor numérico
+  mapRoleNameToNumber(roleName: string): number {
+    switch (roleName) {
+      case RolEnum.ADMIN:
+        return 0;
+      case RolEnum.ORGANIZACION:
+        return 1;
+      case RolEnum.PARTICIPANTE:
+        return 2;
+      default:
+        return -1; // Otra opción si el nombre del rol no coincide con ningún valor esperado
+    }
   }
 }
