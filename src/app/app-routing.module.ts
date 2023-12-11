@@ -8,7 +8,6 @@ import {ExplorarComponent} from "./explorar/explorar.component";
 import {DetallesEventoComponent} from "./detalles-evento/detalles-evento.component";
 import {BuscadorEventoComponent} from "./buscador-evento/buscador-evento.component";
 import {OrganizacionReg2Component} from "./organizacion-reg2/organizacion-reg2.component";
-import {BuscadoreventoComponent} from "./buscadorevento/buscadorevento.component";
 import {OrganizacionReg1Component} from "./organizacion-reg1/organizacion-reg1.component";
 import {EventosComponent} from "./eventos/eventos.component";
 import {OrganizacionesComponent} from "./organizaciones/organizaciones.component";
@@ -69,7 +68,7 @@ const routes: Routes = [
   { path: 'ticket-list', component: TicketListComponent},
   { path: 'misEventos', component: MiseventosComponent},
   { path: 'generate-pdf', component: TicketListComponent},
-  { path: 'favoritos', component: MisFavoritosComponent},
+  { path: 'misfavoritos', component: MisFavoritosComponent},
   { path: 'favoritos', component: FavoritosComponent},
 
   {

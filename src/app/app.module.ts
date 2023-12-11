@@ -91,7 +91,6 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     DetallesOrganizacionComponent,
     MiseventosComponent,
     MisFavoritosComponent,
-    MiseventosComponent,
     FavoritosComponent
 
   ],
@@ -99,7 +98,6 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     MatToolbarModule,

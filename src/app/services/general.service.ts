@@ -11,6 +11,7 @@ import {Busqueda} from "../models/Busqueda";
 import {Ticket} from "../models/Ticket";
 import {TicketDev} from "../models/TicketDev";
 import {Mensaje} from "../models/Mensaje";
+import {Favorito} from "../models/Favorito";
 
 @Injectable({
   providedIn: 'root'
@@ -220,4 +221,17 @@ export class GeneralService {
     const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
     return this.http.post<string>(`${this.apiUrl}/resenyas`, params, { params: { resenya } });
   }
+
+  favorito(data: Favorito){
+
+    return this.http.post<void>(`${this.apiUrl}/evento/favorito`, data)
+
+  }
+
+  misFavorito(data: Favorito): Observable<Evento[]>{
+
+    return this.http.post<Evento[]>(`${this.apiUrl}/evento/misFavorito`, data)
+
+  }
+
 }
