@@ -11,6 +11,14 @@ import {Busqueda} from "../models/Busqueda";
 import {Ticket} from "../models/Ticket";
 import {TicketDev} from "../models/TicketDev";
 import {Mensaje} from "../models/Mensaje";
+import {Favorito} from "../models/Favorito";
+
+
+export enum RolEnum {
+  ADMIN = 'ADMIN',
+  ORGANIZACION = 'ORGANIZACION',
+  PARTICIPANTE = 'PARTICIPANTE'
+}
 
 @Injectable({
   providedIn: 'root'
@@ -221,7 +229,7 @@ export class GeneralService {
     return this.http.post<string>(`${this.apiUrl}/agregar`, body, { headers });
   }
 
-  obtenerEventosFavoritos(participanteId: number): Observable<Evento[]> {
+  obtenerEventosFavoritos(participanteId: number | undefined): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiUrl}/eventos/${participanteId}`);
   }
 
@@ -229,4 +237,49 @@ export class GeneralService {
     const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
     return this.http.post<string>(`${this.apiUrl}/resenyas`, params, { params: { resenya } });
   }
+
+  eliminarFavorito(id: bigint | undefined, participanteId: number | undefined) {
+    return this.http.delete(`${this.apiUrl}/eliminar/${id}/${participanteId}`);
+
+  }
+
+
+
+
+ // getUserRol(): Observable<number> {
+    // Este método debe devolver un observable con el rol del usuario (debe ser un número)
+    // Puedes ajustar el tipo de dato según tu implementación específica
+   // return this.http.get<number>(`${this.apiUrl}/obtener-rol`);
+  //}
+
+  getUserRol(): Observable<string> {
+    return of(this.userRole);
+  }
+
+  // Método para mapear el nombre del rol a su valor numérico
+  mapRoleNameToNumber(roleName: string): number {
+    switch (roleName) {
+      case RolEnum.ADMIN:
+        return 0;
+      case RolEnum.ORGANIZACION:
+        return 1;
+      case RolEnum.PARTICIPANTE:
+        return 2;
+      default:
+        return -1; // Otra opción si el nombre del rol no coincide con ningún valor esperado
+    }
+  }
+
+  favorito(data: Favorito){
+
+    return this.http.post<void>(`${this.apiUrl}/evento/favorito`, data)
+
+  }
+
+  misFavorito(data: Favorito): Observable<Evento[]>{
+
+    return this.http.post<Evento[]>(`${this.apiUrl}/evento/misFavorito`, data)
+
+  }
+
 }

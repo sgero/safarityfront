@@ -1,1 +1,30 @@
-<p>mis-favoritos works!</p>
+
+
+
+<body>
+
+<div class="titulo">
+  <h1><strong>FAVORITOS</strong></h1>
+
+</div>
+
+
+<div class="miniatura">
+  <H3>EVENTOS:</H3>
+  <ul>
+
+    <li *ngFor="let evento of eventosFavoritos">
+      {{ evento.nombre }} - {{ evento.fecha_inicio }}
+
+      <button (click)="eliminarFavorito(evento)">Eliminar</button>
+    </li>
+  </ul>
+</div>
+<div class="message" *ngIf="eventosFavoritos && eventosFavoritos.length === 0">
+  <p>No tiene eventos en sus favoritos.</p>
+</div>
+
+
+
+
+</body>

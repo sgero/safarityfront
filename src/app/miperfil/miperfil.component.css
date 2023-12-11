@@ -3,9 +3,15 @@
 }
 
 .perfil {
+  font-size: 35px;
+  font-weight: bold;
+  color: #7d2ae8;
+  margin-top: 3%;
+  margin-bottom: 0%;
   display: flex;
-
-  margin-left: 25%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 body {
@@ -24,15 +30,22 @@ body {
   background-color: #f9f9f9;
 }
 
+h3 {
+  font-size: 2.3em;
+  font-weight: lighter;
+  color: #7d2ae8;
+  margin-top: 0%;
+  margin-bottom: 3%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 .dato {
   margin-bottom: 10px;
 }
 
 
-h1 {
-  color: #b000ff; /* Título morado */
 
-}
 
 
 .ficha {
