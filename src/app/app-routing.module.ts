@@ -31,6 +31,7 @@ import {TicketListComponent} from "./ticket-list/ticket-list.component";
 import {AuthGuard} from "./models/AuthGuard";
 import {MiseventosComponent} from "./miseventos/miseventos.component";
 import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
+import {ModificareventoComponent} from "./modificarevento/modificarevento.component";
 
 // Rutas de navegación
 
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'buscador', component: BuscadorComponent },
   { path: 'buscadororg', component: BuscadororganizacionComponent },
   { path: 'crearevento', component: CreareventoComponent },
+  { path: 'modificarevento/:id', component: ModificareventoComponent},
   { path: 'crearticket', component: CrearticketComponent },
   { path: 'listatickets', component: ListaticketsComponent },
   { path: 'detallesTicket/:id', component: DetallesTicketComponent },

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Evento} from "../models/Evento";
 import {ActivatedRoute} from "@angular/router";
 import {GeneralService} from "../services/general.service";
+import {Organizacion} from "../models/Organizacion";
 
 @Component({
   selector: 'app-detalles-evento',
@@ -11,6 +12,7 @@ import {GeneralService} from "../services/general.service";
 export class DetallesEventoComponent implements OnInit{
 
   evento: any;
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,6 +29,7 @@ export class DetallesEventoComponent implements OnInit{
       if (eventoId) {
         this.eventoService.obtenerEventoPorId(eventoId).subscribe(
           data => {
+            console.log(data)
             this.evento = data;
             localStorage.setItem('precio', String(data.precio));
           },
@@ -38,4 +41,5 @@ export class DetallesEventoComponent implements OnInit{
     });
   }
 
+  protected readonly Organizacion = Organizacion;
 }

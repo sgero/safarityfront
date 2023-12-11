@@ -1,7 +1,7 @@
 import {Organizacion} from "./Organizacion";
 
 export class Evento {
-  id?: bigint;
+  id?: number;
   nombre?: string;
   direccion?: string;
   descripcion?: string;

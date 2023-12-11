@@ -151,6 +151,15 @@ export class GeneralService {
     return this.http.post<Evento>(`${this.apiUrl}/evento/crear`, data);
   }
 
+  modificarEvento(data: Evento){
+    return this.http.put<Evento>(`${this.apiUrl}/evento/modificar`, data);
+  }
+
+  obtenerEventoPorId2(id: bigint) {
+    return this.http.get<Evento>(`${this.apiUrl}/evento/${id}`);
+  }
+
+
   crearTicket(data: Ticket){
     return this.http.post<Ticket>(`${this.apiUrl}/ticket/crear`, data);
   }
