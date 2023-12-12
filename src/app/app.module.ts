@@ -57,6 +57,7 @@ import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import {MonederoComponent} from "./monedero/monedero.component";
 import { ModificareventoComponent } from './modificarevento/modificarevento.component';
+import { ModificarorganizacionComponent } from './modificarorganizacion/modificarorganizacion.component';
 
 
 
@@ -95,7 +96,8 @@ import { ModificareventoComponent } from './modificarevento/modificarevento.comp
     MiseventosComponent,
     MisFavoritosComponent,
     FavoritosComponent,
-    MonederoComponent
+    MonederoComponent,
+    ModificarorganizacionComponent
 
   ],
   imports: [

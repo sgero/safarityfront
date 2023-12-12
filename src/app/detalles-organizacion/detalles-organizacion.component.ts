@@ -12,7 +12,8 @@ import {Router} from "@angular/router";
 export class DetallesOrganizacionComponent implements OnInit{
   alias = localStorage.getItem('alias');
   organizacion: any;
-  constructor(private service: GeneralService, public router: Router) {
+  usuario: any;
+  constructor(private service: GeneralService, public router: Router, ) {
   }
 
   ngOnInit() {
@@ -21,6 +22,10 @@ export class DetallesOrganizacionComponent implements OnInit{
       this.organizacion = data;
       console.log(data)
     });
+    this.service.mostrarUsuario(localStorage.getItem('alias') || '').subscribe(data =>{
+      this.usuario = data;
+      console.log(data)
+    })
   }
 
 }

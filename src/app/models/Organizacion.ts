@@ -3,14 +3,14 @@ import {Router} from "@angular/router";
 import {GeneralService} from "../services/general.service";
 
 export class Organizacion{
-  id?: bigint;
+  id?: number;
   nombre?: string;
   email?: string;
   cif?: string;
   telefono?: string;
   fecha_fundacion?: string;
   info?: string;
-  sitio_web?: string;
+  sitioWeb?: string;
   logo?: string;
   id_usuario?: bigint;
   activo?: boolean;
