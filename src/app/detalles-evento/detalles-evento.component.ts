@@ -71,62 +71,38 @@ export class DetallesEventoComponent implements OnInit{
       }
     });
 
-    // // Obtener el rol del usuario actual
-    // this.eventoService.getUserRol().subscribe(rol => {
-    //     // Mapear el nombre del rol a su valor numérico
-    //     console.log('Rol del usuario:', rol);
-    //
-    //     // Mapear el nombre del rol a su valor numérico
-    //     const rolNumerico = this.eventoService.mapRoleNameToNumber(rol);
-    //
-    //     // Verificar si el usuario tiene el rol de participante (usando el valor numérico)
-    //     this.esParticipante = rolNumerico === 2;
-    //     console.log('¿Es participante?', this.esParticipante);
-    //   },
-    //   (error: any) => {
-    //     // Agregamos la función de manejo de errores
-    //     console.error('Error al obtener el rol del usuario:', error);
-    //     // Imprimir más detalles sobre el error
-    //     if (error instanceof HttpErrorResponse) {
-    //       console.error('Status:', error.status);
-    //       console.error('Mensaje de error:', error.error);
-    //     }
-    //   });
-
-    // Obtener el rol del usuario actual
     this.eventoService.getUserRol().subscribe(
       (rol: string) => {
-        // Mapear el nombre del rol a su valor numérico
-        console.log('Rol del usuario:', rol);
-
-        // Mapear el nombre del rol a su valor numérico
         const rolNumerico = this.eventoService.mapRoleNameToNumber(rol);
 
-        // Verificar si el usuario tiene el rol de participante (usando el valor numérico)
         this.esParticipante = rolNumerico === 2;
-        console.log('¿Es participante?', this.esParticipante);
-
         this.esOrganizacion = rolNumerico === 1;
-        console.log('¿Es organizacion?', this.esOrganizacion);
+
+        console.log('¿Es participante?', this.esParticipante);
+        console.log('¿Es organización?', this.esOrganizacion);
       },
       (error: any) => {
-        // Agregamos la función de manejo de errores
         console.error('Error al obtener el rol del usuario:', error);
-        // Imprimir más detalles sobre el error
+
         if (error instanceof HttpErrorResponse) {
           console.error('Status:', error.status);
           console.error('Mensaje de error:', error.error);
         }
       });
-    // Método para verificar si el rol es PARTICIPANTE
-    if (localStorage.getItem('rol') === 'PARTICIPANTE') {
+
+    // Verificación basada en localStorage
+    const rolLocalStorage = localStorage.getItem('rol');
+
+    if (rolLocalStorage === 'PARTICIPANTE') {
       this.esParticipante = true;
-    }else {
-      if (localStorage.getItem('rol') === 'ORGANIZACION') {
-        this.esOrganizacion = true;
-      }
+    } else if (rolLocalStorage === 'ORGANIZACION') {
+      this.esOrganizacion = true;
     }
   }
+
+
+
+
 
   enviarfavorito(){
 

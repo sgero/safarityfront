@@ -81,9 +81,10 @@
       </div>
 
 
-      <div class="botona" *ngIf="comprobarEvento && esOrganizacion">
+      <div class="botona" *ngIf="!comprobarEvento && esOrganizacion">
         <button class="ticket" [routerLink]="['/modificarevento', evento.id]">Modificar Evento</button>
       </div>
+
     </div>
 
 
