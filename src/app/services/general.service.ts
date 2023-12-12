@@ -298,4 +298,8 @@ export class GeneralService {
 
   }
 
+  aumentarSaldo(data: Participante){
+    return this.http.put<Participante>(`${this.apiUrl}/participante/saldo`, data);
+  }
+
 }
