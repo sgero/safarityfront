@@ -34,6 +34,7 @@ import {FavoritosComponent} from "./favoritos/favoritos.component";
 import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
 import {ModificareventoComponent} from "./modificarevento/modificarevento.component";
 import {MonederoComponent} from "./monedero/monedero.component";
+import {RecaudacionComponent} from "./recaudacion/recaudacion.component";
 
 // Rutas de navegación
 
@@ -75,6 +76,8 @@ const routes: Routes = [
   { path: 'misfavoritos', component: MisFavoritosComponent},
   { path: 'favoritos', component: FavoritosComponent},
   { path: 'monedero', component: MonederoComponent},
+  { path: 'recaudacion', component: RecaudacionComponent},
+
 
   {
     path: 'ruta-protegida',
