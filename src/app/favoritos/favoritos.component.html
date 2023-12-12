@@ -1,14 +1,14 @@
-<link rel="stylesheet" href="favoritos.component.css">
-
 <body>
-<div class="columna">
 
-  <div class="seccion">
 
-    <h2>MIS EVENTOS FAVORITOS:</h2>
 
-    <div class="tar-evento">
 
+  <div class="titulo">
+
+    <h1><strong>FAVORITOS</strong></h1>
+  </div>
+    <div class="miniatura">
+<h3>FAVORITOS:</h3>
       <div *ngFor="let e of evento" class="tarjeta">
         <a [routerLink]="['/detallesEvento', e.id]">
           <img src="{{e.imagen}}">
@@ -19,7 +19,8 @@
 
     </div>
 
-  </div>
+  <!--<div class="message" *ngIf="eventosFavoritos && eventosFavoritos.length === 0">
+    <p>No tiene eventos en sus favoritos.</p>
+  </div>-->
 
-</div>
 </body>
