@@ -9,24 +9,6 @@ import {GeneralService} from "../services/general.service";
 
 })
 export class MiperfilComponent implements OnInit {
-  // usuario: any;
-  //
-  // constructor(private route: ActivatedRoute, private generalService: GeneralService) {}
-  //
-  // // ngOnInit(): void {
-  // //   const id = +this.route.snapshot.params['id'];
-  // //   this.generalService.obtenerPerfil(id).subscribe((data) => {
-  // //     this.usuario = data;
-  // //   });
-  // // }
-  //
-  //
-  // ngOnInit(): void {
-  //   const id = +this.route.snapshot.params['id'];
-  //   this.generalService.obtenerPerfil(id).subscribe((data) => {
-  //     this.usuario = data;
-  //   });
-  // }
 
   alias = localStorage.getItem('alias');
   participante: any;
@@ -36,12 +18,13 @@ export class MiperfilComponent implements OnInit {
   }
 
   ngOnInit() {
+
     if (this.alias)
-      this.generalService.mostrarParticipante(this.alias).subscribe(data =>{
+      this.generalService.mostrarParticipante(this.alias).subscribe(data => {
         this.participante = data;
         console.log(data)
       });
-  }
 
+  }
 
 }
