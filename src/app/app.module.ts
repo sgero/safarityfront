@@ -59,6 +59,9 @@ import {MonederoComponent} from "./monedero/monedero.component";
 import { ModificareventoComponent } from './modificarevento/modificarevento.component';
 import {RecaudacionComponent} from './recaudacion/recaudacion.component';
 import { ModificarparticipanteComponent } from './modificarparticipante/modificarparticipante.component';
+import { ModificarorganizacionComponent } from './modificarorganizacion/modificarorganizacion.component';
+
+
 
 
 @NgModule({
@@ -97,7 +100,8 @@ import { ModificarparticipanteComponent } from './modificarparticipante/modifica
     FavoritosComponent,
     MonederoComponent,
     RecaudacionComponent,
-    ModificarparticipanteComponent
+    ModificarparticipanteComponent,
+    ModificarorganizacionComponent
 
   ],
   imports: [

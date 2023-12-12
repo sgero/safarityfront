@@ -35,6 +35,7 @@ import {MisFavoritosComponent} from "./mis-favoritos/mis-favoritos.component";
 import {ModificareventoComponent} from "./modificarevento/modificarevento.component";
 import {MonederoComponent} from "./monedero/monedero.component";
 import {RecaudacionComponent} from "./recaudacion/recaudacion.component";
+import {ModificarorganizacionComponent} from "./modificarorganizacion/modificarorganizacion.component";
 
 // Rutas de navegación
 
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: 'buscadororg', component: BuscadororganizacionComponent },
   { path: 'crearevento', component: CreareventoComponent },
   { path: 'modificarevento/:id', component: ModificareventoComponent},
+  { path: 'modificarorganizacion/:id', component: ModificarorganizacionComponent},
   { path: 'crearticket', component: CrearticketComponent },
   { path: 'listatickets', component: ListaticketsComponent },
   { path: 'detallesTicket/:id', component: DetallesTicketComponent },

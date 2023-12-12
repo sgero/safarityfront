@@ -162,6 +162,10 @@ export class GeneralService {
   modificarEvento(data: Evento){
     return this.http.put<Evento>(`${this.apiUrl}/evento/modificar`, data);
   }
+  modificarOrganizacion(data: Organizacion){
+    return this.http.put<Organizacion>(`${this.apiUrl}/organizacion/modificar`, data);
+  }
+
 
   obtenerEventoPorId2(id: bigint) {
     return this.http.get<Evento>(`${this.apiUrl}/evento/${id}`);
