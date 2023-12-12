@@ -69,7 +69,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         { name: 'PANEL DE ORGANIZACION', route: '', icon: 'corporate_fare' },
         { name: 'Home', route: 'inicio', icon: 'roofing' },
         { name: 'Mi Perfil', route: 'miperfilorg', icon: 'manage_accounts' },
-        { name: 'Monedero', route: 'monedero', icon: 'euro' },
+        { name: 'Recaudación', route: 'recaudacion', icon: 'euro' },
         { name: 'Mis Eventos', route: 'misEventos', icon: 'event_note' },
         { name: 'Crear Evento', route: 'crearevento', icon: 'add_circle_outline' },
         { name: 'Logout', route: 'logout', icon: 'close' }

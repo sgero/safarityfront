@@ -16,7 +16,11 @@ export class DetallesEventoComponent implements OnInit{
     alias:"",
     evento:+""
   }
+
+
   esParticipante: boolean = false;
+
+  esOrganizacion: boolean = false;
 
   usuario: any;
 
@@ -27,6 +31,7 @@ export class DetallesEventoComponent implements OnInit{
     private eventoService:GeneralService,
     private router: Router,
   ) {}
+
 
   ngOnInit() {
 
@@ -42,7 +47,7 @@ export class DetallesEventoComponent implements OnInit{
       }
     );
 
-    this.eventoService.mostrarUsuario(localStorage.getItem('alias') || '').subscribe(data =>{
+    this.eventoService.mostrarUsuario(localStorage.getItem('alias') || '').subscribe(data => {
       this.usuario = data;
       console.log(data)
     });
@@ -66,28 +71,38 @@ export class DetallesEventoComponent implements OnInit{
       }
     });
 
-    // Obtener el rol del usuario actual
-    this.eventoService.getUserRol().subscribe(rol => {
-        // Mapear el nombre del rol a su valor numérico
-        console.log('Rol del usuario:', rol);
-
-        // Mapear el nombre del rol a su valor numérico
+    this.eventoService.getUserRol().subscribe(
+      (rol: string) => {
         const rolNumerico = this.eventoService.mapRoleNameToNumber(rol);
 
-        // Verificar si el usuario tiene el rol de participante (usando el valor numérico)
         this.esParticipante = rolNumerico === 2;
+        this.esOrganizacion = rolNumerico === 1;
+
         console.log('¿Es participante?', this.esParticipante);
+        console.log('¿Es organización?', this.esOrganizacion);
       },
       (error: any) => {
-        // Agregamos la función de manejo de errores
         console.error('Error al obtener el rol del usuario:', error);
-        // Imprimir más detalles sobre el error
+
         if (error instanceof HttpErrorResponse) {
           console.error('Status:', error.status);
           console.error('Mensaje de error:', error.error);
         }
       });
+
+    // Verificación basada en localStorage
+    const rolLocalStorage = localStorage.getItem('rol');
+
+    if (rolLocalStorage === 'PARTICIPANTE') {
+      this.esParticipante = true;
+    } else if (rolLocalStorage === 'ORGANIZACION') {
+      this.esOrganizacion = true;
+    }
   }
+
+
+
+
 
   enviarfavorito(){
 
@@ -105,6 +120,7 @@ export class DetallesEventoComponent implements OnInit{
     );
 
   }
+
 
   eliminarfavorito(){
 
@@ -125,5 +141,4 @@ export class DetallesEventoComponent implements OnInit{
 
 
 
-  // protected readonly Organizacion = Organizacion;
 }
