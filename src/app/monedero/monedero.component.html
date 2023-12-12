@@ -9,12 +9,21 @@
 
 
 <div class="miniatura">
-  <H3>SALDO:</H3>
+  <H3>SALDO: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{participante.saldo}} €</H3>
   <ul>
-
+    <form (ngSubmit)="Saldo()">
+      <label name="saldo">Añadir saldo:</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" name="saldo" id="saldo" step="0.01" placeholder="€" [(ngModel)]="numero">
+      &nbsp;
+      <input type="submit">
+    </form>
 
   </ul>
 </div>
+
 
 
 
