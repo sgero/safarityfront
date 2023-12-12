@@ -85,7 +85,7 @@
     </div>
 
 
-    <div class="botona" *ngIf="evento.organizacionDTO.id == evento.organizacionDTO.usuarioDTO.id ">
+    <div class="botona" *ngIf="usuario.id == evento.organizacionDTO.usuarioDTO.id && usuario.rol == 'ORGANIZACION'">
       <button class="evento" [routerLink]="['/modificarevento', evento.id]" >Modificar evento</button>
     </div>
 

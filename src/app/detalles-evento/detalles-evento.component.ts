@@ -18,6 +18,8 @@ export class DetallesEventoComponent implements OnInit{
   }
   esParticipante: boolean = false;
 
+  usuario: any;
+
   comprobarEvento: any;
 
   constructor(
@@ -39,6 +41,11 @@ export class DetallesEventoComponent implements OnInit{
         console.error('Error:', error);
       }
     );
+
+    this.eventoService.mostrarUsuario(localStorage.getItem('alias') || '').subscribe(data =>{
+      this.usuario = data;
+      console.log(data)
+    });
 
     this.activatedRoute.params.subscribe(params => {
       const eventoId = +params['id']; // Convierte el parámetro de la URL a número

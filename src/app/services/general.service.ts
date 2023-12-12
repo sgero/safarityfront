@@ -195,6 +195,10 @@ export class GeneralService {
     return this.http.post<Organizacion>(`${this.apiUrl}/organizacion/mostrarcalculado`, data)
   }
 
+  mostrarUsuario(data: string){
+    return this.http.post<Usuario>(`${this.apiUrl}/usuario/mostrarUsuario`, data)
+  }
+
   generateTicketListPdf() {
     return this.http.get(`${this.apiUrl}/ticket/down-pdf`, { responseType: 'blob' });
   }
