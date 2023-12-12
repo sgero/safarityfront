@@ -108,6 +108,8 @@ body{
   font-size: 24px;
   font-weight: 500;
   color: #333;
+  display: flex;
+  justify-content: space-between;
 }
 .forms .form-content .titulo:before{
   content: '';
@@ -236,4 +238,23 @@ option {
 
 .contenedor {
   position: relative;
+}
+
+.autocompletar{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: x-small;
+  font-weight: bold;
+
+}
+
+.titulo input[type="checkbox"]{
+
+  accent-color: #5b13b9;
+  width: 15%;
+
 }

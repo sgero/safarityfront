@@ -28,7 +28,16 @@
 
       <div class="signup-form">
 
-        <div class="titulo">Modificar Evento</div>
+        <div class="titulo">Modificar Evento
+
+          <div class="autocompletar">
+            Autocompletar con tus datos
+            <input id="auto" type="checkbox" (change)="autocompletar()">
+          </div>
+
+        </div>
+
+        <br>
 
         <form (ngSubmit)="modificar()">
 
