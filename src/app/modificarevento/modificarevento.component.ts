@@ -112,6 +112,32 @@ export class ModificareventoComponent implements OnInit {
 
       (<HTMLSelectElement>(document.getElementById("tipo_pago"))).value = this.eventomodificar.tipoPago;
 
+    }else{
+
+      (<HTMLInputElement>(document.getElementById("nombre"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("direccion"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("descripcion"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("imagen"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("precio"))).value = "0";
+
+      (<HTMLInputElement>(document.getElementById("aforo"))).value = "0";
+
+      (<HTMLInputElement>(document.getElementById("fecha_lanzamiento"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("fecha_venta"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("fecha_inicio"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("fecha_fin"))).value = "";
+
+      (<HTMLSelectElement>(document.getElementById("tipo_evento"))).value = "";
+
+      (<HTMLSelectElement>(document.getElementById("tipo_pago"))).value = "";
+
     }
 
   }

@@ -58,6 +58,7 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
 import {MonederoComponent} from "./monedero/monedero.component";
 import { ModificareventoComponent } from './modificarevento/modificarevento.component';
 import {RecaudacionComponent} from './recaudacion/recaudacion.component';
+import { ModificarparticipanteComponent } from './modificarparticipante/modificarparticipante.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import {RecaudacionComponent} from './recaudacion/recaudacion.component';
     MisFavoritosComponent,
     FavoritosComponent,
     MonederoComponent,
-    RecaudacionComponent
+    RecaudacionComponent,
+    ModificarparticipanteComponent
 
   ],
   imports: [
