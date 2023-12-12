@@ -20,6 +20,8 @@ export class DetallesEventoComponent implements OnInit{
 
   esParticipante: boolean = false;
 
+  esOrganizacion: boolean = false;
+
   usuario: any;
 
   comprobarEvento: any;
@@ -103,6 +105,9 @@ export class DetallesEventoComponent implements OnInit{
         // Verificar si el usuario tiene el rol de participante (usando el valor numérico)
         this.esParticipante = rolNumerico === 2;
         console.log('¿Es participante?', this.esParticipante);
+
+        this.esOrganizacion = rolNumerico === 1;
+        console.log('¿Es organizacion?', this.esOrganizacion);
       },
       (error: any) => {
         // Agregamos la función de manejo de errores
@@ -116,6 +121,10 @@ export class DetallesEventoComponent implements OnInit{
     // Método para verificar si el rol es PARTICIPANTE
     if (localStorage.getItem('rol') === 'PARTICIPANTE') {
       this.esParticipante = true;
+    }else {
+      if (localStorage.getItem('rol') === 'ORGANIZACION') {
+        this.esOrganizacion = true;
+      }
     }
   }
 

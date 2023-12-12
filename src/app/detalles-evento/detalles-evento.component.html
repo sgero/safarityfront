@@ -80,12 +80,16 @@
         <button class="ticket" (click)="eliminarfavorito()">Eliminar de Favorito</button>
       </div>
 
+
+      <div class="botona" *ngIf="comprobarEvento && esOrganizacion">
+        <button class="ticket" [routerLink]="['/modificarevento', evento.id]">Modificar Evento</button>
+      </div>
     </div>
 
 
-    <div class="botona" *ngIf="usuario.id == evento.organizacionDTO.usuarioDTO.id && usuario.rol == 'ORGANIZACION'">
-      <button class="evento" [routerLink]="['/modificarevento', evento.id]" >Modificar evento</button>
-    </div>
+<!--    <div class="botona" *ngIf="usuario.id == evento.organizacionDTO.usuarioDTO.id && usuario.rol == 'ORGANIZACION'">-->
+<!--      <button class="evento" [routerLink]="['/modificarevento', evento.id]" >Modificar evento</button>-->
+<!--    </div>-->
 
   </div>
 
