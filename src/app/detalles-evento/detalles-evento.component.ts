@@ -16,6 +16,8 @@ export class DetallesEventoComponent implements OnInit{
     alias:"",
     evento:+""
   }
+
+
   esParticipante: boolean = false;
 
   usuario: any;
@@ -27,6 +29,7 @@ export class DetallesEventoComponent implements OnInit{
     private eventoService:GeneralService,
     private router: Router,
   ) {}
+
 
   ngOnInit() {
 
@@ -42,7 +45,7 @@ export class DetallesEventoComponent implements OnInit{
       }
     );
 
-    this.eventoService.mostrarUsuario(localStorage.getItem('alias') || '').subscribe(data =>{
+    this.eventoService.mostrarUsuario(localStorage.getItem('alias') || '').subscribe(data => {
       this.usuario = data;
       console.log(data)
     });
@@ -66,8 +69,31 @@ export class DetallesEventoComponent implements OnInit{
       }
     });
 
+    // // Obtener el rol del usuario actual
+    // this.eventoService.getUserRol().subscribe(rol => {
+    //     // Mapear el nombre del rol a su valor numérico
+    //     console.log('Rol del usuario:', rol);
+    //
+    //     // Mapear el nombre del rol a su valor numérico
+    //     const rolNumerico = this.eventoService.mapRoleNameToNumber(rol);
+    //
+    //     // Verificar si el usuario tiene el rol de participante (usando el valor numérico)
+    //     this.esParticipante = rolNumerico === 2;
+    //     console.log('¿Es participante?', this.esParticipante);
+    //   },
+    //   (error: any) => {
+    //     // Agregamos la función de manejo de errores
+    //     console.error('Error al obtener el rol del usuario:', error);
+    //     // Imprimir más detalles sobre el error
+    //     if (error instanceof HttpErrorResponse) {
+    //       console.error('Status:', error.status);
+    //       console.error('Mensaje de error:', error.error);
+    //     }
+    //   });
+
     // Obtener el rol del usuario actual
-    this.eventoService.getUserRol().subscribe(rol => {
+    this.eventoService.getUserRol().subscribe(
+      (rol: string) => {
         // Mapear el nombre del rol a su valor numérico
         console.log('Rol del usuario:', rol);
 
@@ -87,6 +113,10 @@ export class DetallesEventoComponent implements OnInit{
           console.error('Mensaje de error:', error.error);
         }
       });
+    // Método para verificar si el rol es PARTICIPANTE
+    if (localStorage.getItem('rol') === 'PARTICIPANTE') {
+      this.esParticipante = true;
+    }
   }
 
   enviarfavorito(){
@@ -105,6 +135,7 @@ export class DetallesEventoComponent implements OnInit{
     );
 
   }
+
 
   eliminarfavorito(){
 
@@ -125,5 +156,4 @@ export class DetallesEventoComponent implements OnInit{
 
 
 
-  // protected readonly Organizacion = Organizacion;
 }
