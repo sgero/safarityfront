@@ -11,9 +11,9 @@
     <tbody>
     <!-- Aquí puedes usar *ngFor para iterar sobre tus reseñas y mostrarlas en la tabla -->
     <tr *ngFor="let resenya of resenyas">
-      <td>{{ resenya.usuario }}</td>
-      <td>{{ resenya.comentario }}</td>
-      <td>{{ resenya.calificacion }}</td>
+      <td>{{ resenya.id_usuario.alias }}</td>
+      <td>{{ resenya.texto }}</td>
+      <td>{{ resenya.estrella }}</td>
     </tr>
     </tbody>
   </table>
