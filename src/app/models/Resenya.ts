@@ -1,6 +1,6 @@
 export class Resenya {
   id?: bigint;
-  estrella?: numeric;
+  estrella?: bigint;
   texto?: string;
   id_evento?: bigint;
   id_usuario?: bigint;
