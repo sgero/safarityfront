@@ -311,4 +311,12 @@ export class GeneralService {
   crearResenya(data: Resenya){
     return this.http.post<Resenya>(`${this.apiUrl}/resenya/crear`, data);
   }
+
+  listarResenya(): Observable<Resenya[]>{
+    return this.http.get<Resenya[]>(`${this.apiUrl}/resenya/listar`);
+  }
+
+  listarResenyaSegunEvento(data: number): Observable<Resenya[]>{
+    return this.http.post<Resenya[]>(`${this.apiUrl}/resenya/listaresenya`, data);
+  }
 }
