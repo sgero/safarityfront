@@ -36,6 +36,7 @@ import {ModificareventoComponent} from "./modificarevento/modificarevento.compon
 import {MonederoComponent} from "./monedero/monedero.component";
 import {RecaudacionComponent} from "./recaudacion/recaudacion.component";
 import {ModificarorganizacionComponent} from "./modificarorganizacion/modificarorganizacion.component";
+import {ResenyaComponent} from "./resenya/resenya.component";
 
 // Rutas de navegación
 
@@ -79,6 +80,7 @@ const routes: Routes = [
   { path: 'favoritos', component: FavoritosComponent},
   { path: 'monedero', component: MonederoComponent},
   { path: 'recaudacion', component: RecaudacionComponent},
+  { path: 'resenya', component: ResenyaComponent},
 
 
   {

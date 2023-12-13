@@ -60,6 +60,7 @@ import { ModificareventoComponent } from './modificarevento/modificarevento.comp
 import {RecaudacionComponent} from './recaudacion/recaudacion.component';
 import { ModificarparticipanteComponent } from './modificarparticipante/modificarparticipante.component';
 import { ModificarorganizacionComponent } from './modificarorganizacion/modificarorganizacion.component';
+import {ResenyaComponent} from "./resenya/resenya.component";
 
 
 
@@ -101,7 +102,8 @@ import { ModificarorganizacionComponent } from './modificarorganizacion/modifica
     MonederoComponent,
     RecaudacionComponent,
     ModificarparticipanteComponent,
-    ModificarorganizacionComponent
+    ModificarorganizacionComponent,
+    ResenyaComponent
 
   ],
   imports: [

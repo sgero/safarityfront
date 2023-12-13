@@ -1,0 +1,20 @@
+<div class="box">
+  <h1 class="title">Reseñas</h1>
+  <table class="table is-bordered is-striped is-fullwidth">
+    <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Comentario</th>
+      <th>Calificación</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Aquí puedes usar *ngFor para iterar sobre tus reseñas y mostrarlas en la tabla -->
+    <tr *ngFor="let resenya of resenyas">
+      <td>{{ resenya.usuario }}</td>
+      <td>{{ resenya.comentario }}</td>
+      <td>{{ resenya.calificacion }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
