@@ -1,11 +1,11 @@
 <div class="box" *ngIf="resenyas.length!= 0">
-  <h1 class="title">Reseñas</h1>
+  <h1 class="title">Valoraciones:</h1>
   <table class="table is-bordered is-striped is-fullwidth">
     <thead>
     <tr>
-      <th>Usuario</th>
-      <th>Comentario</th>
-      <th>Calificación</th>
+      <th class="name">Usuario</th>
+      <th class="name">Comentario</th>
+      <th class="name">Calificación <p>&#9734; &#9734; &#9734; &#9734; &#9734;</p></th>
     </tr>
     </thead>
     <tbody>
@@ -13,7 +13,7 @@
     <tr *ngFor="let resenya of resenyas">
       <td>{{ resenya.usuarioDTO.alias }}</td>
       <td>{{ resenya.texto }}</td>
-      <td>{{ resenya.estrella }}</td>
+      <td class="stars">{{ resenya.estrella }}<p>&#9733;</p> </td>
     </tr>
     </tbody>
   </table>

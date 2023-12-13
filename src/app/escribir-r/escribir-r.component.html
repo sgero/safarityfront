@@ -1,6 +1,6 @@
 
 
-<div>
+<div class="box">
   <h2>Escribir Reseña</h2>
   <form (submit)="enviarResenya()">
 
@@ -8,18 +8,43 @@
       <label for="texto">Comentario:</label>
       <textarea id="texto" name="texto" [(ngModel)]="resenya.texto" required></textarea>
     </div>
-    <div>
-      <label for="estrella">Calificación:</label>
-      <select id="estrella" name="estrella" [(ngModel)]="resenya.estrella" required>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
+<!--    <div>-->
+<!--      <label for="estrella">Calificación:</label>-->
+<!--      <select id="estrella" name="estrella" [(ngModel)]="resenya.estrella" required>-->
+<!--        <option value="1">1</option>-->
+<!--        <option value="2">2</option>-->
+<!--        <option value="3">3</option>-->
+<!--        <option value="4">4</option>-->
+<!--        <option value="5">5</option>-->
+
+<!--      </select>-->
+<!--    </div>-->
+
+    <div class="field">
+      <label class="label">Calificación:</label>
+      <div class="control">
+        <!-- Utiliza elementos de entrada de tipo radio para las estrellas -->
+        <input type="radio" id="estrella1" name="calificacion" [(ngModel)]="resenya.estrella" value="1">
+        <label for="estrella1">★</label>
+
+        <input type="radio" id="estrella2" name="calificacion" [(ngModel)]="resenya.estrella" value="2">
+        <label for="estrella2">★</label>
+
+        <input type="radio" id="estrella3" name="calificacion" [(ngModel)]="resenya.estrella" value="3">
+        <label for="estrella3">★</label>
+
+        <input type="radio" id="estrella4" name="calificacion" [(ngModel)]="resenya.estrella" value="4">
+        <label for="estrella4">★</label>
+
+        <input type="radio" id="estrella5" name="calificacion" [(ngModel)]="resenya.estrella" value="5">
+        <label for="estrella5">★</label>
+      </div>
     </div>
     <div>
       <button type="submit">Enviar Reseña</button>
     </div>
   </form>
 </div>
+
+
+
