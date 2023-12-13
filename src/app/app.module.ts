@@ -61,6 +61,7 @@ import {RecaudacionComponent} from './recaudacion/recaudacion.component';
 import { ModificarparticipanteComponent } from './modificarparticipante/modificarparticipante.component';
 import { ModificarorganizacionComponent } from './modificarorganizacion/modificarorganizacion.component';
 import {ResenyaComponent} from "./resenya/resenya.component";
+import {EscribirRComponent} from "./escribir-r/escribir-r.component";
 
 
 
@@ -103,7 +104,8 @@ import {ResenyaComponent} from "./resenya/resenya.component";
     RecaudacionComponent,
     ModificarparticipanteComponent,
     ModificarorganizacionComponent,
-    ResenyaComponent
+    ResenyaComponent,
+    EscribirRComponent
 
   ],
   imports: [
