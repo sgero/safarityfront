@@ -37,6 +37,7 @@ import {MonederoComponent} from "./monedero/monedero.component";
 import {RecaudacionComponent} from "./recaudacion/recaudacion.component";
 import {ModificarorganizacionComponent} from "./modificarorganizacion/modificarorganizacion.component";
 import {ResenyaComponent} from "./resenya/resenya.component";
+import {ModificarparticipanteComponent} from "./modificarparticipante/modificarparticipante.component";
 
 // Rutas de navegación
 
@@ -60,6 +61,7 @@ const routes: Routes = [
   { path: 'crearevento', component: CreareventoComponent },
   { path: 'modificarevento/:id', component: ModificareventoComponent},
   { path: 'modificarorganizacion/:id', component: ModificarorganizacionComponent},
+  { path: 'modificarparticipante/:id', component: ModificarparticipanteComponent},
   { path: 'crearticket', component: CrearticketComponent },
   { path: 'listatickets', component: ListaticketsComponent },
   { path: 'detallesTicket/:id', component: DetallesTicketComponent },

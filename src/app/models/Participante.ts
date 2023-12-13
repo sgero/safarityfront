@@ -1,7 +1,7 @@
 import {Usuario} from "./Usuario";
 
 export class Participante {
-  id?: bigint;
+  id?: number;
   nombre?: string;
   apellidos?: string;
   direccion?: string;
@@ -9,7 +9,7 @@ export class Participante {
   dni?: string;
   telefono?: string;
   fecha_nacimiento ?: string;
-  usuarioDTO: Usuario = new Usuario();
+  usuarioDTO?: Usuario = new Usuario();
   activo?: boolean;
 
 

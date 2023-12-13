@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GeneralService} from "../services/general.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -7,33 +7,27 @@ import {ActivatedRoute, Router} from "@angular/router";
   templateUrl: './modificarparticipante.component.html',
   styleUrls: ['./modificarparticipante.component.css']
 })
-export class ModificarparticipanteComponent {
+export class ModificarparticipanteComponent implements OnInit{
 
-  evento = {
+  participante = {
     id:+'',  // Agrega el campo 'id' para identificar el evento que se desea modificar
     nombre: '',
+    apellidos: '',
     direccion: '',
-    descripcion: '',
-    imagen: '',
-    precio: +'',
-    aforo: +'',
-    fecha_lanzamiento: '',
-    fecha_venta: '',
-    fecha_inicio: '',
-    fecha_fin: '',
-    tipoEvento: '',
-    tipoPago: '',
-    organizacion: localStorage.getItem('token')
+    email: '',
+    dni: '',
+    telefono: '',
+    fecha_nacimiento: ''
   };
-  eventomodificar: any;
+  participantemodificar: any;
   mensaje:any;
-  eventoid : any;
+  participanteid : any;
 
   constructor(private service: GeneralService, public router: Router, private route: ActivatedRoute ) {
     // Obtén el ID del evento de la URL usando ActivatedRoute
     this.route.params.subscribe(params => {
       // Convierte el parámetro 'id' a un BigInt
-      this.eventoid = +params['id'];
+      this.participanteid = +params['id'];
     });
 
   }
@@ -67,15 +61,10 @@ export class ModificarparticipanteComponent {
     };
 
     // Formatea las fechas
-    const formattedFechaLanzamiento = formatSingleDate(this.evento.fecha_lanzamiento);
-    const formattedFechaVenta = formatSingleDate(this.evento.fecha_venta);
-    const formattedFechaInicio = formatSingleDate(this.evento.fecha_inicio);
-    const formattedFechaFin = formatSingleDate(this.evento.fecha_fin);
+    const formattedFechaLanzamiento = formatSingleDate(this.participante.fecha_nacimiento);
 
-    this.evento.fecha_lanzamiento = formattedFechaLanzamiento
-    this.evento.fecha_venta = formattedFechaVenta
-    this.evento.fecha_inicio = formattedFechaInicio
-    this.evento.fecha_fin = formattedFechaFin
+    this.participante.fecha_nacimiento = formattedFechaLanzamiento
+
     // Muestra los resultados (puedes hacer lo que quieras con los valores formateados)
 
   }
@@ -86,119 +75,83 @@ export class ModificarparticipanteComponent {
 
     if (check.checked) {
 
-      (<HTMLInputElement>(document.getElementById("nombre"))).value = this.eventomodificar.nombre;
+      (<HTMLInputElement>(document.getElementById("nombre"))).value = this.participantemodificar.nombre;
 
-      (<HTMLInputElement>(document.getElementById("direccion"))).value = this.eventomodificar.direccion;
+      (<HTMLInputElement>(document.getElementById("apellidos"))).value = this.participantemodificar.apellidos;
 
-      (<HTMLInputElement>(document.getElementById("descripcion"))).value = this.eventomodificar.descripcion;
+      (<HTMLInputElement>(document.getElementById("direccion"))).value = this.participantemodificar.direccion;
 
-      (<HTMLInputElement>(document.getElementById("imagen"))).value = this.eventomodificar.imagen;
+      (<HTMLInputElement>(document.getElementById("email"))).value = this.participantemodificar.email;
 
-      (<HTMLInputElement>(document.getElementById("precio"))).value = this.eventomodificar.precio;
+      (<HTMLInputElement>(document.getElementById("dni"))).value = this.participantemodificar.dni;
 
-      (<HTMLInputElement>(document.getElementById("aforo"))).value = this.eventomodificar.aforo;
+      (<HTMLInputElement>(document.getElementById("telefono"))).value = this.participantemodificar.telefono;
 
-      (<HTMLInputElement>(document.getElementById("fecha_lanzamiento"))).value = this.formatearFecha(this.eventomodificar.fecha_lanzamiento);
+      (<HTMLInputElement>(document.getElementById("fecha_nacimiento"))).value = this.formatearFecha(this.participantemodificar.fecha_nacimiento);
 
-      (<HTMLInputElement>(document.getElementById("fecha_venta"))).value = this.formatearFecha(this.eventomodificar.fecha_venta);
-
-      (<HTMLInputElement>(document.getElementById("fecha_inicio"))).value = this.formatearFecha(this.eventomodificar.fecha_inicio);
-
-      (<HTMLInputElement>(document.getElementById("fecha_fin"))).value = this.formatearFecha(this.eventomodificar.fecha_fin);
-
-      (<HTMLSelectElement>(document.getElementById("tipo_evento"))).value = this.eventomodificar.tipoEvento;
-
-      (<HTMLSelectElement>(document.getElementById("tipo_pago"))).value = this.eventomodificar.tipoPago;
 
     }else{
 
       (<HTMLInputElement>(document.getElementById("nombre"))).value = "";
 
+      (<HTMLInputElement>(document.getElementById("apellidos"))).value = "";
+
       (<HTMLInputElement>(document.getElementById("direccion"))).value = "";
 
-      (<HTMLInputElement>(document.getElementById("descripcion"))).value = "";
+      (<HTMLInputElement>(document.getElementById("email"))).value = "";
 
-      (<HTMLInputElement>(document.getElementById("imagen"))).value = "";
+      (<HTMLInputElement>(document.getElementById("dni"))).value = "";
 
-      (<HTMLInputElement>(document.getElementById("precio"))).value = "0";
+      (<HTMLInputElement>(document.getElementById("telefono"))).value = "";
 
-      (<HTMLInputElement>(document.getElementById("aforo"))).value = "0";
+      (<HTMLInputElement>(document.getElementById("fecha_nacimiento"))).value = "";
 
-      (<HTMLInputElement>(document.getElementById("fecha_lanzamiento"))).value = "";
-
-      (<HTMLInputElement>(document.getElementById("fecha_venta"))).value = "";
-
-      (<HTMLInputElement>(document.getElementById("fecha_inicio"))).value = "";
-
-      (<HTMLInputElement>(document.getElementById("fecha_fin"))).value = "";
-
-      (<HTMLSelectElement>(document.getElementById("tipo_evento"))).value = "";
-
-      (<HTMLSelectElement>(document.getElementById("tipo_pago"))).value = "";
 
     }
 
   }
   ngOnInit() {
     // Llama al servicio para obtener los datos del evento a modificar
-    this.service.obtenerEventoPorId(this.eventoid).subscribe(data => {
+    this.service.mostrarParticipante(localStorage.getItem('alias') || '').subscribe(data => {
 
-      this.eventomodificar = data;
-      this.eventomodificar.nombre;
+      this.participantemodificar = data;
+
     });
   }
 
-  modificar() {
+  modificarParticipante() {
 
-    this.evento.id = this.eventomodificar.id
+    this.participante.id = this.participantemodificar.id
 
-    if(this.evento.nombre == ''){
-      this.evento.nombre= this.eventomodificar.nombre
+    if(this.participante.nombre == ''){
+      this.participante.nombre= this.participantemodificar.nombre
     }
 
-    if(this.evento.descripcion == ''){
-      this.evento.descripcion= this.eventomodificar.descripcion
+    if(this.participante.apellidos == ''){
+      this.participante.apellidos= this.participantemodificar.apellidos
     }
 
-    if(this.evento.direccion == ''){
-      this.evento.direccion= this.eventomodificar.direccion
+    if(this.participante.direccion == ''){
+      this.participante.direccion= this.participantemodificar.direccion
     }
 
-    if(this.evento.imagen == ''){
-      this.evento.imagen= this.eventomodificar.imagen
+    if(this.participante.email == ''){
+      this.participante.email= this.participantemodificar.email
     }
 
-    if(this.evento.aforo == 0){
-      this.evento.aforo = this.eventomodificar.aforo
+    if(this.participante.dni == ''){
+      this.participante.dni = this.participantemodificar.dni
     }
 
-    if(this.evento.fecha_lanzamiento == 'NaN/NaN/NaN'){
-      this.evento.fecha_lanzamiento = this.eventomodificar.fecha_lanzamiento
+    if(this.participante.fecha_nacimiento == 'NaN/NaN/NaN'){
+      this.participante.fecha_nacimiento = this.participantemodificar.fecha_nacimiento
     }
 
-    if(this.evento.fecha_venta == 'NaN/NaN/NaN'){
-      this.evento.fecha_venta = this.eventomodificar.fecha_venta
-    }
 
-    if(this.evento.fecha_inicio == 'NaN/NaN/NaN'){
-      this.evento.fecha_inicio = this.eventomodificar.fecha_inicio
-    }
 
-    if(this.evento.fecha_fin == 'NaN/NaN/NaN'){
-      this.evento.fecha_fin = this.eventomodificar.fecha_fin
-    }
-
-    if(this.evento.tipoEvento == ''){
-      this.evento.tipoEvento = this.eventomodificar.tipoEvento
-    }
-
-    if(this.evento.tipoPago == ''){
-      this.evento.tipoPago = this.eventomodificar.tipoPago
-    }
-
-    this.service.modificarEvento(this.evento).subscribe(data  =>{
+    this.service.modificarParticipante(this.participante).subscribe(data  =>{
       console.log(data);
-      this.router.navigate(['/detallesEvento' , this.evento.id])
+      this.router.navigate(['/miperfil' , this.participante.id])
 
     });
   }

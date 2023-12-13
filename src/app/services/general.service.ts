@@ -166,6 +166,10 @@ export class GeneralService {
     return this.http.put<Organizacion>(`${this.apiUrl}/organizacion/modificar`, data);
   }
 
+  modificarParticipante(data: Participante){
+    return this.http.put<Participante>(`${this.apiUrl}/participante/modificar`, data);
+  }
+
 
   obtenerEventoPorId2(id: bigint) {
     return this.http.get<Evento>(`${this.apiUrl}/evento/${id}`);

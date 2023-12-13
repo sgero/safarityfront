@@ -34,6 +34,54 @@ export class ModificarorganizacionComponent  implements OnInit {
 
   }
 
+  autocompletar(){
+
+    let check = (<HTMLInputElement>(document.getElementById("auto")))
+
+    if (check.checked) {
+
+      (<HTMLInputElement>(document.getElementById("nombre"))).value = this.organizacionmodificar.nombre;
+
+      (<HTMLInputElement>(document.getElementById("email"))).value = this.organizacionmodificar.email;
+
+      (<HTMLInputElement>(document.getElementById("cif"))).value = this.organizacionmodificar.cif;
+
+      (<HTMLInputElement>(document.getElementById("telefono"))).value = this.organizacionmodificar.telefono;
+
+      (<HTMLInputElement>(document.getElementById("informacion"))).value = this.organizacionmodificar.info;
+
+      (<HTMLInputElement>(document.getElementById("direccion"))).value = this.organizacionmodificar.direccion;
+
+      (<HTMLInputElement>(document.getElementById("logo"))).value = this.organizacionmodificar.logo;
+
+      (<HTMLInputElement>(document.getElementById("sitioweb"))).value = this.organizacionmodificar.sitioWeb;
+
+
+
+    }else{
+
+      (<HTMLInputElement>(document.getElementById("nombre"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("apellidos"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("direccion"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("email"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("dni"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("telefono"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("fecha_nacimiento"))).value = "";
+
+      (<HTMLInputElement>(document.getElementById("direccion"))).value = this.organizacionmodificar.direccion;
+
+
+
+    }
+
+  }
+
 
 
   ngOnInit() {

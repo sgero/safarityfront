@@ -30,6 +30,14 @@
 
         <div class="titulo">Modificar Organizacion</div>
 
+        <br>
+        <p>¿No recuerdas tus datos?</p>
+
+        <div class="autocompletar">
+          Autocompletar con tus datos
+          <input id="auto" type="checkbox" (change)="autocompletar()">
+        </div>
+
         <form (ngSubmit)="modificarOranizacion()">
 
           <div class="input-boxes">
@@ -46,34 +54,34 @@
 
             <div class="input-box">
               <i class="fas fa-info"></i>
-              <input type="text" placeholder="Cif" name="descripcion" id="descripcion" [(ngModel)]="organizacion.cif" required>
+              <input type="text" placeholder="Cif" name="cif" id="cif" [(ngModel)]="organizacion.cif" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Telefono" name="imagen" id="imagen" [(ngModel)]="organizacion.telefono" required>
+              <input type="text" placeholder="Telefono" name="telefono" id="telefono" [(ngModel)]="organizacion.telefono" required>
             </div>
 
 
             <div class="input-box">
               <i class="fas fa-info"></i>
-              <input type="text" placeholder="Información" name="imagen" id="informacion" [(ngModel)]="organizacion.info" required>
+              <input type="text" placeholder="Información" name="informacion" id="informacion" [(ngModel)]="organizacion.info" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-map-marker"></i>
-              <input type="text" placeholder="Direccion" name="imagen" id="direccion" [(ngModel)]="organizacion.direccion" required>
+              <input type="text" placeholder="Direccion" name="direccion" id="direccion" [(ngModel)]="organizacion.direccion" required>
             </div>
 
 
             <div class="input-box">
               <i class="fas fa-globe"></i>
-              <input type="text" placeholder="Logo" name="imagen" id="logo" [(ngModel)]="organizacion.logo" required>
+              <input type="text" placeholder="Logo" name="logo" id="logo" [(ngModel)]="organizacion.logo" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-globe"></i>
-              <input type="text" placeholder="Web" name="imagen" id="sitioweb" [(ngModel)]="organizacion.sitioWeb" required>
+              <input type="text" placeholder="Web" name="sitioweb" id="sitioweb" [(ngModel)]="organizacion.sitioWeb" required>
             </div>
 
 
