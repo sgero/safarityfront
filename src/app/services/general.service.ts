@@ -12,6 +12,7 @@ import {Ticket} from "../models/Ticket";
 import {TicketDev} from "../models/TicketDev";
 import {Mensaje} from "../models/Mensaje";
 import {Favorito} from "../models/Favorito";
+import {Resenya} from "../models/Resenya";
 
 
 export enum RolEnum {
@@ -310,4 +311,16 @@ export class GeneralService {
     return this.http.put<Participante>(`${this.apiUrl}/participante/saldo`, data);
   }
 
+
+  crearResenya(data: Resenya){
+    return this.http.post<Resenya>(`${this.apiUrl}/resenya/crear`, data);
+  }
+
+  listarResenya(): Observable<Resenya[]>{
+    return this.http.get<Resenya[]>(`${this.apiUrl}/resenya/listar`);
+  }
+
+  listarResenyaSegunEvento(data: number): Observable<Resenya[]>{
+    return this.http.post<Resenya[]>(`${this.apiUrl}/resenya/listaresenya`, data);
+  }
 }

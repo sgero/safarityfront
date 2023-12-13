@@ -1,0 +1,25 @@
+
+
+<div>
+  <h2>Escribir Reseña</h2>
+  <form (submit)="enviarResenya()">
+
+    <div>
+      <label for="texto">Comentario:</label>
+      <textarea id="texto" name="texto" [(ngModel)]="resenya.texto" required></textarea>
+    </div>
+    <div>
+      <label for="estrella">Calificación:</label>
+      <select id="estrella" name="estrella" [(ngModel)]="resenya.estrella" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit">Enviar Reseña</button>
+    </div>
+  </form>
+</div>

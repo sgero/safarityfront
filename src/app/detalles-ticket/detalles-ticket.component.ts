@@ -27,6 +27,7 @@ export class DetallesTicketComponent implements OnInit{
         this.service.mostrarTicket(ticketID).subscribe(
           data => {
             this.ticket = data;
+            localStorage.setItem('id_ticket', ticketID.toString());
           },
           error => {
             console.error('Error al obtener el evento:', error);

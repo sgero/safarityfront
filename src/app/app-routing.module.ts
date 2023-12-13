@@ -38,6 +38,7 @@ import {RecaudacionComponent} from "./recaudacion/recaudacion.component";
 import {ModificarorganizacionComponent} from "./modificarorganizacion/modificarorganizacion.component";
 import {ResenyaComponent} from "./resenya/resenya.component";
 import {ModificarparticipanteComponent} from "./modificarparticipante/modificarparticipante.component";
+import {EscribirRComponent} from "./escribir-r/escribir-r.component";
 
 // Rutas de navegación
 
@@ -83,6 +84,7 @@ const routes: Routes = [
   { path: 'monedero', component: MonederoComponent},
   { path: 'recaudacion', component: RecaudacionComponent},
   { path: 'resenya', component: ResenyaComponent},
+  { path: 'escribir', component: EscribirRComponent},
 
 
   {
