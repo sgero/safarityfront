@@ -323,4 +323,9 @@ export class GeneralService {
   listarResenyaSegunEvento(data: number): Observable<Resenya[]>{
     return this.http.post<Resenya[]>(`${this.apiUrl}/resenya/listaresenya`, data);
   }
+
+  comprobarResenyaSegunEvento(data: Resenya): Observable<Resenya>{
+    return this.http.post<Resenya>(`${this.apiUrl}/resenya/comprobaresenya`, data);
+  }
+
 }

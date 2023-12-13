@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {GeneralService} from "../services/general.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {Resenya} from "../models/Resenya";
 
 @Component({
   selector: 'app-detalles-ticket',
@@ -13,6 +14,12 @@ export class DetallesTicketComponent implements OnInit{
   ticket: any;
   mticket = {ticketID: +'', devolucion: 'SI'};
   mensaje: any;
+  evento:any;
+
+  resenya: Resenya = new Resenya();
+
+  comprobarResenya: any;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private service:GeneralService,
@@ -35,6 +42,27 @@ export class DetallesTicketComponent implements OnInit{
         );
       }
     });
+
+    this.service.obtenerEventoPorId(Number(localStorage.getItem('id_evento') || '')).subscribe(
+      data => {
+        this.evento = data;
+      },
+      error => {
+        console.error('Error al obtener el evento:', error);
+      }
+    );
+
+  }
+
+  ngOnInit1(){
+
+    this.resenya.eventoDTO = this.evento;
+    this.resenya.texto = localStorage.getItem('alias') || '';
+
+    this.service.comprobarResenyaSegunEvento(this.resenya).subscribe(data => {
+      this.comprobarResenya = data;
+    })
+
   }
 
   boton: any;
