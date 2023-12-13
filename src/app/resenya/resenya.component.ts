@@ -11,6 +11,7 @@ import {Resenya} from "../models/Resenya";
   styleUrls: ['./resenya.component.css']
 })
 export class ResenyaComponent {
+  resenyas: any;
 
 
 
