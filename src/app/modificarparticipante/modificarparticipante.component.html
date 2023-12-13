@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title> Modificar Perfil Participante | SAFARITY </title>
-  <link rel="stylesheet" type="text/css" href="modificarevento.component.css">
+  <link rel="stylesheet" type="text/css" href="modificarparticipante.component.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -30,6 +30,10 @@
 
         <div class="titulo">Modificar Perfil Participante
 
+          <p>¿No recuerdas tus datos?</p>
+
+          <br>
+
           <div class="autocompletar">
             Autocompletar con tus datos
             <input id="auto" type="checkbox" (change)="autocompletar()">
@@ -39,83 +43,47 @@
 
         <br>
 
-        <form (ngSubmit)="modificar()">
+        <form (ngSubmit)="modificarParticipante()">
 
           <div class="input-boxes">
 
             <div class="input-box">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" name="nombre" id="nombre" [(ngModel)]="evento.nombre" required>
+              <input type="text" placeholder="Nombre" name="nombre" id="nombre" [(ngModel)]="participante.nombre" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-map-marker"></i>
-              <input type="text" placeholder="Dirección" name="direccion" id="direccion" [(ngModel)]="evento.direccion" required>
+              <input type="text" placeholder="Dirección" name="direccion" id="apellidos" [(ngModel)]="participante.apellidos" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-info"></i>
-              <input type="text" placeholder="Descripción" name="descripcion" id="descripcion" [(ngModel)]="evento.descripcion" required>
+              <input type="text" placeholder="Descripción" name="descripcion" id="direccion" [(ngModel)]="participante.direccion" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-globe"></i>
-              <input type="text" placeholder="URL de tu Imagen" name="imagen" id="imagen" [(ngModel)]="evento.imagen" required>
-            </div>
-            <p>Recuerda que estás asignando el precio.</p>
-            <div class="input-box">
-              <i class="fa fa-usd"></i>
-              <input type="number" name="precio" id="precio" [(ngModel)]="evento.precio" required>
+              <input type="text" placeholder="Email" name="email" id="email" [(ngModel)]="participante.email" required>
             </div>
 
             <div class="input-box">
-              <i class="fa fa-users"></i>
-              <input type="number" name="aforo" id="aforo" [(ngModel)]="evento.aforo" required>
+              <i class="fas fa-globe"></i>
+              <input type="text" placeholder="DNI" name="dni" id="dni" [(ngModel)]="participante.dni" required>
             </div>
 
             <div class="input-box">
-              <i class="fas fa-calendar"></i>
-              <input type="date" name="fecha_lanzamiento" id="fecha_lanzamiento" [(ngModel)]="evento.fecha_lanzamiento" required>
+              <i class="fas fa-globe"></i>
+              <input type="text" placeholder="Num tlf" name="telefono" id="telefono" [(ngModel)]="participante.telefono" required>
             </div>
 
             <div class="input-box">
               <i class="fas fa-calendar"></i>
-              <input type="date"  name="fecha_venta" id="fecha_venta" [(ngModel)]="evento.fecha_venta" required>
+              <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" [(ngModel)]="participante.fecha_nacimiento" required>
             </div>
 
-            <div class="input-box">
-              <i class="fas fa-calendar"></i>
-              <input type="date" name="fecha_inicio" id="fecha_inicio" [(ngModel)]="evento.fecha_inicio" required>
-            </div>
 
-            <div class="input-box">
-              <i class="fas fa-calendar"></i>
-              <input type="date"  name="fecha_fin" id="fecha_fin" [(ngModel)]="evento.fecha_fin" required>
-            </div>
 
-            <div class="input-box">
-              <i class="fa fa-ravelry"></i>
-              <select id="tipo_evento" name="tipo_evento" [(ngModel)]="evento.tipoEvento" required>
-                <option value="" disabled selected>Tipo de Evento</option>
-                <option value="CARRERA">Carrera</option>
-                <option value="SUBASTA">Subasta</option>
-                <option value="MERCADILLO">Mercadillo</option>
-                <option value="CONCIERTO">Concierto</option>
-                <option value="RECOGIDA">Recogida</option>
-                <option value="ESPECTACULO">Espectáculo</option>
-                <option value="OTRO">Otro</option>
-              </select>
-            </div>
-
-            <div class="input-box">
-              <i class="fa fa-credit-card-alt"></i>
-              <select id="tipo_pago" name="tipo_pago" [(ngModel)]="evento.tipoPago" required>
-                <option value="" disabled selected>Tipo de Pago</option>
-                <option value="GRATIS">Gratis</option>
-                <option value="DONATIVO">Donativo</option>
-                <option value="PRECIO_FIJO">Precio Fijo</option>
-              </select>
-            </div>
             <span>{{mensaje}}</span>
 
             <div class="boton input-box">

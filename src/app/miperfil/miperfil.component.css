@@ -44,10 +44,6 @@ h3 {
   margin-bottom: 10px;
 }
 
-
-
-
-
 .ficha {
   margin-left: 25%;
   margin-right: 25%;
@@ -61,4 +57,36 @@ h3 {
   color: #b000ff; /* Título morado */
   font-weight: bold;
   margin-top: 50px;
+}
+.botona{
+  color: #fff;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.botona button{
+  color: #fff;
+  background: #7d2ae8;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.botona button:hover{
+  background: #5b13b9;
+}
+
+.botona button{
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.botona button:focus,
+.botona button:valid{
+  border-color: #7d2ae8;
 }
