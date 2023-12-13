@@ -13,6 +13,7 @@ export class EscribirRComponent implements OnInit {
 
   resenya: Resenya = new Resenya();
   ticket:any;
+  usuario: any;
   constructor(private generalService: GeneralService, private router: Router) {
 
 
@@ -29,14 +30,20 @@ export class EscribirRComponent implements OnInit {
       }
     );
 
+    this.generalService.mostrarUsuario(localStorage.getItem('alias') || '').subscribe(data => {
+      this.usuario = data;
+      console.log(data);
+    } );
+
   }
 
   enviarResenya()
   {
-
+  this.resenya.usuarioDTO = this.usuario;
+  this.resenya.eventoDTO = this.ticket.eventoDTO;
     this.generalService.crearResenya(this.resenya).subscribe(data => {console.log(data);
 
-      this.router.navigate(['/listatickets']);
+      this.router.navigate(['/index']);
     });
     console.log('Reseña enviada');
   }
