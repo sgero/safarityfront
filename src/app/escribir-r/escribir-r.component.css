@@ -41,7 +41,7 @@ textarea {
   color: #b906f1 !important;
   font-size: 1.1em !important;
   font-weight: bold !important;
-
+  padding: 5px;
   resize: none;
   width: 400px;
   height: 150px;
@@ -116,6 +116,13 @@ textarea {
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+.control label {
+
+  color: gold;
+  font-size: 1.5em;
+
 }
 
 .cajatexto {
