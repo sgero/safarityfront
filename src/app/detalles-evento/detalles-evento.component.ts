@@ -17,6 +17,7 @@ export class DetallesEventoComponent implements OnInit{
     evento:+""
   }
 
+  mensaje: any;
 
   esParticipante: boolean = false;
 
@@ -131,6 +132,20 @@ export class DetallesEventoComponent implements OnInit{
       data => {
         this.evento = data;
         this.router.navigate(['/inicio']);
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+
+  }
+
+  eliminarEvento(){
+
+    this.eventoService.eliminarEvento(this.evento).subscribe(
+      data => {
+        this.mensaje = data;
+        this.router.navigate(['/misEventos']);
       },
       error => {
         console.error('Error:', error);

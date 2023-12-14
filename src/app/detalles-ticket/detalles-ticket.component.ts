@@ -46,22 +46,17 @@ export class DetallesTicketComponent implements OnInit{
     this.service.obtenerEventoPorId(Number(localStorage.getItem('id_evento') || '')).subscribe(
       data => {
         this.evento = data;
+        this.resenya.eventoDTO = this.evento;
+        this.resenya.texto = localStorage.getItem('alias') || '';
+
+        this.service.comprobarResenyaSegunEvento(this.resenya).subscribe(data => {
+          this.comprobarResenya = data;
+        })
       },
       error => {
         console.error('Error al obtener el evento:', error);
       }
     );
-
-  }
-
-  ngOnInit1(){
-
-    this.resenya.eventoDTO = this.evento;
-    this.resenya.texto = localStorage.getItem('alias') || '';
-
-    this.service.comprobarResenyaSegunEvento(this.resenya).subscribe(data => {
-      this.comprobarResenya = data;
-    })
 
   }
 

@@ -2,7 +2,7 @@
 
 <div class="body">
 
-  <div *ngIf="ticket" class="evento-container" (mousedown)="ngOnInit1()">
+  <div *ngIf="ticket" class="evento-container">
 
     <div class="thumbnail">
 
@@ -83,7 +83,7 @@
         </form>
       </div>
 
-      <div class="esc-resenya">
+      <div class="esc-resenya" *ngIf="comprobarResenya == null">
         <app-escribir-r></app-escribir-r>
       </div>
     </div>

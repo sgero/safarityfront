@@ -62,15 +62,6 @@ export class GeneralService {
     return this.userRole;
   }
 
-  // Implementa la lógica para verificar si mostrar el elemento de menú según el rol
-  shouldShowNavItem(nav: any): boolean {
-    return this.userRole === nav.role;
-  }
-
-  getUserAlias(): string {
-    return this.usuarioAlias$.toString();
-  }
-
   private usuarioAutenticadoSubject = new BehaviorSubject<boolean>(false);
   usuarioAutenticado$: Observable<boolean> = this.usuarioAutenticadoSubject.asObservable();
 
@@ -116,7 +107,6 @@ export class GeneralService {
 
   }
 
-
   // Métodos para obtener datos relacionados con Organización y Evento
   getOrganizacion(): Observable<Organizacion[]> {
     return this.http.get<Organizacion[]>(`${this.apiUrl}/organizacion/listar`);
@@ -127,23 +117,6 @@ export class GeneralService {
     return this.http.get<Evento[]>(`${this.apiUrl}/evento/listar`);
   }
 
-  // Métodos para obtener datos relacionados con Organización y Evento
-  getUsuario(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/usuario/listar`);
-  }
-
-  // Métodos para obtener datos relacionados con Organización y Evento
-  getUsuarioById(id: number): Observable<Usuario> {
-    return this.http.get<Usuario>(`${this.apiUrl}/usuario/listar/${id}`);
-  }
-
-  // Métodos para obtener datos relacionados con Organización y Evento
-  getUsuarioByAlias(alias: string): Observable<Usuario> {
-    return this.http.get<Usuario>(`${this.apiUrl}/usuario/listar/${alias}`);
-  }
-
-
-  //Métodos para obtener búsqueda de eventos
   getBuscar(data: Busqueda) {
     return this.http.post<Evento[]>(`${this.apiUrl}/evento/buscar`, data);
   }
@@ -170,12 +143,6 @@ export class GeneralService {
   modificarParticipante(data: Participante){
     return this.http.put<Participante>(`${this.apiUrl}/participante/modificar`, data);
   }
-
-
-  obtenerEventoPorId2(id: bigint) {
-    return this.http.get<Evento>(`${this.apiUrl}/evento/${id}`);
-  }
-
 
   crearTicket(data: Ticket){
     return this.http.post<Ticket>(`${this.apiUrl}/ticket/crear`, data);
@@ -212,11 +179,6 @@ export class GeneralService {
     return this.http.get(`${this.apiUrl}/ticket/down-pdf`, { responseType: 'blob' });
   }
 
-
-  obtenerPerfil(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
-  }
-
   isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
@@ -234,36 +196,9 @@ export class GeneralService {
     return this.http.post<void>(`${this.apiUrl}/enviar-mensaje`, data)
   }
 
-
-  agregarFavorito(participanteId: number, eventoId: number): Observable<string> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    const body = { participanteId, eventoId };
-
-    return this.http.post<string>(`${this.apiUrl}/agregar`, body, { headers });
-  }
-
   obtenerEventosFavoritos(participanteId: number | undefined): Observable<Evento[]> {
     return this.http.get<Evento[]>(`${this.apiUrl}/eventos/${participanteId}`);
   }
-
-  agregarResenya(participanteId: number, eventoId: number, resenya: string): Observable<string> {
-    const params = new HttpParams().set('participanteId', participanteId.toString()).set('eventoId', eventoId.toString());
-    return this.http.post<string>(`${this.apiUrl}/resenyas`, params, { params: { resenya } });
-  }
-
-  eliminarFavorito(id: bigint | undefined, participanteId: number | undefined) {
-    return this.http.delete(`${this.apiUrl}/eliminar/${id}/${participanteId}`);
-
-  }
-
-
-
-
- // getUserRol(): Observable<number> {
-    // Este método debe devolver un observable con el rol del usuario (debe ser un número)
-    // Puedes ajustar el tipo de dato según tu implementación específica
-   // return this.http.get<number>(`${this.apiUrl}/obtener-rol`);
-  //}
 
   getUserRol(): Observable<string> {
     return of(this.userRole);
@@ -326,6 +261,12 @@ export class GeneralService {
 
   comprobarResenyaSegunEvento(data: Resenya): Observable<Resenya>{
     return this.http.post<Resenya>(`${this.apiUrl}/resenya/comprobaresenya`, data);
+  }
+
+  eliminarEvento(data: Evento): Observable<String>{
+
+    return this.http.post<string>(`${this.apiUrl}/evento/eliminar`, data);
+
   }
 
 }

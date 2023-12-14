@@ -23,10 +23,18 @@
 .stars {
   color: #b906f1;
   font-size: 1.4em; /* Ajusté el estilo del tamaño de fuente */
-
   text-align: center !important;
   white-space: pre-line;
   height:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.stars p {
+
+  margin-bottom: 0 !important;
 
 }
 

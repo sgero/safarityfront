@@ -44,7 +44,7 @@ export class EscribirRComponent implements OnInit {
   this.resenya.eventoDTO = this.ticket.eventoDTO;
     this.generalService.crearResenya(this.resenya).subscribe(data => {console.log(data);
 
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/inicio']).then(()=>window.location.href='/inicio');
     });
     console.log('Reseña enviada');
   }

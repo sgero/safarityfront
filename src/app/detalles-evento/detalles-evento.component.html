@@ -87,6 +87,10 @@
         <button class="evento" [routerLink]="['/modificarevento', evento.id]" >Modificar evento</button>
       </div>
 
+      <div class="botona" *ngIf="usuario.id == evento.organizacionDTO.usuarioDTO.id && usuario.rol == 'ORGANIZACION'">
+        <button class="evento" (click)="eliminarEvento()">Eliminar evento</button>
+      </div>
+
     </div>
 
     <!-- En tu vista donde deseas mostrar el componente de reseña -->
