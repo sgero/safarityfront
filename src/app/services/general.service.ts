@@ -269,4 +269,10 @@ export class GeneralService {
 
   }
 
+  valoracionmedia(data: Number): Observable<Float64Array>{
+
+    return this.http.post<Float64Array>(`${this.apiUrl}/resenya/valoracionmedia`, data);
+
+  }
+
 }

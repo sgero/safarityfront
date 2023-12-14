@@ -8,7 +8,6 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 100%;
   overflow-x: auto;
   padding: 10px; /* Añadí un poco de relleno para mejorar el aspecto */
 }

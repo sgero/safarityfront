@@ -49,16 +49,6 @@ export class EscribirRComponent implements OnInit {
     console.log('Reseña enviada');
   }
 
-
-//  contarCaracteres(texto: string) {
- //   const longitud = texto.length;
- //   if (longitud > this.caracteresMaximos) {
- //     this.resenya.texto = texto.slice(0, this.caracteresMaximos);
- //   } else {
- //     this.resenya.texto = texto;
- //   }
- // }
-
   contarCaracteres() {
     const longitud = this.resenya.texto?.length || 0;
     if (longitud > this.caracteresMaximos) {
@@ -66,8 +56,4 @@ export class EscribirRComponent implements OnInit {
     }
   }
 
-
-
 }
-
-

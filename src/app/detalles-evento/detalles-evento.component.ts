@@ -19,6 +19,8 @@ export class DetallesEventoComponent implements OnInit{
 
   mensaje: any;
 
+  valoracion: any;
+
   esParticipante: boolean = false;
 
   esOrganizacion: boolean = false;
@@ -63,6 +65,16 @@ export class DetallesEventoComponent implements OnInit{
           data => {
             console.log(data)
             this.evento = data;
+            this.eventoService.valoracionmedia(this.evento.id).subscribe(
+              data => {
+                this.valoracion = data;
+                this.valoracion = this.valoracion.toFixed(2);
+              },
+              error => {
+                console.error('Error:', error);
+              }
+            );
+
             localStorage.setItem('precio', String(data.precio));
           },
           error => {
