@@ -1,27 +1,13 @@
 
 
 <div class="box">
-  <h2>Escribir Reseña</h2>
+  <h2><u>Haz una valoración de este evento:</u></h2>
+  <br>
+
   <form (submit)="enviarResenya()">
 
-    <div>
-      <label for="texto">Comentario:</label>
-      <textarea id="texto" name="texto" [(ngModel)]="resenya.texto" required></textarea>
-    </div>
-<!--    <div>-->
-<!--      <label for="estrella">Calificación:</label>-->
-<!--      <select id="estrella" name="estrella" [(ngModel)]="resenya.estrella" required>-->
-<!--        <option value="1">1</option>-->
-<!--        <option value="2">2</option>-->
-<!--        <option value="3">3</option>-->
-<!--        <option value="4">4</option>-->
-<!--        <option value="5">5</option>-->
-
-<!--      </select>-->
-<!--    </div>-->
-
     <div class="field">
-      <label class="label">Calificación:</label>
+      <label class="calificacion">Calificación:</label>
       <div class="control">
         <!-- Utiliza elementos de entrada de tipo radio para las estrellas -->
         <input type="radio" id="estrella1" name="calificacion" [(ngModel)]="resenya.estrella" value="1">
@@ -40,8 +26,55 @@
         <label for="estrella5">★</label>
       </div>
     </div>
+<br>
+
     <div>
-      <button type="submit">Enviar Reseña</button>
+      <label class="texto" for="miTextarea">Comentario:</label>
+      <br>
+      <div class="cajatexto">
+        <textarea id="miTextarea" name="texto" [(ngModel)]="resenya.texto" (input)="contarCaracteres()" required></textarea>
+        <br>
+      </div>
+      <div class="contador">
+        <p id="contadorCaracteres">{{ resenya.texto?.length }}/{{ caracteresMaximos }} caracteres</p>
+      </div>
+    </div>
+
+      <!--     <script>
+             document.addEventListener('DOMContentLoaded', function() {
+               var textarea = document.getElementById('miTextarea');
+               var contador = document.getElementById('contadorCaracteres');
+
+               textarea.addEventListener('input', function() {
+                 var texto = textarea.value;
+                 var longitud = texto.length;
+                 var maximo = parseInt(textarea.getAttribute('maxlength'));
+
+                 if (longitud > maximo) {
+                   textarea.value = texto.slice(0, maximo);
+                   longitud = maximo;
+                 }
+
+                 contador.textContent = longitud + ' / ' + maximo + ' caracteres';
+               });
+             });
+           </script>-->
+
+<!--    <div>-->
+<!--      <label for="estrella">Calificación:</label>-->
+<!--      <select id="estrella" name="estrella" [(ngModel)]="resenya.estrella" required>-->
+<!--        <option value="1">1</option>-->
+<!--        <option value="2">2</option>-->
+<!--        <option value="3">3</option>-->
+<!--        <option value="4">4</option>-->
+<!--        <option value="5">5</option>-->
+
+<!--      </select>-->
+<!--    </div>-->
+
+
+    <div class="botoncin">
+      <button class="boton" type="submit">Enviar Reseña</button>
     </div>
   </form>
 </div>
