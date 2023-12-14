@@ -116,13 +116,36 @@ textarea {
   justify-content: center;
   align-items: center;
   align-content: center;
+  direction: rtl;
+  unicode-bidi: bidi-override;
 }
 
 .control label {
 
-  color: gold;
+  color:grey;
   font-size: 1.5em;
+  cursor: pointer;
 
+}
+
+.control input {
+
+  display: none;
+
+}
+
+.control input:checked ~ label{
+  color:gold;
+}
+
+.control label:hover{
+
+  color: gold;
+
+}
+
+.control label:hover ~ label{
+  color:gold;
 }
 
 .cajatexto {
