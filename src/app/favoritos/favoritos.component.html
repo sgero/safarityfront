@@ -8,17 +8,17 @@
     <h1><strong>FAVORITOS</strong></h1>
   </div>
   <h3>FAVORITOS:</h3>
-    <div class="miniatura">
+  <div *ngFor="let e of evento" class="miniatura">
 
-      <div *ngFor="let e of evento" class="tarjeta">
-        <a [routerLink]="['/detallesEvento', e.id]">
-          <img src="{{e.imagen}}">
-          <h3>{{e.nombre}}</h3>
-          <p><strong>Aforo:</strong> {{e.aforo}}</p>
-        </a>
-      </div>
-
-    </div>
+    <h3>{{e.nombre}}</h3>
+    <br>
+    <a [routerLink]="['/detallesEvento', evento.id]">
+      <img [src]="evento.imagen" alt="{{evento.nombre}}">
+    </a>
+    <img src="{{e.imagen}}">
+    <p><strong>Aforo:</strong> {{e.aforo}}</p>
+    <br>
+  </div>
 
   <!--<div class="message" *ngIf="eventosFavoritos && eventosFavoritos.length === 0">
     <p>No tiene eventos en sus favoritos.</p>
