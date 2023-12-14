@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {GeneralService} from "../services/general.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 import {Resenya} from "../models/Resenya";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-detalles-ticket',
@@ -23,7 +24,8 @@ export class DetallesTicketComponent implements OnInit{
   constructor(
     private activatedRoute: ActivatedRoute,
     private service:GeneralService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -62,6 +64,7 @@ export class DetallesTicketComponent implements OnInit{
 
   boton: any;
   formulario: any;
+  botonc: any;
 
   vistaFormulario(){
     if (document.getElementById('bbutton') && document.getElementById('form')){
@@ -69,9 +72,14 @@ export class DetallesTicketComponent implements OnInit{
       this.boton.style.display = 'none';
       this.formulario = document.getElementById('form');
       this.formulario.style.display = 'flex';
+      this.botonc = document.getElementById('cancel');
+      this.botonc.style.display = 'flex';
     }
   }
 
+  cancelar(){
+    window.location.href = window.location.href;
+  }
   eliminarTicket(){
     this.activatedRoute.params.subscribe(params => {
       const ticketID = +params['id'];
@@ -83,6 +91,7 @@ export class DetallesTicketComponent implements OnInit{
           error =>{
             console.error('Error al obtener el evento:', error);
             this.router.navigate(['/listatickets']);
+            this.toastr.success('Ticket cancelado correctamente', 'Éxito');
           }
           );
       }
