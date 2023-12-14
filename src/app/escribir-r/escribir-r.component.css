@@ -1,0 +1,126 @@
+@import 'bulma/css/bulma.css';
+
+
+.box {
+  margin-top: 20px;
+  border: 1px solid #b906f1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.title {
+  color: #b906f1;
+  size: 1.4em;
+}
+
+.stars {
+  color: #b906f1;
+  size: 1.4em;
+  display: flex;
+  justify-content: center;
+}
+
+
+.name {
+  color: #b906f1 !important;
+  font-size: 1.4em !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+
+h2 {
+  color: #b906f1 !important;
+  font-size: 1.4em !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+textarea {
+  color: #b906f1 !important;
+  font-size: 1.1em !important;
+  font-weight: bold !important;
+
+  resize: none;
+  width: 500px;
+  height: 150px;
+  border: 1px solid #b906f1;
+}
+
+.boton {
+  color: #ffffff !important;
+  font-size: 1.1em !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  border: 1px solid #b906f1;
+  background-color: #b906f1;
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+
+}
+
+.boton:hover {
+  background-color: #6849b6;
+  color: #ffffff;
+}
+
+.botoncin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#estrella1 .label {
+  color: #b906f1 !important;
+  font-size: 1.1em !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+
+.calificacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+.texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.contador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.miTextarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.cajatexto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
