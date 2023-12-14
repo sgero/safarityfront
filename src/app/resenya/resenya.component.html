@@ -1,5 +1,6 @@
 <div class="box" *ngIf="resenyas.length!= 0">
   <h1 class="title">Valoraciones:</h1>
+  <div class="table-container">
   <table class="table is-bordered is-striped is-fullwidth">
     <thead>
     <tr>
@@ -11,10 +12,11 @@
     <tbody>
     <!-- Aquí puedes usar *ngFor para iterar sobre tus reseñas y mostrarlas en la tabla -->
     <tr *ngFor="let resenya of resenyas">
-      <td>{{ resenya.usuarioDTO.alias }}</td>
-      <td>{{ resenya.texto }}</td>
+      <td class="barrita">{{ resenya.usuarioDTO.alias }}</td>
+      <td class="barrita"> {{ resenya.textoFormateado }}</td>
       <td class="stars">{{ resenya.estrella }}<p>&#9733;</p> </td>
     </tr>
     </tbody>
   </table>
+</div>
 </div>
