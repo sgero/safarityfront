@@ -14,7 +14,7 @@ export class EscribirRComponent implements OnInit {
   resenya: Resenya = new Resenya();
   ticket:any;
   usuario: any;
-  caracteresMaximos = 500;
+  caracteresMaximos = 1000;
   constructor(private generalService: GeneralService, private router: Router) {
 
 

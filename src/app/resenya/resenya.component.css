@@ -1,30 +1,78 @@
-@import 'bulma/css/bulma.css';
-
-
 /* resena.component.css */
 
 .box {
   margin-top: 20px;
   border: 1px solid #b906f1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px; /* Añadí un poco de relleno para mejorar el aspecto */
 }
 
-
 .title {
-  color: #b906f1;
-  size: 1.4em;
+  color: #b906f1 !important;
+  font-size: 2em !important;
+  font-weight: bold !important;
+  text-align: center !important;
 }
 
 .stars {
   color: #b906f1;
-  size: 1.4em;
-  display: flex;
-  justify-content: center;
-}
+  font-size: 1.4em; /* Ajusté el estilo del tamaño de fuente */
 
+  text-align: center !important;
+  white-space: pre-line;
+  height:auto;
+
+}
 
 .name {
   color: #b906f1 !important;
-  font-size: 1.4em !important;
+  font-size: 1.2em !important;
   font-weight: bold !important;
   text-align: center !important;
+  white-space: pre-line;
 }
+
+/* Establece un ancho máximo para la tabla y que ocupe el 100% del contenedor */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Establece un ancho específico para las columnas de la tabla (puedes ajustar según tus necesidades) */
+.table-container table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.table-container th, .table-container td {
+  word-wrap: break-word;
+}
+
+
+.table-container th, .table-container td {
+  padding: 15px; /* Añade un poco de relleno para mejorar el aspecto */
+  text-align: -moz-center;
+}
+.table-container td {
+  border: 0px solid #ddd; /* Borde sutil */
+  padding: 8px; /* Añade un poco de relleno para mejorar el aspecto */
+}
+
+/* Añade un fondo alternado para mejorar la legibilidad */
+.table-container tr:nth-child(even) {
+  background-color: #e8d5fc;
+}
+
+
+th.name {
+  width: 20%;
+  border-bottom: 3px solid #aa4fff;
+  border-top: 3px solid #aa4fff;
+}
+
