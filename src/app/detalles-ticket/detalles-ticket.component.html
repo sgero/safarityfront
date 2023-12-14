@@ -79,8 +79,9 @@
         <form id="form" (ngSubmit)="eliminarTicket()">
           <span>¿Desea retirar su donación?</span>
           <input type="checkbox" value="SI" id="devolucion" name="devolucion" [(ngModel)]="mticket.devolucion" required>
-          <button type="submit">Continuar</button>
+          <button type="submit">Si</button>
         </form>
+        <button id="cancel" (click)="cancelar()" >No</button>
       </div>
     </div>
 
