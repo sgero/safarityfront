@@ -11,30 +11,6 @@
 
 <div class="body">
 
-  <div class="botones">
-
-    <div *ngIf="esParticipante" class="botona">
-      <button class="ticket" routerLink="/crearticket">Comprar Ticket</button>
-    </div>
-
-    <div class="botona" *ngIf="!comprobarEvento && esParticipante">
-      <button class="ticket" (click)="enviarfavorito()">Añadir a Favorito</button>
-    </div>
-
-    <div class="botona" *ngIf="comprobarEvento && esParticipante">
-      <button class="ticket" (click)="eliminarfavorito()">Eliminar de Favorito</button>
-    </div>
-
-    <div class="botona" *ngIf="usuario.id == evento.organizacionDTO.usuarioDTO.id && usuario.rol == 'ORGANIZACION'">
-      <button class="evento" [routerLink]="['/modificarevento', evento.id]" >Modificar evento</button>
-    </div>
-
-    <div class="botona" *ngIf="usuario.id == evento.organizacionDTO.usuarioDTO.id && usuario.rol == 'ORGANIZACION'">
-      <button class="evento" (click)="eliminarEvento()">Eliminar evento</button>
-    </div>
-
-  </div>
-
   <div *ngIf="evento" class="evento-container">
 
     <div class="thumbnail">
@@ -95,6 +71,30 @@
       <div class="detail">
         <span class="label">Valoracion Media:</span>
         <span class="value">{{valoracion}}/5 &#9733;</span>
+      </div>
+
+    </div>
+
+    <div class="botones">
+
+      <div *ngIf="esParticipante" class="botona">
+        <button class="ticket" routerLink="/crearticket">Comprar Ticket</button>
+      </div>
+
+      <div class="botona" *ngIf="!comprobarEvento && esParticipante">
+        <button class="ticket" (click)="enviarfavorito()">Añadir a Favorito</button>
+      </div>
+
+      <div class="botona" *ngIf="comprobarEvento && esParticipante">
+        <button class="ticket" (click)="eliminarfavorito()">Eliminar de Favorito</button>
+      </div>
+
+      <div class="botona" *ngIf="usuario.id == evento.organizacionDTO.usuarioDTO.id && usuario.rol == 'ORGANIZACION'">
+        <button class="evento" [routerLink]="['/modificarevento', evento.id]">Modificar evento</button>
+      </div>
+
+      <div class="botona" *ngIf="usuario.id == evento.organizacionDTO.usuarioDTO.id && usuario.rol == 'ORGANIZACION'">
+        <button class="evento" (click)="eliminarEvento()">Eliminar evento</button>
       </div>
 
     </div>

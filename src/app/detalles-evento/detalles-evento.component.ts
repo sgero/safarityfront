@@ -113,10 +113,6 @@ export class DetallesEventoComponent implements OnInit{
     }
   }
 
-
-
-
-
   enviarfavorito(){
 
     this.favorito.evento = Number(localStorage.getItem('id_evento') || '');
@@ -165,7 +161,5 @@ export class DetallesEventoComponent implements OnInit{
     );
 
   }
-
-
 
 }
