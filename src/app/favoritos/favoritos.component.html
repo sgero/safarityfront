@@ -7,13 +7,14 @@
 
     <h1><strong>FAVORITOS</strong></h1>
   </div>
+  <h3>FAVORITOS:</h3>
     <div class="miniatura">
-<h3>FAVORITOS:</h3>
+
       <div *ngFor="let e of evento" class="tarjeta">
         <a [routerLink]="['/detallesEvento', e.id]">
           <img src="{{e.imagen}}">
           <h3>{{e.nombre}}</h3>
-          <p>Aforo: {{e.aforo}}</p>
+          <p><strong>Aforo:</strong> {{e.aforo}}</p>
         </a>
       </div>
 
@@ -24,3 +25,5 @@
   </div>-->
 
 </body>
+
+

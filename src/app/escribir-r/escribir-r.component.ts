@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Resenya} from "../models/Resenya";
-import {HttpClient} from "@angular/common/http";
 import {GeneralService} from "../services/general.service";
 import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-escribir-r',
@@ -14,6 +14,7 @@ export class EscribirRComponent implements OnInit {
   resenya: Resenya = new Resenya();
   ticket:any;
   usuario: any;
+  caracteresMaximos = 1000;
   constructor(private generalService: GeneralService, private router: Router) {
 
 
@@ -43,13 +44,27 @@ export class EscribirRComponent implements OnInit {
   this.resenya.eventoDTO = this.ticket.eventoDTO;
     this.generalService.crearResenya(this.resenya).subscribe(data => {console.log(data);
 
-      this.router.navigate(['/index']);
+      this.router.navigate(['/inicio']);
     });
     console.log('Reseña enviada');
   }
 
 
+//  contarCaracteres(texto: string) {
+ //   const longitud = texto.length;
+ //   if (longitud > this.caracteresMaximos) {
+ //     this.resenya.texto = texto.slice(0, this.caracteresMaximos);
+ //   } else {
+ //     this.resenya.texto = texto;
+ //   }
+ // }
 
+  contarCaracteres() {
+    const longitud = this.resenya.texto?.length || 0;
+    if (longitud > this.caracteresMaximos) {
+      this.resenya.texto = this.resenya.texto?.slice(0, this.caracteresMaximos) || '';
+    }
+  }
 
 
 
